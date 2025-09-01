@@ -1,0 +1,22 @@
+/* Custom heading styles */
+
+/* H2 (##) */
+h2 {
+  color: #005A9C; /* azul corporativo */
+  border-bottom: 2px solid #FF8200;
+  padding-bottom: 0.2em;
+  margin-top: 1.5em;
+}
+
+/* H3 (###) */
+h3 {
+  color: #FF8200; /* naranja corporativo */
+  margin-top: 1.2em;
+}
+
+/* Center all images inside markdown content */
+.md-typeset img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="eu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../dws-2-unitatea-aldagaiak-eta-adierazpenak/">
+      
+      
+        <link rel="next" href="../dws-2-unitatea-kontrol-egiturak/">
+      
+      
+      <link rel="icon" href="http://fptxurdinaga.eus/wp-content/uploads/2022/10/favicon-96x96-1.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>2. PHP Elementuak - DWS Apunteak - 2025-2026</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dws-2-unitatea-php-elementuak" class="md-skip">
+          Joan zuzenean edukira
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Atalburua">
+    <a href="../.." title="DWS Apunteak - 2025-2026" class="md-header__button md-logo" aria-label="DWS Apunteak - 2025-2026" data-md-component="logo">
+      
+  <img src="https://fptxurdinaga.eus/wp-content/uploads/2023/06/Logo_Home3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DWS Apunteak - 2025-2026
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. PHP Elementuak
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Bilatu" placeholder="Bilatu" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Bilatu">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Garbitu" aria-label="Garbitu" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Bilaketa hasieratzen
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Nabigazioa" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DWS Apunteak - 2025-2026" class="md-nav__button md-logo" aria-label="DWS Apunteak - 2025-2026" data-md-component="logo">
+      
+  <img src="https://fptxurdinaga.eus/wp-content/uploads/2023/06/Logo_Home3.png" alt="logo">
+
+    </a>
+    DWS Apunteak - 2025-2026
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hasiera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unitatea 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unitatea 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arkitektura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aurkezpena
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arkitektura/1-web-programazio-arkitektura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Web programazioaren ezaugarriak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arkitektura/2-estatiko-vs-dinamiko/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Estatikoak vs Dinamikoak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arkitektura/3-web-aplikazioak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Web aplikazioak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arkitektura/4-teknologiak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Teknologiak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unitatea 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Unitatea 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dws-2-unitatea-aldagaiak-eta-adierazpenak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Aldagaiak eta adierazpenak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2. PHP Elementuak
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. PHP Elementuak
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Edukiak">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Edukiak
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#testu-kateak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testu kateak
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testu kateak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aldagaiak-kateetan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aldagaiak kateetan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kateen-kateatzea-concatenacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kateen kateatzea (concatenación)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ihes-egindako-karaktereak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ihes egindako karaktereak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-erako-aldatzea-conversion-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String-erako aldatzea (Conversión a String)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="String-erako aldatzea (Conversión a String)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#print-funtzioaren-erabilera" class="md-nav__link">
+    <span class="md-ellipsis">
+      print funtzioaren erabilera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print-eta-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      print eta echo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printf" class="md-nav__link">
+    <span class="md-ellipsis">
+      printf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testu-kateekin-erlazionaturiko-funtzioak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testu kateekin erlazionaturiko funtzioak
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testu kateekin erlazionaturiko funtzioak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strlen-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strlen () funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strpos-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strpos () funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr-funtzioa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strstr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strstr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strtr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strtr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr_count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr_count-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr_count() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      chr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ord-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      ord() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explode" class="md-nav__link">
+    <span class="md-ellipsis">
+      explode()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtrim-ltrim-trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      rtrim(), ltrim(), trim()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strtolower-strtoupper" class="md-nav__link">
+    <span class="md-ellipsis">
+      strtolower() / strtoupper()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcmp-strcasecmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      strcmp() / strcasecmp()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ariketa-praktikoa-testu-prozesatzailea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ariketa Praktikoa: Testu Prozesatzailea
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-eta-php-konbinatuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML eta PHP konbinatuz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ariketa-html-eta-php-konbinatuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ariketa: HTML eta PHP konbinatuz
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dws-2-unitatea-kontrol-egiturak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Kontrol egiturak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dws-2-unitatea-arrayak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Arrayak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dws-2-unitatea-funtzioak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Funtzioak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-formak-sesioak-cookieak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unitatea 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-datu-atzipena/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unitatea 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Edukiak">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Edukiak
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#testu-kateak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testu kateak
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testu kateak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aldagaiak-kateetan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aldagaiak kateetan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kateen-kateatzea-concatenacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kateen kateatzea (concatenación)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ihes-egindako-karaktereak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ihes egindako karaktereak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-erako-aldatzea-conversion-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String-erako aldatzea (Conversión a String)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="String-erako aldatzea (Conversión a String)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#print-funtzioaren-erabilera" class="md-nav__link">
+    <span class="md-ellipsis">
+      print funtzioaren erabilera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print-eta-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      print eta echo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printf" class="md-nav__link">
+    <span class="md-ellipsis">
+      printf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testu-kateekin-erlazionaturiko-funtzioak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testu kateekin erlazionaturiko funtzioak
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testu kateekin erlazionaturiko funtzioak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strlen-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strlen () funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strpos-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strpos () funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr-funtzioa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strstr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strstr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strtr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      strtr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr_count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substr_count-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      substr_count() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chr-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      chr() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ord-funtzioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      ord() funtzioa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explode" class="md-nav__link">
+    <span class="md-ellipsis">
+      explode()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtrim-ltrim-trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      rtrim(), ltrim(), trim()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strtolower-strtoupper" class="md-nav__link">
+    <span class="md-ellipsis">
+      strtolower() / strtoupper()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcmp-strcasecmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      strcmp() / strcasecmp()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ariketa-praktikoa-testu-prozesatzailea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ariketa Praktikoa: Testu Prozesatzailea
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-eta-php-konbinatuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML eta PHP konbinatuz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ariketa-html-eta-php-konbinatuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ariketa: HTML eta PHP konbinatuz
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dws-2-unitatea-php-elementuak">DWS 2. unitatea - PHP Elementuak<a class="headerlink" href="#dws-2-unitatea-php-elementuak" title="Permanent link">&para;</a></h1>
+<h2 id="testu-kateak">Testu kateak<a class="headerlink" href="#testu-kateak" title="Permanent link">&para;</a></h2>
+<p>PHPn testu kateak bi modutara adieraz ditzakegu:
+- Kakotx sinpleak (<code>' '</code>) 
+- Kakotx bikoitzak (<code>" "</code>)</p>
+<p>Kateek kakotx sinpleak zein bikoitzak erabil ditzakete PHPn. Alde nabarmena dago bata eta bestearen artean, ordea: aldagaia kakotx bikoitzen artean jartzen dugunean, prozesatu egiten da eta beraren balioak ordezkatua da; hortaz, honela erabili genezake print:</p>
+<pre><code class="language-php">&lt;?php
+$ikasgaia=&quot;DWES&quot;;
+print &quot;&lt;p&gt;Ikasgaia: $ikasgaia&lt;/p&gt;&quot;;
+?&gt;
+</code></pre>
+<p><code>$ikasgaia</code> aldagaia kakotx bikoitzen artean da ezagutua, eta, irteera sortu baino lehen, “DWES”ekin ordezkatua da; hori berori kakotx sinpleak erabiliz egin izan bagenu, ez zen inolako ordezkapenik egingo.</p>
+<h3 id="aldagaiak-kateetan">Aldagaiak kateetan<a class="headerlink" href="#aldagaiak-kateetan" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">&lt;?php
+$ikasgaia = &quot;DWES&quot;;
+
+// Kakotx bikoitzak: aldagaien ordezkapena egiten du
+print &quot;&lt;p&gt;Ikasgaia: $ikasgaia&lt;/p&gt;&quot;;  // Irteera: Ikasgaia: DWES
+
+// Kakotx sinpleak: testu literala bezala tratatzen du
+print '&lt;p&gt;Ikasgaia: $ikasgaia&lt;/p&gt;';  // Iriteera: Ikasgaia: $ikasgaia
+?&gt;
+</code></pre>
+<h3 id="kateen-kateatzea-concatenacion">Kateen kateatzea (concatenación)<a class="headerlink" href="#kateen-kateatzea-concatenacion" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">&lt;?php
+$izena = &quot;Pertsona&quot;;
+$agur = &quot;Kaixo &quot; . $izena . &quot;!&quot;;
+echo $agur;  // Irteera: Kaixo Pertsona!
+?&gt;
+</code></pre>
+<h3 id="ihes-egindako-karaktereak">Ihes egindako karaktereak<a class="headerlink" href="#ihes-egindako-karaktereak" title="Permanent link">&para;</a></h3>
+<p>String kakotx bikoitzen artean badago ("), PHPk ihes-sekuentzia hauek interpretatuko ditu karaktere berezietarako:</p>
+<p>Kakotx sinpleak erabiltzean, bi ordezkapen baino ez dira egiten katearen barruan: \' topatzen denean, kakotx sinplea erakusten da irteeran; \ topatzen denean, berriz, alderantzizko marra erakusten da irteeran.
+Sekuentzia horiek ihes-sekuentzia gisa ezagutuak dira. Kakotx bikoitzak erabiltzen dituzten kateetan, \ sekuentziaz aparte, beste batzuk erabili daitezke; \' sekuentzia, ordea, ez. Kakotx bikoitzekin erabiltzeko ihes-sekuentziak agertzen dira honako taula honetan.</p>
+<p><img alt="Testu kateak" src="images/slide32_10.png" /></p>
+<h2 id="string-erako-aldatzea-conversion-a-string">String-erako aldatzea (Conversión a String)<a class="headerlink" href="#string-erako-aldatzea-conversion-a-string" title="Permanent link">&para;</a></h2>
+<h3 id="print-funtzioaren-erabilera">print funtzioaren erabilera<a class="headerlink" href="#print-funtzioaren-erabilera" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>print</code> beste aukera bat da, eta antzera funtzionatzen du.</li>
+<li><code>print</code> eta <code>echo</code>-ren arteko alderik handiena zera da: <code>print</code>-ek parametro bakarra jaso dezake eta bakarra bueltatzen du.</li>
+</ul>
+<pre><code class="language-php">int print (string $arg);
+</code></pre>
+<h3 id="print-eta-echo">print eta echo<a class="headerlink" href="#print-eta-echo" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">&lt;?php
+//lehenbizi, &quot;echo&quot; funtzioa probatuko dugu hainbat kate inprimatzeko
+
+echo &quot;Lehenengo katea&quot;, &quot; bigarren katea&quot;, &quot; hirugarren katea&quot;; 
+
+//komaz bereizitako zenbait kate inprima daitezke
+
+//orain, print probatuko dugu. Ohartzerakoan, linea bakarra erabili dugu, baina print-arekin 3 kode-lerro behar dira, funtzio baten antzera funtzionatzen du eta parametro bakarra onartzen du
+
+print &quot;Lehenengo katea&quot;;
+print &quot; bigarren katea&quot;;
+print &quot; hirugarren katea&quot;;  ?&gt;
+</code></pre>
+<h3 id="printf">printf<a class="headerlink" href="#printf" title="Permanent link">&para;</a></h3>
+<p><code>printf</code> irteera bat sortzeko beste aukera bat da. </p>
+<p>Hainbat parametro jaso ditzake:</p>
+<ul>
+<li>
+<p>lehenengoa testu-katea da eta ezarri beharreko formatua adierazten du; </p>
+</li>
+<li>
+<p>funtzioak beste hainbat parametro jaso ditzake, eta, horietako bakoitzagatik, bihurtze-espezifikadore bat eduki beharko du kateak -parametroak agertutako ordena berean-. </p>
+</li>
+</ul>
+<p>Adibidez:</p>
+<pre><code class="language-php">
+&lt;?php
+$zikloa=&quot;DAW&quot;;
+$ikasgaia=&quot;eDWS; print &quot;&lt;p&gt;&quot;;
+printf(&quot;%s %s zikloko %d mailako ikasgaia&quot;, $ikasgaia, $zikloa, 2);
+print &quot;&lt;/p&gt;&quot;;
+?&gt;
+</code></pre>
+<p>Zelan uste duzue agertuko dela pantailan?</p>
+<p>Espezifikadoreek <code>%</code> karakterea daukate aurretik, mota bakarrik da derrigorrezkoa, gainontzekoak hautazkoak dira.
+Hurrengo estekan dituzu mota-espezifikadoreak:
+<a href="https://www.w3schools.com/php/func_string_printf.asp">https://www.w3schools.com/php/func_string_printf.asp</a></p>
+<h2 id="testu-kateekin-erlazionaturiko-funtzioak">Testu kateekin erlazionaturiko funtzioak<a class="headerlink" href="#testu-kateekin-erlazionaturiko-funtzioak" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.php.net/manual/es/ref.strings.php">https://www.php.net/manual/es/ref.strings.php</a></p>
+<h3 id="strlen-funtzioa">strlen () funtzioa<a class="headerlink" href="#strlen-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Katearen luzera itzultzen du.</p>
+<pre><code class="language-php">&lt;?php
+echo &quot;Katearen luzera neurtu: &quot;;
+echo strlen(&quot;Katearen luzera neurtu&quot;);
+?&gt;
+</code></pre>
+<ul>
+<li>Katearen luzera begiztetan (bucles) eta funtzioetan erabili ohi da; izan ere, horietan,
+garrantzitsua baita katea noiz bukatzen den jakitea.</li>
+<li>Stringak array gisa tratatu ditzakegu; hala, katearen azken karakterea lortu nahiko
+bagenu, honako agindu honekin egin genezake:</li>
+</ul>
+<pre><code class="language-php">$katea[strlen($katea)-1]
+</code></pre>
+<h3 id="strpos-funtzioa">strpos () funtzioa<a class="headerlink" href="#strpos-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Katearen barruan karaktere zehatza bilatzeko erabiltzen da; topatzen baldin badu,
+topatutako lehenengo posizioa itzuliko du; behin ere topatzen ez badu, aldiz, <code>false</code>
+itzuliko du. </p>
+<p>Zer erakutsiko luke honako kode honek?</p>
+<pre><code class="language-php">&lt;?php
+    $cadena=&quot;Esto es una cadena un poco más larga&quot;;
+    $car='c';
+    $palabra=&quot;poco&quot;;
+    $pos=strpos($cadena,$car);
+    echo &quot;La posición de la 1ª '$car': &quot;,$pos,&quot;&lt;br /&gt;&quot;;
+
+    $pos=strrpos($cadena,$car);
+    echo &quot;La posición de la última '$car': &quot;, $pos,&quot;&lt;br /&gt;&quot;;
+
+    $pos=strpos($cadena,$palabra);
+    echo &quot;La posición de la palabra '$palabra': &quot;, $pos,&quot;&lt;br /&gt;&quot;;
+?&gt;
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">KONTUZ!</p>
+<p>Kontuan izan behar da, halaber, kate-en hasierako posizioak 0-n hasten direla, eta ez 1-en.</p>
+</div>
+<p><code>strrpos()</code> funtzioak azkeneko aldia agertzen dena bilatzen du.</p>
+<h3 id="substr-funtzioa">substr() funtzioa<a class="headerlink" href="#substr-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Katearen zati bat itzultzen du.</p>
+<pre><code class="language-php">string substr ( string $string , int $start [, int $length ] )
+</code></pre>
+<pre><code class="language-php">&lt;?php
+    echo substr('abcdef', 1);     // bcdef
+    echo substr('abcdef', 1, 3);  // bcd
+    echo substr('abcdef', 0, 4);  // abcd
+    echo substr('abcdef', 0, 8);  // abcdef
+    echo substr('abcdef', -1, 1); // f    Zergatik ematen du emaitza hau?
+?&gt;
+</code></pre>
+<h3 id="substr-funtzioa_1">substr() funtzioa<a class="headerlink" href="#substr-funtzioa_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">&lt;?php
+    // Start negatiboa erabiliz
+    $rest = substr(&quot;abcdef&quot;, -1);    // devuelve &quot;f&quot;
+    $rest = substr(&quot;abcdef&quot;, -2);    // devuelve &quot;ef&quot;
+    $rest = substr(&quot;abcdef&quot;, -3, 1); // devuelve &quot;d&quot;
+?&gt;
+</code></pre>
+<h3 id="strstr-funtzioa">strstr() funtzioa<a class="headerlink" href="#strstr-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Katearen barruan azpikatea topatzen du eta azpikatetik  -azpikatea bera barneaurrerako katea itzultzen du osorik.</p>
+<pre><code class="language-php">&lt;?php
+    $rest = strstr(&quot;abcdef&quot;, &quot;c&quot;);    // devuelve &quot;cdef&quot;
+?&gt;
+</code></pre>
+<h3 id="strtr-funtzioa">strtr() funtzioa<a class="headerlink" href="#strtr-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Karaktereak bihurtzen ditu (edo substring-ak ordezkatu).</p>
+<pre><code class="language-php">string str_replace ( mixed $search , mixed $replace , mixed $subject [, int &amp;$count ] )
+</code></pre>
+<p>Bilatutako string-aren agerraldi guztiak ordezkatze-string-arekin ordezkatzen ditu.</p>
+<pre><code class="language-php">&lt;?php
+    $rest = str_replace(&quot;c&quot;, &quot;C&quot;, &quot;abcdef&quot;);    // devuelve &quot;Abcdef&quot;
+?&gt;
+</code></pre>
+<h3 id="substr_count">substr_count<a class="headerlink" href="#substr_count" title="Permanent link">&para;</a></h3>
+<p>Zenbat aldiz agertzen da substring bat string baten barruan. Letra larriz eta xehez sentikorra da</p>
+<h3 id="substr_count-funtzioa">substr_count() funtzioa<a class="headerlink" href="#substr_count-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Substring-aren agerraldi-kopurua zenbatzen du.</p>
+<h3 id="chr-funtzioa">chr() funtzioa<a class="headerlink" href="#chr-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Parametro gisa pasatutako ASCII-kode zenbakiari dagokion karakterea itzultzen du.</p>
+<pre><code class="language-php">echo chr(65);// ‘A’ katea itzuliko luke
+</code></pre>
+<h3 id="ord-funtzioa">ord() funtzioa<a class="headerlink" href="#ord-funtzioa" title="Permanent link">&para;</a></h3>
+<p>Aurrekoaren kontrako funtizoa da. Parametro gisa pasatutako karaktereari dagokion
+ASCII-kode zenbakia itzultzen du.</p>
+<pre><code class="language-php">echo ord(‘A’);// 65 zenbakia itzuliko luke
+</code></pre>
+<h3 id="explode">explode()<a class="headerlink" href="#explode" title="Permanent link">&para;</a></h3>
+<p>Katea azpikatetan banatzen du.</p>
+<pre><code class="language-php">array explode (string separator, string string [, int limit])
+</code></pre>
+<h3 id="rtrim-ltrim-trim">rtrim(), ltrim(), trim()<a class="headerlink" href="#rtrim-ltrim-trim" title="Permanent link">&para;</a></h3>
+<p>Eskumako, ezkerreko edo alde bietako zuriunak eta karaktere kontrolgarriak ezabatzen dituzte.</p>
+<pre><code class="language-php">// Adibide errealagoak:
+echo rtrim(&quot;Hello World!   &quot;);  // &quot;Hello World!&quot; (eskuineko zuriunak kentzen ditu)
+echo ltrim(&quot;   Hello World!&quot;);  // &quot;Hello World!&quot; (ezkerreko zuriunak kentzen ditu)
+echo trim(&quot;  Hello World!  &quot;);  // &quot;Hello World!&quot; (bi aldeetako zuriunak kentzen ditu)
+</code></pre>
+<h3 id="strtolower-strtoupper">strtolower() / strtoupper()<a class="headerlink" href="#strtolower-strtoupper" title="Permanent link">&para;</a></h3>
+<p>Katearen hizki guztiak xehe edo larri bihurtzen dituzte, hurrenez hurren.</p>
+<pre><code class="language-php">echo strtolower(&quot;Hello World!&quot;);  // &quot;hello world!&quot;
+echo strtoupper(&quot;Hello World!&quot;);  // &quot;HELLO WORLD!&quot;
+</code></pre>
+<h3 id="strcmp-strcasecmp">strcmp() / strcasecmp()<a class="headerlink" href="#strcmp-strcasecmp" title="Permanent link">&para;</a></h3>
+<p>Bi kate konparatzen dituzte. <code>strcmp()</code>-ek letra larriak eta xeheak bereizten ditu, <code>strcasecmp()</code>-ek ez.</p>
+<pre><code class="language-php">// strcmp() - Letra larri eta xeheak bereizten ditu
+// Negatiboa: lehenengoa txikiagoa
+// Zero: berdinak
+// Positiboa: lehenengoa handiagoa
+
+echo strcmp(&quot;Hello&quot;, &quot;World&quot;);    // -1 (H &lt; W alfabetoan)
+echo strcmp(&quot;Hello&quot;, &quot;Hello&quot;);   // 0 (berdinak)
+echo strcmp(&quot;Hello&quot;, &quot;hello&quot;);   // -32 ('H' ASCII 72 vs 'h' ASCII 104)
+echo strcmp(&quot;Hello&quot;, &quot;Hello!&quot;);  // -1 (bigarrena luzeagoa da)
+
+// strcasecmp() - Ez du bereizten letra larri eta xeheen artean
+echo strcasecmp(&quot;Hello&quot;, &quot;HELLO&quot;);  // 0 (berdinak)
+echo strcasecmp(&quot;Hello&quot;, &quot;hello&quot;);  // 0 (berdinak)
+echo strcasecmp(&quot;Hello&quot;, &quot;Hello!&quot;);  // -1 (bigarrena luzeagoa da)
+</code></pre>
+<h2 id="ariketa-praktikoa-testu-prozesatzailea">Ariketa Praktikoa: Testu Prozesatzailea<a class="headerlink" href="#ariketa-praktikoa-testu-prozesatzailea" title="Permanent link">&para;</a></h2>
+<div class="admonition exercise">
+<p class="admonition-title">Ariketa: Testu Prozesatzailea</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
+</ul>
+<p>Sortu PHP script bat <code>prozesatzailea.php</code> izenekoa, eta idatzi kodea honako funtzionalitateekin:</p>
+<ol>
+<li>Erabiltzaileak sartu behar du bere izen-abizenak (adibidez: "Juan Perez")</li>
+<li>Programa honek erakutsi behar ditu:</li>
+<li>Izen-abizenak letra larriz</li>
+<li>Izen-abizenak letra xehez</li>
+<li>Izen-abizenaren luzera (karaktere kopurua)</li>
+<li>Lehenengo karakterea eta azkena</li>
+<li>Izena eta abizena bananduta (bietan lehenengo letra maiuskulaz)</li>
+<li>Izen-abizenaren 3. eta 5. karaktereak</li>
+</ol>
+<p><strong>Adibidea:</strong>
+```
+Sarrera: "juan perez"</p>
+<p>Irteera:
+Izen-abizenak letra larriz: JUAN PEREZ
+Izen-abizenak letra xehez: juan perez
+Izen-abizenaren luzera: 10
+Lehenengo karakterea: 'j', Azken karakterea: 'z'
+Izena: Juan, Abizena: Perez
+3. karakterea: 'a', 5. karakterea: ' '
+```</p>
+</div>
+<h2 id="html-eta-php-konbinatuz">HTML eta PHP konbinatuz<a class="headerlink" href="#html-eta-php-konbinatuz" title="Permanent link">&para;</a></h2>
+<p>PHP eta HTML konbinatzea oso ohikoa da:</p>
+<pre><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;PHP eta HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Ongi etorri, 
+    &lt;?php 
+    $izena = &quot;Pertsona&quot;; 
+    echo $izena; 
+    ?&gt;!&lt;/h1&gt;
+
+    &lt;p&gt;Noiz hasi zinen PHP ikasten? &lt;?php echo date(&quot;Y-m-d&quot;); ?&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="ariketa-html-eta-php-konbinatuz">Ariketa: HTML eta PHP konbinatuz<a class="headerlink" href="#ariketa-html-eta-php-konbinatuz" title="Permanent link">&para;</a></h2>
+<div class="admonition exercise">
+<p class="admonition-title">Ariketa 2</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
+</ul>
+<p>Sortu HTML orri bat PHP kodea erabiliz:
+1. Sortu HTML5 dokumentu bat
+2. PHP erabiliz, erakutsi uneko urtea eta hileko eguna
+3. Erabili aldagai bat zure herrialdearen izenarentzat
+4. Erabili HereDoc formatua HTML kodea sortzeko</p>
+<p><strong>Aholkua:</strong> Erabili <code>date()</code> funtzioa datak lortzeko</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Arbelean kopiatuta", "clipboard.copy": "Kopiatu arbelean", "search.result.more.one": "Bat gehiago orri honetan", "search.result.more.other": "# gehiago orri honetan", "search.result.none": "Bat datorren dokumenturik ez", "search.result.one": "Bat datorren dokumentu bat", "search.result.other": "Bat datozen # dokumentu", "search.result.placeholder": "Idatzi bilatzen hasteko", "search.result.term.missing": "Falta da", "select.version": "Hautatu bertsioa"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
