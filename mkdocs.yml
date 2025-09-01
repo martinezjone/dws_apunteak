@@ -1,0 +1,45 @@
+site_name: DWS Apunteak - 2025-2026
+theme:
+  name: material
+  language: eu
+  logo: https://fptxurdinaga.eus/wp-content/uploads/2023/06/Logo_Home3.png
+  favicon: http://fptxurdinaga.eus/wp-content/uploads/2022/10/favicon-96x96-1.png
+palette:
+- scheme: default
+  primary: '#005A9C'
+  accent: '#FF8200'
+- scheme: slate
+  primary: '#005A9C'
+  accent: '#FF8200'
+  toggle:
+    icon: material/weather-night
+    name: Modu iluna
+extra_css:
+- stylesheets/extra.css
+plugins:
+- search
+markdown_extensions:
+- admonition
+- pymdownx.tasklist:          # ← nuevo
+    clickable_checkbox: true  #  hace los checkboxes interactivos
+    custom_checkbox: true     #  usa los iconos de Material
+- toc:
+    permalink: true
+- footnotes
+- tables
+nav:
+- Hasiera: index.md
+- Unitatea 1:
+  - Aurkezpena: 01-arkitektura/index.md
+  - 1. Web programazioaren ezaugarriak: 01-arkitektura/1-web-programazio-arkitektura.md
+  - 2. Estatikoak vs Dinamikoak: 01-arkitektura/2-estatiko-vs-dinamiko.md
+  - 3. Web aplikazioak: 01-arkitektura/3-web-aplikazioak.md
+  - 4. Teknologiak: 01-arkitektura/4-teknologiak.md
+- Unitatea 2:
+  - 1. Aldagaiak eta adierazpenak: 02-sintaxia\dws-2-unitatea-aldagaiak-eta-adierazpenak\index.md
+  - 2. PHP Elementuak: 02-sintaxia\dws-2-unitatea-php-elementuak\index.md
+  - 3. Kontrol egiturak: 02-sintaxia\dws-2-unitatea-kontrol-egiturak\index.md
+  - 4. Arrayak: 02-sintaxia\dws-2-unitatea-arrayak\index.md
+  - 5. Funtzioak: 02-sintaxia\dws-2-unitatea-funtzioak\index.md
+- Unitatea 3: 03-formak-sesioak-cookieak/index.md
+- Unitatea 4: 04-datu-atzipena/index.md
