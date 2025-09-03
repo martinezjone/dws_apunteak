@@ -16,6 +16,8 @@ palette:
     name: Modu iluna
 extra_css:
 - stylesheets/extra.css
+extra_javascript:
+- scripts/checkboxes.js
 plugins:
 - search
 markdown_extensions:
