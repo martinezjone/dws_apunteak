@@ -19,7 +19,7 @@ Ongi etorri! Honako edukiei egingo diegu aurre PHP ardatz hartuta:
 
 ---
 
-## Unitatea 2: PHP oinarrizko sintaxia
+## [Unitatea 2: PHP oinarrizko sintaxia](./02-sintaxia/aurkezpena.md)
 
 - [ ] 2.1 Aldagaiak eta adierazpenak
     - Aldagaiak deklaratzea

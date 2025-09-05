@@ -38,11 +38,12 @@ nav:
   - 3. Web aplikazioak: 01-arkitektura/3-web-aplikazioak.md
   - 4. Teknologiak: 01-arkitektura/4-teknologiak.md
 - Unitatea 2:
-  - 1. Aldagaiak eta adierazpenak: 02-sintaxia\dws-2-unitatea-aldagaiak-eta-adierazpenak\index.md
-  - 2. PHP Elementuak: 02-sintaxia\dws-2-unitatea-php-elementuak\index.md
-  - 3. Kontrol egiturak: 02-sintaxia\dws-2-unitatea-kontrol-egiturak\index.md
-  - 4. Arrayak: 02-sintaxia\dws-2-unitatea-arrayak\index.md
-  - 5. Funtzioak: 02-sintaxia\dws-2-unitatea-funtzioak\index.md
+  - Aurkezpena: 02-sintaxia/aurkezpena.md
+  - 1. Aldagaiak eta adierazpenak: 02-sintaxia/dws-2-unitatea-aldagaiak-eta-adierazpenak/index.md
+  - 2. PHP Elementuak: 02-sintaxia/dws-2-unitatea-php-elementuak/index.md
+  - 3. Kontrol egiturak: 02-sintaxia/dws-2-unitatea-kontrol-egiturak/index.md
+  - 4. Arrayak: 02-sintaxia/dws-2-unitatea-arrayak/index.md
+  - 5. Funtzioak: 02-sintaxia/dws-2-unitatea-funtzioak/index.md
 - Unitatea 3:
   - Aurkezpena: 03-formak-sesioak-cookieak/index.md
   - 1. Formularioak: 03-formak-sesioak-cookieak/dws-3-formularioak/index.md

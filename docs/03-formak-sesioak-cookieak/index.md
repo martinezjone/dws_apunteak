@@ -1,10 +1,17 @@
 # Unitatea 3: Inprimakiak, saioak eta cookiak
 
-Unitate honetan HTML inprimakiak, saio kudeaketa eta cookien erabilera aztertuko ditugu.
+Unitate honetan HTML inprimakiak, saio kudeaketa, cookien erabilera eta web segurtasuna aztertuko ditugu.
 
-## Atalak
+### Edukiaren mapa
 
-1. [Formularioak](./dws-3-formularioak/index.md) - HTML formularioen erabilera eta PHP-rekin prozesatzeko modua
-2. [Cookiak eta Saioak](./dws-3-cookiak-saioak/index.md) - Saioen eta cookien kudeaketa PHP-n
+1. [Formularioak (HTML Formularioak)](./dws-3-formularioak)
 
-Hasi zure bidaia formularioekin eta saioen kudeaketarekin!
+2. [Saioen Kudeaketa (Sessions)](./dws-3-saioak)
+
+3. [Cookiak (Cookies)](./cookiak)
+
+4. [Erabiltzaileen Kudeaketa](./erabiltzaile_kudeaketa)
+
+5. [Web Segurtasuna](./segurtasuna)
+
+
