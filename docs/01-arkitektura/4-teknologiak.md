@@ -10,4 +10,7 @@ Web aplikazioak exekutatzeko beharrezko osagai nagusiak:
   Datuak gordetzeko eta eskuratzeko aplikazioa (MySQL, MariaDB, PostgreSQL…).
 - **Programazio lengoaia**  
   Web aplikazioa garatzeko erabiltzen den teknologia (PHP, Python, Java…).
+  
+
+  ![PHP-server-model](../images/PHP-server-model.png)
 
