@@ -1211,17 +1211,17 @@
 <p>Mota ezberdinetako aldagaiekin eragiketa bat egiten baldin bada, guztiak mota komunera bihurtuko dira:</p>
 </li>
 </ul>
-<pre><code class="language-php">$nire_osokoa = 3;
-$nire_erreala = 2.3;
-$emaitza = $nire_osokoa + $nire-erreala;
-// $emaitza aldagaia erreal motakoa da.
+<pre><code class="language-php">    $nire_osokoa = 3;
+    $nire_erreala = 2.3;
+    $emaitza = $nire_osokoa + $nire-erreala;
+    // $emaitza aldagaia erreal motakoa da.
 </code></pre>
 <p>Bihurketak behartu egin daitezke:</p>
-<pre><code class="language-php">$nire_osokoa = 3;
-$nire_erreala = 2.3;
-$emaitza = $nire_osokoa + (int) $nire_erreala;
-// $nire_erreala aldagaia osoko bihurtzen da (2 balioa) batu baino lehen.
-// $emaitza aldagaia osokoa da (5 balioa du).
+<pre><code class="language-php">    $nire_osokoa = 3;
+    $nire_erreala = 2.3;
+    $emaitza = $nire_osokoa + (int) $nire_erreala;
+    // $nire_erreala aldagaia osoko bihurtzen da (2 baliora) batu baino lehen.
+    // $emaitza aldagaia osokoa da (5 balioa izango du).
 </code></pre>
 <h2 id="ariketekin-hasi-aurretik">Ariketekin hasi aurretik…..<a class="headerlink" href="#ariketekin-hasi-aurretik" title="Permanent link">&para;</a></h2>
 <h3 id="echo">Echo<a class="headerlink" href="#echo" title="Permanent link">&para;</a></h3>
@@ -1229,8 +1229,8 @@ $emaitza = $nire_osokoa + (int) $nire_erreala;
 <pre><code class="language-php">echo &quot;&lt;p&gt;Hau da erakutsiko dugun mezua.&lt;/p&gt;&quot;;
 </code></pre>
 <p>Aldagai bat erakutsi ahal izateko:</p>
-<pre><code class="language-php">echo &quot;&lt;p&gt;X aldagaiaren balioa  $x da.&lt;/p&gt;&quot;;
-echo &quot;&lt;p&gt;X aldagaiaren balioa &quot;. $x . &quot; da.&lt;/p&gt;&quot;;
+<pre><code class="language-php">    echo &quot;&lt;p&gt;X aldagaiaren balioa  $x da.&lt;/p&gt;&quot;; // (Interpolacion)
+    echo &quot;&lt;p&gt;X aldagaiaren balioa &quot;. $x . &quot; da.&lt;/p&gt;&quot;;  // (Concatenación)
 </code></pre>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa 1</p>
@@ -1238,11 +1238,10 @@ echo &quot;&lt;p&gt;X aldagaiaren balioa &quot;. $x . &quot; da.&lt;/p&gt;&quot;
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
 <p>Sortu aldagai Integer bat eta beste bat erreala eta euren batura egin eta erakutsi pantailan.
-Horrelako zeozer agertu beharko litzateke:
-<code>php
-&lt;p&gt;X aldagaiaren balioa  5 da.&lt;/p&gt;
-&lt;p&gt;Y aldagaiaren balioa  2.5 da.&lt;/p&gt;
-&lt;p&gt;X+Y= 7.5 &lt;/p&gt;</code></p>
+Horrelako zeozer agertu beharko litzateke:</p>
+<p><code>&lt;p&gt;X aldagaiaren balioa  5 da.&lt;/p&gt;
+    &lt;p&gt;Y aldagaiaren balioa  2.5 da.&lt;/p&gt;
+    &lt;p&gt;X+Y= 7.5 &lt;/p&gt;</code></p>
 </div>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa 2</p>
@@ -1257,10 +1256,10 @@ Horrelako zeozer agertu beharko litzateke:
 <li>Edozein tokitan erabili ditzakegu.</li>
 <li>Ez bada existitzen, erabiltzen den lehenengo aldian lekua erreserbatzen zaio.</li>
 <li>Funtzio baten barruan erabiltzen baldin badugu estreinakoz, funtzio barruan lokala da.</li>
-<li>Kanpoan ere erabili nahi izanez gero global hitza erabili behar da.</li>
-<li>Funtzio barruan erabiltzen diren aldagaiak sortu eta ezabatu egiten dira funtzioa deitzen zaion bakoitzean; aldagaiaren balioa mantendu ahal izateko static hitza erabili behar da.</li>
+<li>Kanpoan ere erabili nahi izanez gero <code>global</code> hitza erabili behar da.</li>
+<li>Funtzio barruan erabiltzen diren aldagaiak sortu eta ezabatu egiten dira funtzioa deitzen zaion bakoitzean; aldagaiaren balioa mantendu ahal izateko <code>static</code> hitza erabili behar da.</li>
 </ul>
-<pre><code class="language-php">static $a;
+<pre><code class="language-php">    static $a;
 </code></pre>
 <ul>
 <li><code>global</code> hitza barik funtzioaren barruan $a ez legoke definiturik eta Warning aterako litzateke programan….</li>
@@ -1287,37 +1286,38 @@ Horrelako zeozer agertu beharko litzateke:
     froga ();
 ?&gt;
 </code></pre>
-<div class="admonition exercise">
-<p class="admonition-title">Ariketa 1B</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
-</ul>
-<p>Ariketa 1ean egindako eragiketa egingo dugu, baina oraingo honetan funtzio baten barruan, 
-<code>global</code> eta <code>static</code>-en ezberdintasuna ikusi ahal izateko.</p>
-<p>Aurreko diapositiban ikusi duzuen moduan, funtzioen nomeklatura hurrengo hau da:</p>
-<p><code>php
-function froga() {
-    // Hemen gure kodea sartuko dugu
-}</code></p>
-</div>
 <h2 id="phpko-aldagai-bereziak">PHPko aldagai bereziak<a class="headerlink" href="#phpko-aldagai-bereziak" title="Permanent link">&para;</a></h2>
 <p>PHPk baditu hainbat predefinitutako aldagai edozein eremutik erabili daitezkeenak; hori dela eta, aldagai superglobal izena dute; ez duzu ezta global ere erabili behar haiek atzitzeko.
 Aldagai horietako bakoitza array-a da, eta array horrek balio-multzoa dauka.
 <a href="https://www.php.net/manual/es/reserved.variables.php">https://www.php.net/manual/es/reserved.variables.php</a></p>
 <p><img alt="PHPko aldagai bereziak" src="images/slide18_3.png" /></p>
-<h2 id="konstanteak">Konstanteak<a class="headerlink" href="#konstanteak" title="Permanent link">&para;</a></h2>
-<p><code>define (const PHP 5.3.0-tik aurrera)</code> funtzioarekin konstanteak definitu ditzakegu, konstanteak identifikadoreak dira eta beraien balioa ez da programa exekutatzen ari den bitartean aldatzen.
-- Letra larriz idatzi ohi dira.
-- Integer, float, string, boolean eta null balioak izan ditzakete.</p>
-<pre><code class="language-php">&lt;?php
-    define (&quot;KONSTANTEA&quot;,&quot;Kaixo Mundua!! Zelan zaude?&quot;);
-    print KONSTANTEA;
-?&gt;
+<pre><code class="language-php">    &lt;?php
+      // $_GET adibidea
+      echo &quot;URL parametroa: &quot; . $_GET['parametroa'];
 
-&lt;?php
-    const KONSTANTEA_2 = 'Hau beste modu bat da';
-    print KONSTANTEA_2 ;
-?&gt;
+      // $_POST adibidea  
+      echo &quot;Formularioko datuak: &quot; . $_POST['izena'];
+
+      // $_SERVER adibidea
+      echo &quot;Zure IP helbidea: &quot; . $_SERVER['REMOTE_ADDR'];
+    ?&gt;
+</code></pre>
+<h2 id="konstanteak">Konstanteak<a class="headerlink" href="#konstanteak" title="Permanent link">&para;</a></h2>
+<p><code>define (const PHP 5.3.0-tik aurrera)</code> funtzioarekin konstanteak definitu ditzakegu, konstanteak identifikadoreak dira eta beraien balioa ez da programa exekutatzen ari den bitartean aldatzen.</p>
+<ul>
+<li>Letra larriz idatzi ohi dira.</li>
+<li>Integer, float, string, boolean eta null balioak izan ditzakete.</li>
+</ul>
+<pre><code class="language-php">    &lt;?php
+        define (&quot;KONSTANTEA&quot;,&quot;Kaixo Mundua!! Zelan zaude?&quot;);
+        print KONSTANTEA;
+    ?&gt;
+</code></pre>
+<p>Ala ere, gaur egun <code>const</code>-en erabiltzea gomendatzen da.</p>
+<pre><code class="language-php">    &lt;?php
+        const KONSTANTEA_2 = 'Hau beste modu bat da';
+        print KONSTANTEA_2 ;
+    ?&gt;
 </code></pre>
 <h2 id="adierazpenak-eta-eragileak">Adierazpenak eta eragileak<a class="headerlink" href="#adierazpenak-eta-eragileak" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.php.net/manual/en/language.operators.php">https://www.php.net/manual/en/language.operators.php</a></p>
@@ -1326,7 +1326,7 @@ Aldagai horietako bakoitza array-a da, eta array horrek balio-multzoa dauka.
 <h3 id="esleitzeko-operadoreak">Esleitzeko operadoreak<a class="headerlink" href="#esleitzeko-operadoreak" title="Permanent link">&para;</a></h3>
 <p><img alt="Esleitzeko operadoreak" src="images/slide21_5.png" /></p>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 4</p>
+<p class="admonition-title">Ariketa 3</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1365,13 +1365,54 @@ Gorde eragiketa bakoitzeko emaitza aldagai ezberdinetan, $batuketa, $kenketa eta
 <h3 id="operadore-logikoak">Operadore logikoak<a class="headerlink" href="#operadore-logikoak" title="Permanent link">&para;</a></h3>
 <p><img alt="Operadore logikoak" src="images/slide26_9.png" /></p>
 <h3 id="kate-operadorak">Kate operadorak<a class="headerlink" href="#kate-operadorak" title="Permanent link">&para;</a></h3>
-<pre><code class="language-php">&lt;?php
-$a = &quot;Kaixo &quot;;
-$b = $a . &quot;Mundua!&quot;; // orain $b aldagaiak &quot;Kaixo mundua! Balioa izango du&quot;
-$a = &quot;Kaixo &quot;;
-$a .= &quot;Mundua!&quot;;     // orain $a aldagaiak &quot;Kaixo mundua! Balioa izango du&quot;
-?&gt;
+<pre><code class="language-php">    &lt;?php
+        $a = &quot;Kaixo &quot;;
+        $b = $a . &quot;Mundua!&quot;; // orain $b aldagaiak &quot;Kaixo mundua! Balioa izango du&quot;
+        $a = &quot;Kaixo &quot;;
+        $a .= &quot;Mundua!&quot;;     // orain $a aldagaiak &quot;Kaixo mundua! Balioa izango du&quot;
+    ?&gt;
 </code></pre>
+<div class="admonition exercise">
+<p class="admonition-title">Ariketa 4</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
+</ul>
+<p>Ariketa hau egiteko, HTML formatuan informazioa erakutsi beharrezkoa da. Horretarako, lehenengo php kodea idatziko dugu eta gero HTML-an txertatu.</p>
+<ol>
+<li>
+<p>Sortu hurrengo konstanteak <code>const</code> edo <code>define()</code> erabiliz:</p>
+<ul>
+<li><code>UNIBERTSITATEA</code> → "Euskal Herriko Unibertsitatea"</li>
+<li><code>GRADU_KREDITOAK</code> → 240</li>
+<li><code>IKASTAROA_PREZIOA</code> → 1250.75</li>
+</ul>
+</li>
+<li>
+<p>Sortu aldagai hauek:</p>
+<ul>
+<li><code>$ikasle_izena</code> → zure izena</li>
+<li><code>$orain_arte_kreditoak</code> → 45 (integer)</li>
+<li><code>$batez_besteko_nota</code> → 7.8 (float)</li>
+<li><code>$ikastaro_bukatua</code> → false (boolean)</li>
+</ul>
+</li>
+<li>
+<p>Erakutsi pantailan informazio hau HTML formatuan:</p>
+</li>
+</ol>
+<p><code>html
+    &lt;h2&gt;Ikaslearen informazioa&lt;/h2&gt;
+    &lt;p&gt;Ikaslearen izena: [IKASLE_IZENA]&lt;/p&gt;
+    &lt;p&gt;Unibertsitatea: [UNIBERTSITATEA]&lt;/p&gt;
+    &lt;p&gt;Orain arteko kreditoak: [ORAIN_ARKTE_KREDITOAK] / [GRADU_KREDITOAK]&lt;/p&gt;
+    &lt;p&gt;Batez besteko nota: [BATEZ_BESTEKO_NOTA]&lt;/p&gt;
+    &lt;p&gt;Ikastaroa bukatuta: [BAI/EZ]&lt;/p&gt;
+    &lt;p&gt;Ordaindu beharreko prezioa: [IKASTAROA_PREZIOA]€&lt;/p&gt;</code></p>
+<p>Batez besteko nota ateratzeko: (orain_arte_kreditoak / GRADU_KREDITOAK) * 10</p>
+<p><strong>Laguntza:</strong> Boolean balioak testuan erakusteko:
+    <code>php
+    echo $ikastaro_bukatua ? "Bai" : "Ez";</code></p>
+</div>
 
 
 
