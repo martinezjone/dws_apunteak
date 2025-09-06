@@ -3,77 +3,168 @@
 ## Testu kateak
 
 PHPn testu kateak bi modutara adieraz ditzakegu:
+
 - Kakotx sinpleak (`' '`) 
 - Kakotx bikoitzak (`" "`)
 
-Kateek kakotx sinpleak zein bikoitzak erabil ditzakete PHPn. Alde nabarmena dago bata eta bestearen artean, ordea: aldagaia kakotx bikoitzen artean jartzen dugunean, prozesatu egiten da eta beraren balioak ordezkatua da; hortaz, honela erabili genezake print:
+### Interpolazioa vs Kateen kateatzea
+
+#### Interpolazioa (Kakotx bikoitzak)
+
+Kateek kakotx sinpleak zein bikoitzak erabil ditzakete PHPn. Alde nabarmena dago bata eta bestearen artean, ordea: **aldagaia kakotx bikoitzen artean jartzen dugunean, interpolazioa gertatzen da** - hau da, PHPk automatikoki aldagaia bere balioarekin ordezkatzen du prozesatu baino lehen.
 
 ```php
-<?php
-$ikasgaia="DWES";
-print "<p>Ikasgaia: $ikasgaia</p>";
-?>
+    <?php
+    $ikasgaia = "DWES";
+    echo "Ikasgaia: $ikasgaia";  // Irteera: Ikasgaia: DWES
+    ?>
 ```
 
-`$ikasgaia` aldagaia kakotx bikoitzen artean da ezagutua, eta, irteera sortu baino lehen, “DWES”ekin ordezkatua da; hori berori kakotx sinpleak erabiliz egin izan bagenu, ez zen inolako ordezkapenik egingo.
+`$ikasgaia` aldagaia kakotx bikoitzen artean ezagutzen da, eta irteera sortu baino lehen, "DWES"ekin ordezkatua da automatikoki.
 
-### Aldagaiak kateetan
+#### Kateen kateatzea (Concatenación)
+
+Kateatzeak aldagaiak eta testua eskuz elkartzea esan nahi du `.` eragilea erabiliz:
 
 ```php
-<?php
-$ikasgaia = "DWES";
-
-// Kakotx bikoitzak: aldagaien ordezkapena egiten du
-print "<p>Ikasgaia: $ikasgaia</p>";  // Irteera: Ikasgaia: DWES
-
-// Kakotx sinpleak: testu literala bezala tratatzen du
-print '<p>Ikasgaia: $ikasgaia</p>';  // Iriteera: Ikasgaia: $ikasgaia
-?>
+    <?php
+    $ikasgaia = "DWES";
+    echo "Ikasgaia: " . $ikasgaia;  // Irteera: Ikasgaia: DWES
+    ?>
 ```
 
-### Kateen kateatzea (concatenación)
+### Kakotx moten konparaketa
+
+#### Aldagaiak kateetan
 
 ```php
-<?php
-$izena = "Pertsona";
-$agur = "Kaixo " . $izena . "!";
-echo $agur;  // Irteera: Kaixo Pertsona!
-?>
+    <?php
+    $ikasgaia = "DWES";
+
+    // Kakotx bikoitzak: interpolazioa (aldagaien ordezkapena automatikoa)
+    echo "Ikasgaia: $ikasgaia";    // Irteera: Ikasgaia: DWES
+
+    // Kakotx sinpleak: testu literala bezala tratatzen du
+    echo 'Ikasgaia: $ikasgaia';    // Irteera: Ikasgaia: $ikasgaia
+    ?>
+```
+
+**Garrantzitsua:** Kakotx sinpleak erabiltzean, interpolaziorik ez da gertatzen, aldagaia literalki agertzen da.
+
+#### Kateen kateatzea (concatenación)
+
+```php
+    <?php
+    $izena = "Pertsona";
+    $agur = "Kaixo " . $izena . "!";
+    echo $agur;  // Irteera: Kaixo Pertsona!
+    ?>
 ```
 
 ### Ihes egindako karaktereak
 
 String kakotx bikoitzen artean badago ("), PHPk ihes-sekuentzia hauek interpretatuko ditu karaktere berezietarako:
 
-Kakotx sinpleak erabiltzean, bi ordezkapen baino ez dira egiten katearen barruan: \' topatzen denean, kakotx sinplea erakusten da irteeran; \\ topatzen denean, berriz, alderantzizko marra erakusten da irteeran.
-Sekuentzia horiek ihes-sekuentzia gisa ezagutuak dira. Kakotx bikoitzak erabiltzen dituzten kateetan, \\ sekuentziaz aparte, beste batzuk erabili daitezke; \' sekuentzia, ordea, ez. Kakotx bikoitzekin erabiltzeko ihes-sekuentziak agertzen dira honako taula honetan.
+Kakotx sinpleak erabiltzean, bi ordezkapen baino ez dira egiten katearen barruan: \' topatzen denean, kakotx sinplea erakusten da irteeran; \ topatzen denean, berriz, alderantzizko marra erakusten da irteeran. 
 
-![Testu kateak](images/slide32_10.png)
+Sekuentzia horiek ihes-sekuentzia gisa ezagutuak dira. Kakotx bikoitzak erabiltzen dituzten kateetan, \ sekuentziaz aparte, beste batzuk erabili daitezke; \' sekuentzia, ordea, ez. 
 
-## String-erako aldatzea (Conversión a String)
-### print funtzioaren erabilera
+Kakotx bikoitzekin erabiltzeko ihes-sekuentziak agertzen dira honako taula honetan:
 
-- `print` beste aukera bat da, eta antzera funtzionatzen du.
-- `print` eta `echo`-ren arteko alderik handiena zera da: `print`-ek parametro bakarra jaso dezake eta bakarra bueltatzen du.
+![Ihes karaktereak](images/slide32_10.png)
+
+## String-erako aldatzea eta irteera funtzioak
+
+### echo vs print vs printf
+
+##### echo funtzioa
+- **Arinena** eta ohikoena
+- Hainbat parametro onar ditzake
+- Ez du balioa bueltatzen
+
+```php
+<?php
+echo "Lehenengo katea", " bigarren katea", " hirugarren katea"; 
+// Komaz bereizitako zenbait kate inprima daitezke
+?>
+```
+
+##### print funtzioa
+- `print` eta `echo`-ren arteko alderik handiena: `print`-ek **parametro bakarra** jaso dezake eta **1 bueltatzen du**
+- Pixka bat astunagoa da
+
 ```php
 int print (string $arg);
 ```
 
-### print eta echo
+```php
+<?php
+// print-arekin 3 kode-lerro behar dira, funtzio baten antzera funtzionatzen du
+print "Lehenengo katea";
+print " bigarren katea";
+print " hirugarren katea";
+?>
+```
+
+### printf funtzioa
+
+`printf` formateatutako irteera sortzeko erabiltzen da. Hainbat parametro jaso ditzake:
+
+- **Lehenengoa:** testu-katea da eta ezarri beharreko formatua adierazten du
+- **Gainerakoak:** formatuan agertutako espezifikadoreen arabera ordezkatuko diren balioak
 
 ```php
 <?php
-//lehenbizi, "echo" funtzioa probatuko dugu hainbat kate inprimatzeko
+$zikloa = "DAW";
+$ikasgaia = "DWES";
+printf("%s %s zikloko %d. mailako ikasgaia", $ikasgaia, $zikloa, 2);
+// Irteera: DWES DAW zikloko 2. mailako ikasgaia
+?>
+```
 
-echo "Lehenengo katea", " bigarren katea", " hirugarren katea"; 
+### printf espezifikadoreak
 
-//komaz bereizitako zenbait kate inprima daitezke
+Espezifikadoreek `%` karakterea daukate aurretik. Ohikoenak:
 
-//orain, print probatuko dugu. Ohartzerakoan, linea bakarra erabili dugu, baina print-arekin 3 kode-lerro behar dira, funtzio baten antzera funtzionatzen du eta parametro bakarra onartzen du
+| Espezifikadorea | Deskribapena | Adibidea |
+|-----------------|--------------|----------|
+| `%s` | String (katea) | `printf("%s", "testua")` |
+| `%d` | Integer (zenbaki osoa) | `printf("%d", 25)` |
+| `%f` | Float (dezimala) | `printf("%.2f", 3.14159)` |
+| `%c` | Character (karakterea) | `printf("%c", 65)` // A |
+| `%x` | Hexadezimala | `printf("%x", 255)` // ff |
 
-print "Lehenengo katea";
-print " bigarren katea";
-print " hirugarren katea";  ?>
+```php
+<?php
+$izena = "Jon";
+$adina = 25;
+$nota = 8.75;
+
+printf("Ikaslearen izena: %s, %d urte ditu eta %.1f-ko nota media du", $izena, $adina, $nota);
+// Irteera: Ikaslearen izena: Jon, 25 urte ditu eta 8.8-ko nota media du
+?>
+```
+
+## Gomendio orokorrak
+
+### Errendimenduari begira:
+1. **echo** erabiltzea gomendatzen da errendimendua garrantzitsua denean
+2. **Interpolazioa** (kakotx bikoitzak) kateatzea baino arinagoa da kasu sinpleetan
+3. **Kakotx sinpleak** pixka bat arinagoak dira ez badago aldagairik
+
+### Irakurgarritasunari begira:
+```php
+// ✅ Gomendatua - interpolazioa sinplea denean
+echo "Kaixo, $izena!";
+
+// ✅ Gomendatua - kateatzea konplexua denean
+echo 'Emaitza: ' . ($a + $b) . ' puntu';
+
+// ❌ Saihestu - nahastearen arrazoia
+echo "Kaixo, " . $izena . "!";
+```
+
+Espezifikadore gehiago eta informazio gehiago lortzeko: <https://www.w3schools.com/php/func_string_printf.asp>
 ```
 
 ### printf

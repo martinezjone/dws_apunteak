@@ -51,20 +51,21 @@ $nire_aldagaia = 7;
 - **Null:** Datu mota berezia; aldagaia baliorik gabekoa dela adierazten du.  
 
 
+
 - Mota ezberdinetako aldagaiekin eragiketa bat egiten baldin bada, guztiak mota komunera bihurtuko dira:
 ```php
-$nire_osokoa = 3;
-$nire_erreala = 2.3;
-$emaitza = $nire_osokoa + $nire-erreala;
-// $emaitza aldagaia erreal motakoa da.
+    $nire_osokoa = 3;
+    $nire_erreala = 2.3;
+    $emaitza = $nire_osokoa + $nire-erreala;
+    // $emaitza aldagaia erreal motakoa da.
 ```
 Bihurketak behartu egin daitezke:
 ```php
-$nire_osokoa = 3;
-$nire_erreala = 2.3;
-$emaitza = $nire_osokoa + (int) $nire_erreala;
-// $nire_erreala aldagaia osoko bihurtzen da (2 balioa) batu baino lehen.
-// $emaitza aldagaia osokoa da (5 balioa du).
+    $nire_osokoa = 3;
+    $nire_erreala = 2.3;
+    $emaitza = $nire_osokoa + (int) $nire_erreala;
+    // $nire_erreala aldagaia osoko bihurtzen da (2 baliora) batu baino lehen.
+    // $emaitza aldagaia osokoa da (5 balioa izango du).
 ```
 
 ## Ariketekin hasi aurretik…..
@@ -74,9 +75,10 @@ Mezuak pantailan idazteko agindua da.
 echo "<p>Hau da erakutsiko dugun mezua.</p>";
 ```
 Aldagai bat erakutsi ahal izateko:
+
 ```php
-echo "<p>X aldagaiaren balioa  $x da.</p>";
-echo "<p>X aldagaiaren balioa ". $x . " da.</p>";
+    echo "<p>X aldagaiaren balioa  $x da.</p>"; // (Interpolacion)
+    echo "<p>X aldagaiaren balioa ". $x . " da.</p>";  // (Concatenación)
 ```
 
 !!! exercise "Ariketa 1"
@@ -84,10 +86,11 @@ echo "<p>X aldagaiaren balioa ". $x . " da.</p>";
     
     Sortu aldagai Integer bat eta beste bat erreala eta euren batura egin eta erakutsi pantailan.
     Horrelako zeozer agertu beharko litzateke:
-    ```php
-    <p>X aldagaiaren balioa  5 da.</p>
-    <p>Y aldagaiaren balioa  2.5 da.</p>
-    <p>X+Y= 7.5 </p>
+
+    ```
+        <p>X aldagaiaren balioa  5 da.</p>
+        <p>Y aldagaiaren balioa  2.5 da.</p>
+        <p>X+Y= 7.5 </p>
     ```
 
 !!! exercise "Ariketa 2"
@@ -101,11 +104,11 @@ echo "<p>X aldagaiaren balioa ". $x . " da.</p>";
 - Edozein tokitan erabili ditzakegu.
 - Ez bada existitzen, erabiltzen den lehenengo aldian lekua erreserbatzen zaio.
 - Funtzio baten barruan erabiltzen baldin badugu estreinakoz, funtzio barruan lokala da.
-- Kanpoan ere erabili nahi izanez gero global hitza erabili behar da.
-- Funtzio barruan erabiltzen diren aldagaiak sortu eta ezabatu egiten dira funtzioa deitzen zaion bakoitzean; aldagaiaren balioa mantendu ahal izateko static hitza erabili behar da.
+- Kanpoan ere erabili nahi izanez gero `global` hitza erabili behar da.
+- Funtzio barruan erabiltzen diren aldagaiak sortu eta ezabatu egiten dira funtzioa deitzen zaion bakoitzean; aldagaiaren balioa mantendu ahal izateko `static` hitza erabili behar da.
 
 ```php
-static $a;
+    static $a;
 ```
 
 - `global` hitza barik funtzioaren barruan $a ez legoke definiturik eta Warning aterako litzateke programan….
@@ -133,21 +136,6 @@ static $a;
 ?>
 ```
 
-!!! exercise "Ariketa 1B"
-    - [ ] Eginda dut
-    
-    Ariketa 1ean egindako eragiketa egingo dugu, baina oraingo honetan funtzio baten barruan, 
-    `global` eta `static`-en ezberdintasuna ikusi ahal izateko.
-    
-    Aurreko diapositiban ikusi duzuen moduan, funtzioen nomeklatura hurrengo hau da:
-    
-    ```php
-    function froga() {
-        // Hemen gure kodea sartuko dugu
-    }
-    ```
-
-
 ## PHPko aldagai bereziak
 
 PHPk baditu hainbat predefinitutako aldagai edozein eremutik erabili daitezkeenak; hori dela eta, aldagai superglobal izena dute; ez duzu ezta global ere erabili behar haiek atzitzeko.
@@ -157,21 +145,38 @@ Aldagai horietako bakoitza array-a da, eta array horrek balio-multzoa dauka.
 
 ![PHPko aldagai bereziak](images/slide18_3.png)
 
+```php
+    <?php
+      // $_GET adibidea
+      echo "URL parametroa: " . $_GET['parametroa'];
+
+      // $_POST adibidea  
+      echo "Formularioko datuak: " . $_POST['izena'];
+
+      // $_SERVER adibidea
+      echo "Zure IP helbidea: " . $_SERVER['REMOTE_ADDR'];
+    ?>
+```
+
 ## Konstanteak
 `define (const PHP 5.3.0-tik aurrera)` funtzioarekin konstanteak definitu ditzakegu, konstanteak identifikadoreak dira eta beraien balioa ez da programa exekutatzen ari den bitartean aldatzen.
+
 - Letra larriz idatzi ohi dira.
 - Integer, float, string, boolean eta null balioak izan ditzakete.
 
 ```php
-<?php
-    define ("KONSTANTEA","Kaixo Mundua!! Zelan zaude?");
-    print KONSTANTEA;
-?>
+    <?php
+        define ("KONSTANTEA","Kaixo Mundua!! Zelan zaude?");
+        print KONSTANTEA;
+    ?>
+```
 
-<?php
-    const KONSTANTEA_2 = 'Hau beste modu bat da';
-    print KONSTANTEA_2 ;
-?>
+Ala ere, gaur egun `const`-en erabiltzea gomendatzen da.
+```php
+    <?php
+        const KONSTANTEA_2 = 'Hau beste modu bat da';
+        print KONSTANTEA_2 ;
+    ?>
 ```
 
 ## Adierazpenak eta eragileak
@@ -184,7 +189,7 @@ Aldagai horietako bakoitza array-a da, eta array horrek balio-multzoa dauka.
 ### Esleitzeko operadoreak
 ![Esleitzeko operadoreak](images/slide21_5.png)
 
-!!! exercise "Ariketa 4"
+!!! exercise "Ariketa 3"
     - [ ] Eginda dut
 
     Sortu bi aldagai ezberdin eta euren arteko batuketa, kenketa, biderketa eta zatiketa egin eta pantailan erakutsi.
@@ -233,10 +238,47 @@ Zein balio izango dute `$a` eta `$b` aldagaiek kasu bakoitzean?
 
 ### Kate operadorak
 ```php
-<?php
-$a = "Kaixo ";
-$b = $a . "Mundua!"; // orain $b aldagaiak "Kaixo mundua! Balioa izango du"
-$a = "Kaixo ";
-$a .= "Mundua!";     // orain $a aldagaiak "Kaixo mundua! Balioa izango du"
-?>
+    <?php
+        $a = "Kaixo ";
+        $b = $a . "Mundua!"; // orain $b aldagaiak "Kaixo mundua! Balioa izango du"
+        $a = "Kaixo ";
+        $a .= "Mundua!";     // orain $a aldagaiak "Kaixo mundua! Balioa izango du"
+    ?>
 ```
+
+
+!!! exercise "Ariketa 4"
+    - [ ] Eginda dut
+
+    Ariketa hau egiteko, HTML formatuan informazioa erakutsi beharrezkoa da. Horretarako, lehenengo php kodea idatziko dugu eta gero HTML-an txertatu.
+
+       1. Sortu hurrengo konstanteak `const` edo `define()` erabiliz:
+        - `UNIBERTSITATEA` → "Euskal Herriko Unibertsitatea"
+        - `GRADU_KREDITOAK` → 240
+        - `IKASTAROA_PREZIOA` → 1250.75
+
+    2. Sortu aldagai hauek:
+        - `$ikasle_izena` → zure izena
+        - `$orain_arte_kreditoak` → 45 (integer)
+        - `$batez_besteko_nota` → 7.8 (float)
+        - `$ikastaro_bukatua` → false (boolean)
+
+    3. Erakutsi pantailan informazio hau HTML formatuan:
+
+    ```html
+        <h2>Ikaslearen informazioa</h2>
+        <p>Ikaslearen izena: [IKASLE_IZENA]</p>
+        <p>Unibertsitatea: [UNIBERTSITATEA]</p>
+        <p>Orain arteko kreditoak: [ORAIN_ARKTE_KREDITOAK] / [GRADU_KREDITOAK]</p>
+        <p>Batez besteko nota: [BATEZ_BESTEKO_NOTA]</p>
+        <p>Ikastaroa bukatuta: [BAI/EZ]</p>
+        <p>Ordaindu beharreko prezioa: [IKASTAROA_PREZIOA]€</p>
+    ```
+    
+    Batez besteko nota ateratzeko: (orain_arte_kreditoak / GRADU_KREDITOAK) * 10
+
+
+    **Laguntza:** Boolean balioak testuan erakusteko:
+        ```php
+        echo $ikastaro_bukatua ? "Bai" : "Ez";
+    ```
