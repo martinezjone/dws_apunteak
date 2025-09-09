@@ -1175,9 +1175,11 @@
 <ol>
 <li>Sortu aldagai bat <code>$zenbakia</code> izenekoa</li>
 <li>Erabili <code>if-else</code> egitura zenbakia 0 eta 10 artean dagoen konprobatzeko</li>
-<li>Erakutsi mezu egokia:</li>
+<li>Erakutsi mezu egokia:<ul>
 <li>0-10 artean badago: "Zenbakia X da" (non X sartu den zenbakia den)</li>
 <li>Bestela: "Zenbakia ez dago 0 eta 10en artean"</li>
+</ul>
+</li>
 </ol>
 <p><strong>Adibideak:</strong></p>
 <pre><code>* Zenbakia: 5
@@ -1221,26 +1223,7 @@ Mezua:  - Zenbakia ez dago 0 eta 10en artean
 </ul>
 </div>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 9: Switch erabiliz</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
-</ul>
-<p>Bihurtu hurrengo kodea <code>if-else</code> egitura duena <code>switch</code> egitura erabiliz:</p>
-<pre><code>$aldagaia = 2;
-
-if ($aldagaia == 1) {
-    echo '$aldagaia berdin 1.';
-} else if ($aldagaia == 2) {
-    echo '$aldagaia berdin 2.';
-} elseif ($aldagaia == 3) {
-    echo '$aldagaia berdin 3.';
-} else {
-    echo '$aldagaia ez da ez 1, ez 2 ezta 3.';
-}
-</code></pre>
-</div>
-<div class="admonition exercise">
-<p class="admonition-title">Ariketa 10: Zenbakia asmatu</p>
+<p class="admonition-title">Ariketa 9: Zenbakia asmatu (Switch erabiliz)</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1282,7 +1265,7 @@ if ($aldagaia == 1) {
        // Kodea exekutatuko da $erabiltzailea ez bada hutsik
    }</code></p>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 11: Sarbidea konprobatu</p>
+<p class="admonition-title">Ariketa 10: Sarbidea konprobatu</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1348,7 +1331,7 @@ Mezua: Ez du sarbiderik</code></p>
 </ul>
 <p><img alt="Bukle anidatuak" src="images/slide23_6.png" /></p>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 12: Biderketa taula (for)</p>
+<p class="admonition-title">Ariketa 11: Biderketa taula (for)</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1360,7 +1343,7 @@ Mezua: Ez du sarbiderik</code></p>
 </ol>
 </div>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 13: Taula sortzea (for anidatuak)</p>
+<p class="admonition-title">Ariketa 12: Taula sortzea (for anidatuak)</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1368,7 +1351,7 @@ Mezua: Ez du sarbiderik</code></p>
 <p><img alt="Taula sortu" src="images/slide25_8.png" /></p>
 </div>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 14: Zenbaki bikoitiak</p>
+<p class="admonition-title">Ariketa 13: Zenbaki bikoitiak</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1391,7 +1374,7 @@ Mezua: Ez du sarbiderik</code></p>
 </code></pre>
 <p><img alt="slide28_10.png" src="images/slide28_10.png" /></p>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 15: Biderketa taula (while)</p>
+<p class="admonition-title">Ariketa 14: Biderketa taula (while)</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1412,7 +1395,7 @@ Mezua: Ez du sarbiderik</code></p>
 ?&gt;
 </code></pre>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 16: Do-while erabiliz</p>
+<p class="admonition-title">Ariketa 15: Do-while erabiliz</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
@@ -1471,7 +1454,7 @@ Mezua: Ez du sarbiderik</code></p>
 <p><code>foreach</code>-ek arrayekin bakarrik funtzionatzen du, eta errorea itzuliko du beste datu mota batekin erabiltzen saiatuz gero.</p>
 </div>
 <div class="admonition exercise">
-<p class="admonition-title">Ariketa 17: Zenbakia asmatu</p>
+<p class="admonition-title">Ariketa 16: Zenbakia asmatu</p>
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</p>
@@ -1486,11 +1469,11 @@ Zereginak:</p>
 <li>Buklea bukatzean ez baldin badu asmatu, "Ez duzu zenbakia asmatu 5 saiakeretan. Zenbaki sekretua XX zen.” erakusten du.</li>
 </ul>
 </li>
+<li>
+<p>Adibidez horrelako zeozer  erakutsiko du programak:</p>
+</li>
 </ul>
 <p><img alt="Ariketa 12 - errepaso" src="images/slide40_17.png" /></p>
-<ul>
-<li>Adibidez horrelako zeozer  erakutsiko du programak:</li>
-</ul>
 </div>
 
 

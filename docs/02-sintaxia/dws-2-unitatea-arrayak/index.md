@@ -74,7 +74,7 @@ Baina edozein momentutan elementu berriak sor daitezke eta PHP-k lekua izango du
 $izenak[34]="Maider";
 ```
 
-!!! exercise "Ariketa 14"
+!!! exercise "Ariketa 17"
     - [ ] Eginda dut
 
     - Zenbakizko balioak dituen array bat definitu, adibidez, 10 zenbaki dituen arraya. 
@@ -110,7 +110,7 @@ $lagun = array( "izena"=> "Pedro Torres","helbidea"=> "CL Mayor,37",
 ```
 
 
-!!! exercise "Ariketa 15"
+!!! exercise "Ariketa 18"
     - [ ] Eginda dut
 
     - Hurrengo array kontutan izanda, atara ikasleen nota guztiak banan-banan alde batetik eta gero  foreach bategaz, kontutan izan zein motatako arraya den.
@@ -126,7 +126,7 @@ Dimentsio anitzeko array bat bada array bat non bere balioetako bat, gutxienez b
 ![slide14_3.png](images/slide14_3.png)
 
 
-!!! exercise "Ariketa 16"
+!!! exercise "Ariketa 19"
     - [ ] Eginda dut
 
     Sortu matriz multidimentsionala ikasleen datuak gordetzeko.
@@ -177,7 +177,7 @@ if (in_array("berdea", $koloreak)) {
 ?>
 ```
 
-!!! exercise "Ariketa 1: Zenbakien batuketa"
+!!! exercise "Ariketa 20: Zenbakien batuketa"
     - [ ] Eginda dut
     
     Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
@@ -188,7 +188,7 @@ if (in_array("berdea", $koloreak)) {
     
    
 
-!!! exercise "Ariketa 2: Ikasleen notak"
+!!! exercise "Ariketa 21: Ikasleen notak"
     - [ ] Eginda dut
     
     Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
@@ -198,7 +198,7 @@ if (in_array("berdea", $koloreak)) {
     3. Kalkulatu batez besteko nota
     
    
-!!! exercise "Ariketa 3: Ikasleen datuak"
+!!! exercise "Ariketa 22: Ikasleen datuak"
     - [ ] Eginda dut
     
     Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
@@ -284,7 +284,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 !!! tip "Bi array-en batura egiteko"
     - `array_merge()` erabili beharko genuke
 
-!!! exercise "Ariketa 17"
+!!! exercise "Ariketa 23"
     - [ ] Eginda dut
 
     - Badugu ondorengo array bat:
@@ -333,7 +333,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 ![Print_r](images/slide28_10.png)
 
 
-!!! exercise "Ariketa 18"
+!!! exercise "Ariketa 24"
     - [ ] Eginda dut
 
     - Hamar film-titulu dituen array bat definitu.
@@ -344,7 +344,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 
 ![unset()](images/slide31_11.png)
 
-!!! exercise "Ariketa 19"
+!!! exercise "Ariketa 25"
     - [ ] Eginda dut
     - Array hau emanda:
 
@@ -365,7 +365,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 - Irteera:
 ![Var_dump](images/slide33_13.png)
 
-!!! exercise "Ariketa 20"
+!!! exercise "Ariketa 26"
     - [ ] Eginda dut
     - Karaktere bateko gakoak dituen array bat definitu, kareakterak ‘a’tik ‘f’rarte joango dira.
     - Definizio berean, gako bakoitzari letra horrekin hasten den izen propio bat eman. Adibidez (“a”=’Amanda’);
@@ -379,7 +379,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 - Irteera:
 ![in_array()](images/slide35_15.png)
 
-!!! exercise "Ariketa 21"
+!!! exercise "Ariketa 27"
     - [ ] Eginda dut
         
     - Hartuko dugu, ariketa 12 errepaso, eta array batekin kontrolatuko dugu hautazko zenbakia ez errepikatzea.
@@ -391,7 +391,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 - Funtzio honek bi parametro izan ditzake, alde batetik arraya, hori derrigorrezkoa da, eta bestetik aukerazko beste parametro bat, zenbat elementu nahi ditugun zehazteko.
 - <https://www.w3schools.com/php/func_array_rand.asp>
 
-!!! exercise "Ariketa 20B"
+!!! exercise "Ariketa 28"
     - [ ] Eginda dut
     
     - Zure bidaia-desioen zerrenda
