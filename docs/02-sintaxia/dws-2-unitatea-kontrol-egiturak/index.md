@@ -66,8 +66,8 @@
     1. Sortu aldagai bat `$zenbakia` izenekoa
     2. Erabili `if-else` egitura zenbakia 0 eta 10 artean dagoen konprobatzeko
     3. Erakutsi mezu egokia:
-    - 0-10 artean badago: "Zenbakia X da" (non X sartu den zenbakia den)
-    - Bestela: "Zenbakia ez dago 0 eta 10en artean"
+        - 0-10 artean badago: "Zenbakia X da" (non X sartu den zenbakia den)
+        - Bestela: "Zenbakia ez dago 0 eta 10en artean"
 
     **Adibideak:**
 
@@ -114,26 +114,8 @@ Switch egitura balio bat hainbat aukeratatik konparatzeko erabiltzen da.
 
 
 
-!!! exercise "Ariketa 9: Switch erabiliz"
-    - [ ] Eginda dut
-
-    Bihurtu hurrengo kodea `if-else` egitura duena `switch` egitura erabiliz:
-
-        $aldagaia = 2;
-
-        if ($aldagaia == 1) {
-            echo '$aldagaia berdin 1.';
-        } else if ($aldagaia == 2) {
-            echo '$aldagaia berdin 2.';
-        } elseif ($aldagaia == 3) {
-            echo '$aldagaia berdin 3.';
-        } else {
-            echo '$aldagaia ez da ez 1, ez 2 ezta 3.';
-        }
+!!! exercise "Ariketa 9: Zenbakia asmatu (Switch erabiliz)"
     
-
-
-!!! exercise "Ariketa 10: Zenbakia asmatu"
     - [ ] Eginda dut
 
     Bihurtu hurrengo kodea `if-else` egitura duena `switch` egitura erabiliz:
@@ -181,7 +163,7 @@ Switch egitura balio bat hainbat aukeratatik konparatzeko erabiltzen da.
    }
    ```
 
-!!! exercise "Ariketa 11: Sarbidea konprobatu"
+!!! exercise "Ariketa 10: Sarbidea konprobatu"
     - [ ] Eginda dut
 
     Sortu PHP script bat `ariketa11.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
@@ -262,7 +244,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
 
 
 
-!!! exercise "Ariketa 12: Biderketa taula (for)"
+!!! exercise "Ariketa 11: Biderketa taula (for)"
     - [ ] Eginda dut
     
     Idatzi programa bat honako funtzionalitateekin:
@@ -272,7 +254,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
     ![Biderketa taula](images/slide24_7.png)
    
 
-!!! exercise "Ariketa 13: Taula sortzea (for anidatuak)"
+!!! exercise "Ariketa 12: Taula sortzea (for anidatuak)"
     - [ ] Eginda dut
     
     FOR anidatuak erabiliz ondorengo taula moduko bat sortu. Horretarako html kodea sartu beharko duzu
@@ -281,7 +263,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
     
     
 
-!!! exercise "Ariketa 14: Zenbaki bikoitiak"
+!!! exercise "Ariketa 13: Zenbaki bikoitiak"
     - [ ] Eginda dut
     
     Sortu programa bat 5 eta 50 bitarteko zenbaki bikoitiak koma batekin bananduta erakutsiko duena. **Azken koma ez erakutsi**.
@@ -308,7 +290,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
 ![slide28_10.png](images/slide28_10.png)
 
 
-!!! exercise "Ariketa 15: Biderketa taula (while)"
+!!! exercise "Ariketa 14: Biderketa taula (while)"
     - [ ] Eginda dut
     
     Berridatzi aurreko biderketa taula `while` begizta erabiliz. 
@@ -332,7 +314,7 @@ Aurrekoaren antzeko begizta da; kasu honetan, ordea, bukaeran ebaluatzen da adie
     // Irteera: Zenbakia: 1 Zenbakia: 2 Zenbakia: 3 Zenbakia: 4 Zenbakia: 5
 ?>
 ```
-!!! exercise "Ariketa 16: Do-while erabiliz"
+!!! exercise "Ariketa 15: Do-while erabiliz"
     - [ ] Eginda dut
     
     Idatzi programa bat eta erakutsi 0tik 10erako zenbakiak `do-while` erabiliz.
@@ -390,18 +372,21 @@ Array asoziatiboentzat, beste modu hau erabiliko genuke, klabea eta balioa atera
 
 
 
-!!! exercise "Ariketa 17: Zenbakia asmatu"
+!!! exercise "Ariketa 16: Zenbakia asmatu"
     - [ ] Eginda dut
 
         Sortu programa bat, 1 eta 10 bitarteko zenbaki sekretu bat asmatzeko joko txiki bat simulatzen duena. 
         Zereginak:
-        
+
         -  Aurrez definitutako zenbaki sekretu bat izango du (adibidez, 7).
         - Bukle bat sortuko dugu zenbakia asmatzeko saiakerak simulatzeko, gehienez 5 saiakerekin.
         - Saio bakoitzeko, programak "asmatu" egingo du zenbaki bat (ausaz sortutako zenbaki bat erabiliz). Horretarako rand funtzioa erabiliko dugu.  
         - Asmatutako zenbakia zenbaki sekretuarekin bat badator, "Zuzen asmatu duzu, zenbakia X zen!" erakusten du eta buklea geldituko da.
         - Bat ez badator, hau bistaratuko du: " Saiakera okerra, berriro saiatzen...".
         - Buklea bukatzean ez baldin badu asmatu, "Ez duzu zenbakia asmatu 5 saiakeretan. Zenbaki sekretua XX zen.” erakusten du.
+
+    - Adibidez horrelako zeozer  erakutsiko du programak:
+
     ![Ariketa 12 - errepaso](images/slide40_17.png)
     
-    - Adibidez horrelako zeozer  erakutsiko du programak:
+  
