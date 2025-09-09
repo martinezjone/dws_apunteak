@@ -41,7 +41,43 @@
 ?>
 ```
 
-## Switch egitura
+
+!!! exercise "Ariketa 7: Adina konprobatu"
+    - [ ] Eginda dut
+
+    Sortu PHP script bat `ariketa7.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
+
+    1. Sortu aldagai bat `$adina` izenekoa
+    2. Erabili `if-else` egitura adina 18 baino handiagoa den konprobatzeko
+    3. Erakutsi mezu egokia:
+    - 18 edo gehiago bada: "Pasa zaitezke"
+    - Bestela: "Ondino adingabekoa zara, ezin zara pasatu"
+
+    **Adibidea:**
+   
+        Sartu zure adina: 20 - Mezua:  Pasa zaitezke
+ 
+
+!!! exercise "Ariketa 8: Zenbakiaren balioa"
+    - [ ] Eginda dut
+
+    Sortu PHP script bat `ariketa8.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
+
+    1. Sortu aldagai bat `$zenbakia` izenekoa
+    2. Erabili `if-else` egitura zenbakia 0 eta 10 artean dagoen konprobatzeko
+    3. Erakutsi mezu egokia:
+    - 0-10 artean badago: "Zenbakia X da" (non X sartu den zenbakia den)
+    - Bestela: "Zenbakia ez dago 0 eta 10en artean"
+
+    **Adibideak:**
+
+        * Zenbakia: 5
+        Mezua:  - Zenbakia 5 da
+        * Zenbakia: 15
+        Mezua:  - Zenbakia ez dago 0 eta 10en artean
+
+
+### Switch egitura
 
 Switch egitura balio bat hainbat aukeratatik konparatzeko erabiltzen da.
 
@@ -76,79 +112,9 @@ Switch egitura balio bat hainbat aukeratatik konparatzeko erabiltzen da.
     - `default` aukerakoa da eta kasurik bat ere ez denean exekutatuko da
     - Kasuak konstante sinpleak izan behar dute (ez dira onartzen adierazpen konplexuak)
 
-!!! exercise "Ariketa 1: Adina konprobatu"
-    - [ ] Eginda dut
-
-    Sortu PHP script bat `adina.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
-
-    1. Sortu aldagai bat `$adina` izenekoa
-    2. Erabili `if-else` egitura adina 18 baino handiagoa den konprobatzeko
-    3. Erakutsi mezu egokia:
-    - 18 edo gehiago bada: "Pasa zaitezke"
-    - Bestela: "Ondino adingabekoa zara, ezin zara pasatu"
-
-    **Adibidea:**
-   
-        Sartu zure adina: 20 - Mezua:  Pasa zaitezke
- 
-
-!!! exercise "Ariketa 2: Zenbakiaren balioa"
-    - [ ] Eginda dut
-
-    Sortu PHP script bat `zenbakia.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
-
-    1. Sortu aldagai bat `$zenbakia` izenekoa
-    2. Erabili `if-else` egitura zenbakia 0 eta 10 artean dagoen konprobatzeko
-    3. Erakutsi mezu egokia:
-    - 0-10 artean badago: "Zenbakia X da" (non X sartu den zenbakia den)
-    - Bestela: "Zenbakia ez dago 0 eta 10en artean"
-
-    **Adibideak:**
-
-        * Zenbakia: 5
-        Mezua:  - Zenbakia 5 da
-        * Zenbakia: 15
-        Mezua:  - Zenbakia ez dago 0 eta 10en artean
 
 
-## Begiztak (Loops)
-
-### While begizta
-
-```php
-<?php
-    $kontagailua = 1;
-
-    while ($kontagailua <= 5) {
-        echo "Zenbakia: $kontagailua<br>";
-        $kontagailua++;
-    }
-?>
-```
-
-### For begizta
-
-```php
-<?php
-    for ($i = 1; $i <= 5; $i++) {
-        echo "Zenbakia: $i<br>";
-    }
-?>
-```
-
-### Foreach begizta
-
-```php
-<?php
-    $ikastaroak = ["PHP", "JavaScript", "HTML", "CSS"];
-
-    foreach ($ikastaroak as $ikastaroa) {
-        echo "$ikastaroa<br>";
-    }
-?>
-```
-
-!!! exercise "Ariketa 3: Switch erabiliz"
+!!! exercise "Ariketa 9: Switch erabiliz"
     - [ ] Eginda dut
 
     Bihurtu hurrengo kodea `if-else` egitura duena `switch` egitura erabiliz:
@@ -167,7 +133,7 @@ Switch egitura balio bat hainbat aukeratatik konparatzeko erabiltzen da.
     
 
 
-!!! exercise "Ariketa 4: Zenbakia asmatu"
+!!! exercise "Ariketa 10: Zenbakia asmatu"
     - [ ] Eginda dut
 
     Bihurtu hurrengo kodea `if-else` egitura duena `switch` egitura erabiliz:
@@ -215,20 +181,20 @@ Switch egitura balio bat hainbat aukeratatik konparatzeko erabiltzen da.
    }
    ```
 
-!!! exercise "Ariketa 5: Sarbidea konprobatu"
+!!! exercise "Ariketa 11: Sarbidea konprobatu"
     - [ ] Eginda dut
 
-    Sortu PHP script bat `sarbidea.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
+    Sortu PHP script bat `ariketa11.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
 
     1. Sortu hiru aldagai:
-    - `$izena`: erabiltzailearen izena
-    - `$abizen1`: lehen abizena
-    - `$abizen2`: bigarren abizena
+        - `$izena`: erabiltzailearen izena
+        - `$abizen1`: lehen abizena
+        - `$abizen2`: bigarren abizena
     2. Erabili operadore logikoak hurrengo baldintzak egiaztatzeko:
-    - Izena "Garazi" den
-    - Edo abizenak "Olabarria Iriondo" diren
+        - Izena "Garazi" den
+        - Edo abizenak "Olabarria Iriondo" diren
     3. Baldintza betetzen bada, erakutsi "Ongi etorri $izena $abizen1 $abizen2!"
-    - Bestela, erakutsi "Ez du sarbiderik"
+        - Bestela, erakutsi "Ez du sarbiderik"
 
     **Adibidea 1:**
     ```
@@ -296,7 +262,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
 
 
 
-!!! exercise "Ariketa 6: Biderketa taula (for)"
+!!! exercise "Ariketa 12: Biderketa taula (for)"
     - [ ] Eginda dut
     
     Idatzi programa bat honako funtzionalitateekin:
@@ -306,7 +272,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
     ![Biderketa taula](images/slide24_7.png)
    
 
-!!! exercise "Ariketa 7: Taula sortzea (for anidatuak)"
+!!! exercise "Ariketa 13: Taula sortzea (for anidatuak)"
     - [ ] Eginda dut
     
     FOR anidatuak erabiliz ondorengo taula moduko bat sortu. Horretarako html kodea sartu beharko duzu
@@ -315,10 +281,10 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
     
     
 
-!!! exercise "Ariketa 8: Zenbaki bikoitiak"
+!!! exercise "Ariketa 14: Zenbaki bikoitiak"
     - [ ] Eginda dut
     
-    Sortu programa bat 5 eta 50 bitarteko zenbaki bikoitiak koma batekin bananduta erakutsiko duena. Azken koma ez erakutsi.
+    Sortu programa bat 5 eta 50 bitarteko zenbaki bikoitiak koma batekin bananduta erakutsiko duena. **Azken koma ez erakutsi**.
     
     ![Zenbaki bikoitiak](images/slide26_9.png)
     
@@ -342,7 +308,7 @@ Kontagailu baten balioaren arabera, zehaztutako kode.lerroak exekutatuko dira:
 ![slide28_10.png](images/slide28_10.png)
 
 
-!!! exercise "Ariketa 9: Biderketa taula (while)"
+!!! exercise "Ariketa 15: Biderketa taula (while)"
     - [ ] Eginda dut
     
     Berridatzi aurreko biderketa taula `while` begizta erabiliz. 
@@ -366,7 +332,7 @@ Aurrekoaren antzeko begizta da; kasu honetan, ordea, bukaeran ebaluatzen da adie
     // Irteera: Zenbakia: 1 Zenbakia: 2 Zenbakia: 3 Zenbakia: 4 Zenbakia: 5
 ?>
 ```
-!!! exercise "Ariketa 10: Do-while erabiliz"
+!!! exercise "Ariketa 16: Do-while erabiliz"
     - [ ] Eginda dut
     
     Idatzi programa bat eta erakutsi 0tik 10erako zenbakiak `do-while` erabiliz.
@@ -406,35 +372,36 @@ Array asoziatiboentzat, beste modu hau erabiliko genuke, klabea eta balioa atera
     email: ane.garcia@ikasle.eus
     notak: 7.5, 8, 9.2, 7.8
 ```
+!!! info "Adibidea"
+    ![foreach_adibidea](images/slide36_16.png)
 
-![foreach_adibidea](images/slide36_16.png)
+    **Irteera:**
 
- **Irteera:**
+    - Santander es la capital de Cantabria.
 
- - Santander es la capital de Cantabria.
+    - Vitoria es la capital de Euskadi.
 
- - Vitoria es la capital de Euskadi.
+    - Zaragoza es la capital de Aragón.
 
- - Zaragoza es la capital de Aragón.
-
- - Pamplona es la capital de NAvarra.
+    - Pamplona es la capital de NAvarra.
 
 !!! warning "KONTUZ!"
     `foreach`-ek arrayekin bakarrik funtzionatzen du, eta errorea itzuliko du beste datu mota batekin erabiltzen saiatuz gero.
 
 
 
-!!! exercise "Ariketa 11: Zenbakia asmatu"
+!!! exercise "Ariketa 17: Zenbakia asmatu"
     - [ ] Eginda dut
 
         Sortu programa bat, 1 eta 10 bitarteko zenbaki sekretu bat asmatzeko joko txiki bat simulatzen duena. 
         Zereginak:
-    -  Aurrez definitutako zenbaki sekretu bat izango du (adibidez, 7).
-    - Bukle bat sortuko dugu zenbakia asmatzeko saiakerak simulatzeko, gehienez 5 saiakerekin.
-    - Saio bakoitzeko, programak "asmatu" egingo du zenbaki bat (ausaz sortutako zenbaki bat erabiliz). Horretarako rand funtzioa erabiliko dugu.  
-    - Asmatutako zenbakia zenbaki sekretuarekin bat badator, "Zuzen asmatu duzu, zenbakia X zen!" erakusten du eta buklea geldituko da.
-    - Bat ez badator, hau bistaratuko du: " Saiakera okerra, berriro saiatzen...".
-    - Buklea bukatzean ez baldin badu asmatu, "Ez duzu zenbakia asmatu 5 saiakeretan. Zenbaki sekretua XX zen.” erakusten du.
+        
+        -  Aurrez definitutako zenbaki sekretu bat izango du (adibidez, 7).
+        - Bukle bat sortuko dugu zenbakia asmatzeko saiakerak simulatzeko, gehienez 5 saiakerekin.
+        - Saio bakoitzeko, programak "asmatu" egingo du zenbaki bat (ausaz sortutako zenbaki bat erabiliz). Horretarako rand funtzioa erabiliko dugu.  
+        - Asmatutako zenbakia zenbaki sekretuarekin bat badator, "Zuzen asmatu duzu, zenbakia X zen!" erakusten du eta buklea geldituko da.
+        - Bat ez badator, hau bistaratuko du: " Saiakera okerra, berriro saiatzen...".
+        - Buklea bukatzean ez baldin badu asmatu, "Ez duzu zenbakia asmatu 5 saiakeretan. Zenbaki sekretua XX zen.” erakusten du.
     ![Ariketa 12 - errepaso](images/slide40_17.png)
     
     - Adibidez horrelako zeozer  erakutsiko du programak:
