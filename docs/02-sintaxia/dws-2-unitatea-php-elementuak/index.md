@@ -106,7 +106,7 @@ print " hirugarren katea";
 ?>
 ```
 
-### printf funtzioa
+##### printf funtzioa
 
 `printf` formateatutako irteera sortzeko erabiltzen da. Hainbat parametro jaso ditzake:
 
@@ -145,24 +145,6 @@ printf("Ikaslearen izena: %s, %d urte ditu eta %.1f-ko nota media du", $izena, $
 ?>
 ```
 
-## Gomendio orokorrak
-
-### Errendimenduari begira:
-1. **echo** erabiltzea gomendatzen da errendimendua garrantzitsua denean
-2. **Interpolazioa** (kakotx bikoitzak) kateatzea baino arinagoa da kasu sinpleetan
-3. **Kakotx sinpleak** pixka bat arinagoak dira ez badago aldagairik
-
-### Irakurgarritasunari begira:
-```php
-// ✅ Gomendatua - interpolazioa sinplea denean
-echo "Kaixo, $izena!";
-
-// ✅ Gomendatua - kateatzea konplexua denean
-echo 'Emaitza: ' . ($a + $b) . ' puntu';
-
-// ❌ Saihestu - nahastearen arrazoia
-echo "Kaixo, " . $izena . "!";
-```
 
 Espezifikadore gehiago eta informazio gehiago lortzeko: <https://www.w3schools.com/php/func_string_printf.asp>
 ```
@@ -192,8 +174,28 @@ Zelan uste duzue agertuko dela pantailan?
 
 Espezifikadoreek `%` karakterea daukate aurretik, mota bakarrik da derrigorrezkoa, gainontzekoak hautazkoak dira.
 Hurrengo estekan dituzu mota-espezifikadoreak:
-<https://www.w3schools.com/php/func_string_printf.asp>
+<a href="https://www.w3schools.com/php/func_string_printf.asp" target="_blank">Espezifikadore gehiago eta informazio gehiago</a>
 
+
+
+## Gomendio orokorrak
+
+### Errendimenduari begira:
+1. **echo** erabiltzea gomendatzen da errendimendua garrantzitsua denean
+2. **Interpolazioa** (kakotx bikoitzak) kateatzea baino arinagoa da kasu sinpleetan
+3. **Kakotx sinpleak** pixka bat arinagoak dira ez badago aldagairik
+
+### Irakurgarritasunari begira:
+```php
+// ✅ Gomendatua - interpolazioa sinplea denean
+echo "Kaixo, $izena!";
+
+// ✅ Gomendatua - kateatzea konplexua denean
+echo 'Emaitza: ' . ($a + $b) . ' puntu';
+
+// ❌ Saihestu - nahastearen arrazoia
+echo "Kaixo, " . $izena . "!";
+```
 
 ## Testu kateekin erlazionaturiko funtzioak
 
@@ -362,14 +364,14 @@ echo strcasecmp("Hello", "Hello!");  // -1 (bigarrena luzeagoa da)
 ```
 
 
-## Ariketa Praktikoa: Testu Prozesatzailea
+## Ariketa 5: Testu Prozesatzailea
 
-!!! exercise "Ariketa: Testu Prozesatzailea"
+!!! exercise "Ariketa 5: Testu Prozesatzailea"
     - [ ] Eginda dut
     
-    Sortu PHP script bat `prozesatzailea.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
+    Sortu PHP script bat `ariketa5_prozesatzailea.php` izenekoa, eta idatzi kodea honako funtzionalitateekin:
     
-    1. Erabiltzaileak sartu behar du bere izen-abizenak (adibidez: "Juan Perez")
+    1. Erabiltzaileak sartu behar du bere izen-abizenak (adibidez: "Juan Perez"). Momentuz formularioak zelan sortu ez dugunez ikasi, eskuz egingo dugu.
     2. Programa honek erakutsi behar ditu:
        - Izen-abizenak letra larriz
        - Izen-abizenak letra xehez
@@ -413,16 +415,16 @@ PHP eta HTML konbinatzea oso ohikoa da:
 </html>
 ```
 
-## Ariketa: HTML eta PHP konbinatuz
+## Ariketa 6: HTML eta PHP konbinatuz
 
-!!! exercise "Ariketa 2"
+!!! exercise "Ariketa 6"
     - [ ] Eginda dut
     
     Sortu HTML orri bat PHP kodea erabiliz:
+
     1. Sortu HTML5 dokumentu bat
-    2. PHP erabiliz, erakutsi uneko urtea eta hileko eguna
+    2. PHP erabiliz, erakutsi momentuko urtea eta hileko eguna
     3. Erabili aldagai bat zure herrialdearen izenarentzat
-    4. Erabili HereDoc formatua HTML kodea sortzeko
     
     **Aholkua:** Erabili `date()` funtzioa datak lortzeko
 

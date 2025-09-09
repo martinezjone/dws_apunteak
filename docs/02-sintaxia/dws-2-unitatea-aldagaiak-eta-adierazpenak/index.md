@@ -274,6 +274,7 @@ Zein balio izango dute `$a` eta `$b` aldagaiek kasu bakoitzean?
         <p>Ikastaroa bukatuta: [BAI/EZ]</p>
         <p>Ordaindu beharreko prezioa: [IKASTAROA_PREZIOA]€</p>
     ```
+    ![Ariketa 4](images/ariketa4.png)
     
     Batez besteko nota ateratzeko: (orain_arte_kreditoak / GRADU_KREDITOAK) * 10
 
