@@ -50,8 +50,9 @@
     1. Sortu aldagai bat `$adina` izenekoa
     2. Erabili `if-else` egitura adina 18 baino handiagoa den konprobatzeko
     3. Erakutsi mezu egokia:
-    - 18 edo gehiago bada: "Pasa zaitezke"
-    - Bestela: "Ondino adingabekoa zara, ezin zara pasatu"
+    
+        - 18 edo gehiago bada: "Pasa zaitezke"
+        - Bestela: "Ondino adingabekoa zara, ezin zara pasatu"
 
     **Adibidea:**
    
