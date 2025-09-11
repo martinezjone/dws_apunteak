@@ -173,18 +173,7 @@ if (in_array("berdea", $koloreak)) {
 ?>
 ```
 
-!!! exercise "Ariketa 20: Zenbakien batuketa"
-    - [ ] Eginda dut
-    
-    Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
-    
-    1. Sortu array bat 5 zenbakirekin
-    2. Kalkulatu zenbaki guztien batuketa
-    3. Bistaratu emaitza
-    
-   
-
-!!! exercise "Ariketa 21: Ikasleen notak"
+!!! exercise "Ariketa 20: Ikasleen notak"
     - [ ] Eginda dut
     
     Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
@@ -194,7 +183,7 @@ if (in_array("berdea", $koloreak)) {
     3. Kalkulatu batez besteko nota
     
    
-!!! exercise "Ariketa 22: Ikasleen datuak"
+!!! exercise "Ariketa 21: Ikasleen datuak"
     - [ ] Eginda dut
     
     Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
@@ -288,7 +277,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 !!! tip "Bi array-en batura egiteko"
     - `array_merge()` erabili beharko genuke
 
-!!! exercise "Ariketa 23"
+!!! exercise "Ariketa 22"
     - [ ] Eginda dut
 
     - Badugu ondorengo array bat:
@@ -340,7 +329,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 ![Print_r](images/slide28_10.png)
 
 
-!!! exercise "Ariketa 24"
+!!! exercise "Ariketa 23"
     - [ ] Eginda dut
 
     - Hamar film-titulu dituen array bat definitu.
@@ -351,7 +340,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 
 ![unset()](images/slide31_11.png)
 
-!!! exercise "Ariketa 25"
+!!! exercise "Ariketa 24"
     - [ ] Eginda dut
 
     Array hau emanda:
@@ -374,14 +363,14 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 - Irteera:
 ![Var_dump](images/slide33_13.png)
 
-!!! exercise "Ariketa 26"
+!!! exercise "Ariketa 25"
     - [ ] Eginda dut
 
     - Karaktere bateko gakoak dituen array bat definitu, kareakterak ‘a’tik ‘f’rarte joango dira.
     - Definizio berean, gako bakoitzari letra horrekin hasten den izen propio bat eman. Adibidez (“a”=’Amanda’);
     - Erakutsi emaitza pantailan var_dump erabiliz
 
-!!! exercise "Ariketa 27"
+!!! exercise "Ariketa 26"
     - [ ] Eginda dut
         
     - Hartuko dugu, "Ariketa 16: Zenbakia asmatu", eta array batekin kontrolatuko dugu hautazko zenbakia ez errepikatzea.
@@ -393,7 +382,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 - Funtzio honek bi parametro izan ditzake, alde batetik arraya, hori derrigorrezkoa da, eta bestetik aukerazko beste parametro bat, zenbat elementu nahi ditugun zehazteko.
 - <https://www.w3schools.com/php/func_array_rand.asp>
 
-!!! exercise "Ariketa 28"
+!!! exercise "Ariketa 27"
     - [ ] Eginda dut
     
     - Zure bidaia-desioen zerrenda
@@ -403,7 +392,7 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
         - Sortu `$desio_zerrenda` izeneko array bat, bidaiatu nahi zenituzkeen bost herrialderekin.
         - Erabili beharrezko funtzioa  bi herrialde gehiago gehitzeko zerrendara.
         - Orain bi zerrenda gehigarri dituzu, azken bi urteetan bidaiatu dituzun herrialdeekin, adibidez:
-        
+
             - `$bisitatuak_2022 = array('Italia', 'Frantzia')`
             - `$bisitatuak_2023 = array('Portugal', 'Japon')`
         - Bi zerrenda horiek batu array bakarrean `$bisitatuak_guztiak`.

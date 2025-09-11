@@ -735,27 +735,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#elementuak-txertatzea_1" class="md-nav__link">
+  <a href="#array-funtzio-gehiago" class="md-nav__link">
     <span class="md-ellipsis">
-      Elementuak txertatzea
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elementuak-ezabatzea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elementuak ezabatzea
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#array-zati-bat-lortzeko" class="md-nav__link">
-    <span class="md-ellipsis">
-      Array zati bat lortzeko
+      Array funtzio gehiago...
     </span>
   </a>
   
@@ -768,9 +750,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Arrayak ordenatzen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#print_r" class="md-nav__link">
     <span class="md-ellipsis">
       Print_r
@@ -778,8 +761,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#unset" class="md-nav__link">
     <span class="md-ellipsis">
       unset()
@@ -787,8 +770,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#var_dump" class="md-nav__link">
     <span class="md-ellipsis">
       Var_dump
@@ -796,22 +779,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#in_array_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      in_array()
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#array_rand" class="md-nav__link">
     <span class="md-ellipsis">
       array_rand
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1263,27 +1242,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#elementuak-txertatzea_1" class="md-nav__link">
+  <a href="#array-funtzio-gehiago" class="md-nav__link">
     <span class="md-ellipsis">
-      Elementuak txertatzea
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elementuak-ezabatzea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elementuak ezabatzea
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#array-zati-bat-lortzeko" class="md-nav__link">
-    <span class="md-ellipsis">
-      Array zati bat lortzeko
+      Array funtzio gehiago...
     </span>
   </a>
   
@@ -1296,9 +1257,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Arrayak ordenatzen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#print_r" class="md-nav__link">
     <span class="md-ellipsis">
       Print_r
@@ -1306,8 +1268,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#unset" class="md-nav__link">
     <span class="md-ellipsis">
       unset()
@@ -1315,8 +1277,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#var_dump" class="md-nav__link">
     <span class="md-ellipsis">
       Var_dump
@@ -1324,22 +1286,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#in_array_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      in_array()
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#array_rand" class="md-nav__link">
     <span class="md-ellipsis">
       array_rand
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1405,10 +1363,10 @@ $ikasgaiak2[&quot;DWES&quot;];
 <pre><code class="language-php">$izenak[4]=&quot;Elena&quot;;
 $izenak[]=&quot;Elena&quot;;  // Ez da beharrezkoa indizea jartzea, PHPk zuzenean bukaeran sartzen du
 </code></pre>
-<p>Ikusi dugu indizeak zerotik hasten dire, eta goranzko sekuentzian sortuz. Baina hori alda dezakegu, kasu bakoitzean komeni zaigun moduan.</p>
+<p>Ikusi dugunez, indizeak zerotik hasten dira, eta goranzko sekuentzian sortuz. Baina hori alda dezakegu, kasu bakoitzean komeni zaigun moduan.</p>
 <pre><code class="language-php">$izenak = array (1=&gt;&quot;Pedro&quot;,&quot;Ana&quot;,&quot;Carmen&quot;,&quot;Alfredo&quot;, &quot;Eva&quot;);
 </code></pre>
-<p>Kasu honetan lehenengoa 1ean hasiko zen eta hurrengoa 2 izango zen, baina hori hurrengo adibidean ikusi daitekeen moduan, ere alda daiteke horrela nahi izatekotan.</p>
+<p>Kasu honetan lehenengoa, 1 posizioan hasiko zen eta hurrengoa 2.nean, baina hori hurrengo adibidean ikusi daitekeen moduan, ere alda daiteke horrela nahi izatekotan.</p>
 <pre><code class="language-php">$izenak = array (1=&gt;&quot;Pedro&quot;,&quot;Ana&quot;,50=&gt;&quot;Carmen&quot;,&quot;Alfredo&quot;, &quot;Eva&quot;);
 </code></pre>
 <p>PHP matrize hori sortzen denean, ez du espaziorik gordetzen aitortu gabeko elementuen memoria. 
@@ -1429,13 +1387,10 @@ Baina edozein momentutan elementu berriak sor daitezke eta PHP-k lekua izango du
 </ul>
 </div>
 <h3 id="array-asoziatiboak">Array asoziatiboak<a class="headerlink" href="#array-asoziatiboak" title="Permanent link">&para;</a></h3>
-<p>Elementuak dituzten matrize-motak dira gako-balio bikoteen bidez eratzen dira, eta gakoa horrekin jakingo dugu zein den dagokion elementua.</p>
-<p>Horrela, array bat lor dezakegu, non gakoa haren balioari lotzen zaio.</p>
-<pre><code class="language-php">$lagun = array( &quot;izena&quot;=&gt; &quot;Pedro Torres&quot;,&quot;helbidea&quot;=&gt; &quot;CL Mayor,37&quot;, 
-&quot;telefonoa&quot;=&gt;123456789);
-</code></pre>
+<p>Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dira; gako horrekin jakingo dugu zein den dagokion elementua.</p>
 <pre><code class="language-php">&lt;?php
-// Array asoziatiboa sortu
+    // Array asoziatiboa sortu
+
     $ikaslea = array(
         &quot;izena&quot; =&gt; &quot;Ane&quot;,
         &quot;abizena&quot; =&gt; &quot;Garcia&quot;,
@@ -1444,6 +1399,7 @@ Baina edozein momentutan elementu berriak sor daitezke eta PHP-k lekua izango du
     );
 
     // Elementu bat atzitu
+
     echo $ikaslea[&quot;izena&quot;];  // &quot;Ane&quot;
 ?&gt;
 </code></pre>
@@ -1460,7 +1416,7 @@ Baina edozein momentutan elementu berriak sor daitezke eta PHP-k lekua izango du
 <p><code>$notak = array("Ander"=&gt;"3.5", "Bego"=&gt;"7", "Jon"=&gt;"6.3");</code></p>
 </div>
 <h2 id="matrize-mutidimestsionala">Matrize mutidimestsionala<a class="headerlink" href="#matrize-mutidimestsionala" title="Permanent link">&para;</a></h2>
-<p>Dimentsio anitzeko array bat bada array bat non bere balioetako bat, gutxienez beste array bat da.
+<p>Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array bat denean.
 <img alt="slide14_2.png" src="images/slide14_2.png" />
 <img alt="slide14_3.png" src="images/slide14_3.png" /></p>
 <div class="admonition exercise">
@@ -1487,10 +1443,16 @@ Hurrengoko datuekin:</p>
 </div>
 <h2 id="matrizeetan-nabigatzea">Matrizeetan nabigatzea<a class="headerlink" href="#matrizeetan-nabigatzea" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Matrize indexatuak direnean, erraza da array baten zehar nabigatzea, nahikoa da nahi dugun elementuan sartzea, baina elkarte-matrizeren bat denez, ezin da tratamendu bera aplikatu.</li>
-<li>Horretarako, funtzio-multzo bat dago aurrefabrikatuak, ekintza ugari: <code>count()</code>, <code>reset()</code>, <code>end()</code> etab…</li>
-<li>Hurrengo estekan dituzue Array-en funtzioen zerrenda:</li>
-<li><a href="https://www.php.net/manual/es/ref.array.php">https://www.php.net/manual/es/ref.array.php</a></li>
+<li>
+<p>Matrize indexatuak direnean, erraza da array baten zehar nabigatzea, baina matrize multidimensaionala denean, ez da ain erraza izaten.</p>
+</li>
+<li>
+<p>Horretarako, funtzio-multzo bat dago aurrefabrikatuak, ekintza ugari: <code>count()</code>, <code>reset()</code>, <code>end()</code> etab…</p>
+</li>
+<li>
+<p>Hurrengo estekan dituzue Array-en funtzioen zerrenda:
+    <a href="https://www.php.net/manual/es/ref.array.php">Array-en funtzioen zerrenda</a></p>
+</li>
 </ul>
 <h3 id="count">count()<a class="headerlink" href="#count" title="Permanent link">&para;</a></h3>
 <p>Array baten elementu kopurua itzultzen du:</p>
@@ -1541,12 +1503,20 @@ if (in_array(&quot;berdea&quot;, $koloreak)) {
 </ul>
 <p>Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:</p>
 <ol>
-<li>Sortu array multidimentsionala ikasleen datuekin:</li>
-<li>Izena</li>
+<li>
+<p>Sortu array multidimentsionala ikasleen datuekin:</p>
+</li>
+<li>
+<p>Izena</p>
+</li>
 <li>Abizena</li>
 <li>Adina</li>
-<li>Zikloa</li>
-<li>Erabili foreach egitura bikoitza datuak erakusteko</li>
+<li>
+<p>Zikloa</p>
+</li>
+<li>
+<p>Erabili foreach egitura bikoitza datuak erakusteko</p>
+</li>
 </ol>
 </div>
 <div class="admonition info">
@@ -1555,7 +1525,6 @@ if (in_array(&quot;berdea&quot;, $koloreak)) {
 <li>Erabili <code>print_r()</code> edo <code>var_dump()</code> array-ak aztertzeko</li>
 <li>Gogoan izan array-ak 0-tik hasten direla indexatzen</li>
 <li>Erabili <code>foreach</code> egitura array-etan zehar ibiltzeko</li>
-<li><code>array_</code> hasierako funtzioak ikasi (sort(), merge(), search(), etc.)</li>
 </ul>
 </div>
 <h2 id="matrizeetan-nabigatzea_1">Matrizeetan nabigatzea<a class="headerlink" href="#matrizeetan-nabigatzea_1" title="Permanent link">&para;</a></h2>
@@ -1569,40 +1538,41 @@ if (in_array(&quot;berdea&quot;, $koloreak)) {
 <p><img alt="Matrizeetan nabigatzea" src="images/slide19_7.png" /></p>
 <h2 id="elementuak-txertatzea">Elementuak txertatzea<a class="headerlink" href="#elementuak-txertatzea" title="Permanent link">&para;</a></h2>
 <p>Array baten barruan elementuak txertatzeko PHP-k hainbat funtzio eskaintzen ditu:</p>
-<h3 id="array_push"><code>array_push()</code><a class="headerlink" href="#array_push" title="Permanent link">&para;</a></h3>
+<h3 id="array_push">array_push()<a class="headerlink" href="#array_push" title="Permanent link">&para;</a></h3>
 <p>Array baten bukaeran elementuak gehitzen ditu.</p>
-<pre><code class="language-php">$koloreak = [&quot;gorria&quot;, &quot;berdea&quot;];
-array_push($koloreak, &quot;urdina&quot;, &quot;horia&quot;);
-// Emaitza: [&quot;gorria&quot;, &quot;berdea&quot;, &quot;urdina&quot;, &quot;horia&quot;]
+<pre><code class="language-php">    $koloreak = [&quot;gorria&quot;, &quot;berdea&quot;];
+    array_push($koloreak, &quot;urdina&quot;, &quot;horia&quot;);
+    // Emaitza: [&quot;gorria&quot;, &quot;berdea&quot;, &quot;urdina&quot;, &quot;horia&quot;]
 </code></pre>
-<h3 id="array_unshift"><code>array_unshift()</code><a class="headerlink" href="#array_unshift" title="Permanent link">&para;</a></h3>
+<h3 id="array_unshift">array_unshift()<a class="headerlink" href="#array_unshift" title="Permanent link">&para;</a></h3>
 <p>Array baten hasieran elementuak gehitzen ditu, beste elementuak atzeraka mugituz.</p>
-<pre><code class="language-php">$zenbakiak = [3, 4];
-array_unshift($zenbakiak, 1, 2);
-// Emaitza: [1, 2, 3, 4]
+<pre><code class="language-php">    $zenbakiak = [3, 4];
+    array_unshift($zenbakiak, 1, 2);
+    // Emaitza: [1, 2, 3, 4]
 </code></pre>
-<h3 id="array_pad"><code>array_pad()</code><a class="headerlink" href="#array_pad" title="Permanent link">&para;</a></h3>
+<h3 id="array_pad">array_pad()<a class="headerlink" href="#array_pad" title="Permanent link">&para;</a></h3>
 <p>Array baten tamaina handitzen du, beharrezkoa bada, balio lehenetsi betez.</p>
-<pre><code class="language-php">$array = [1, 2];
-$berria = array_pad($array, 5, 0);
-// Emaitza: [1, 2, 0, 0, 0]
+<pre><code class="language-php">    $array = [1, 2];
+    $berria = array_pad($array, 5, 0);
+    // Emaitza: [1, 2, 0, 0, 0]
 
-// Tamaina negatiboa erabiliz hasieran betetzeko
-$berria = array_pad($array, -5, 0);
-// Emaitza: [0, 0, 0, 1, 2]
+    // Tamaina negatiboa erabiliz hasieran betetzeko
+    $berria = array_pad($array, -5, 0);
+    // Emaitza: [0, 0, 0, 1, 2]
 </code></pre>
-<h3 id="array_merge"><code>array_merge()</code><a class="headerlink" href="#array_merge" title="Permanent link">&para;</a></h3>
+<h3 id="array_merge">array_merge()<a class="headerlink" href="#array_merge" title="Permanent link">&para;</a></h3>
 <p>Bi edo array gehiago batzen ditu.</p>
-<pre><code class="language-php">$array1 = [&quot;a&quot; =&gt; &quot;sagarra&quot;];
-$array2 = [&quot;b&quot; =&gt; &quot;madaria&quot;];
-$emaitza = array_merge($array1, $array2);
-// Emaitza: [&quot;a&quot; =&gt; &quot;sagarra&quot;, &quot;b&quot; =&gt; &quot;madaria&quot;]
+<pre><code class="language-php">    $array1 = [&quot;a&quot; =&gt; &quot;sagarra&quot;];
+    $array2 = [&quot;b&quot; =&gt; &quot;madaria&quot;];
+    $emaitza = array_merge($array1, $array2);
+
+    // Emaitza: [&quot;a&quot; =&gt; &quot;sagarra&quot;, &quot;b&quot; =&gt; &quot;madaria&quot;]
 </code></pre>
-<h3 id="operadorea"><code>+</code> Operadorea<a class="headerlink" href="#operadorea" title="Permanent link">&para;</a></h3>
-<pre><code class="language-php">
-    $array1 = [1, 2];
+<h3 id="operadorea">+ Operadorea<a class="headerlink" href="#operadorea" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">    $array1 = [1, 2];
     $array2 = [3, 4];
     $emaitza = $array1 + $array2;  // Lehenengo array-aren gakoak mantentzen ditu
+
     // Emaitza === [1, 2]
     // ($array2-ren elementuak ez dira gehituko haien gakoak $array1-n daudelako)
 </code></pre>
@@ -1628,38 +1598,63 @@ $emaitza = array_merge($array1, $array2);
 <li>Gehitu beste bi elementu (limoia eta sagarra) <code>array_push()</code> funtzioarekin.</li>
 </ul>
 </div>
-<h2 id="elementuak-txertatzea_1">Elementuak txertatzea<a class="headerlink" href="#elementuak-txertatzea_1" title="Permanent link">&para;</a></h2>
+<h2 id="array-funtzio-gehiago">Array funtzio gehiago...<a class="headerlink" href="#array-funtzio-gehiago" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>array_unshift(matrizea,aldagai1,aldagaiN);</code></li>
+<li>
+<p><code>array_unshift(matrizea,aldagai1,aldagaiN);</code></p>
+<ul>
 <li>Funtzioaren hasieran elementuak gehitzen ditu besteak atzeruntz botatzen.</li>
-<li><code>array_pad(matrizea,berria,balio_betegarria);</code></li>
+</ul>
+</li>
+<li>
+<p><code>array_pad(matrizea,berria,balio_betegarria);</code></p>
+<ul>
 <li>Matrizearen tamaina handitzen du balio bat erabiliz betegarri gisa.</li>
-<li><code>array_shift(matrizea);</code></li>
+</ul>
+</li>
+<li>
+<p><code>array_shift(matrizea);</code></p>
+<ul>
 <li>Matrizeko lehenengo elementua ezabatzen du</li>
-<li><code>array_pop (matrizea);</code></li>
+</ul>
+</li>
+<li>
+<p><code>array_pop (matrizea);</code></p>
+<ul>
 <li>Matrizeko azkeneko elementua ezabatzen du</li>
-<li><code>array_splice(matrizea, pos_ini,[tamaina],[ordezkoak]);</code></li>
+</ul>
+</li>
+<li>
+<p><code>array_splice(matrizea, pos_ini,[tamaina],[ordezkoak]);</code></p>
+<ul>
 <li>Matrize baten zati baten edukia ordezkatzeko edo ezabatzeko erabiltzen da. Horretarako, posizioa zehaztu behar dugu, zenbat elementu ordezkatuko diren eta ordezkoak zeintzuk izango diren (baldin eta elementuren batekin ordezkatu nahi dugun).</li>
 </ul>
-<h2 id="elementuak-ezabatzea">Elementuak ezabatzea<a class="headerlink" href="#elementuak-ezabatzea" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p><code>array_keys(matrizea,[bilatutako balioa]);</code></p>
 <ul>
-<li><code>array_keys(matrizea,[bilatutako balioa]);</code></li>
 <li>Honek esaten digu array baten klabeak. Balioagarria da elementu bat ezabatu behar dugunerako eta ez baldin badakigu zein posiziotan dagoen</li>
-<li><code>array_values (matrizea);</code></li>
+</ul>
+</li>
+<li>
+<p><code>array_values (matrizea);</code></p>
+<ul>
 <li>Honek bueltatzen ditu array baten balioak</li>
 </ul>
-<h2 id="array-zati-bat-lortzeko">Array zati bat lortzeko<a class="headerlink" href="#array-zati-bat-lortzeko" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p><code>array_slice(matrizea,posizioa,tamaina);</code></p>
 <ul>
-<li><code>array_slice(matrizea,posizioa,tamaina);</code></li>
 <li>Funtzio honek array baten zati bat bueltatzen du, esaten diogu non hasi behar duen zatitzen eta zenbat elementu nahi ditugun.</li>
+</ul>
+</li>
 <li>Ez badugu tamaina jartzen, bukaerararte egingo du.</li>
 </ul>
 <h2 id="arrayak-ordenatzen">Arrayak ordenatzen<a class="headerlink" href="#arrayak-ordenatzen" title="Permanent link">&para;</a></h2>
 <p><img alt="Arrayak ordenatzen" src="images/slide27_8.png" /></p>
-<h2 id="print_r">Print_r<a class="headerlink" href="#print_r" title="Permanent link">&para;</a></h2>
-<ul>
-<li>print_r funtzioak bueltatzen digu array baten klabeak eta balioak. Klabeak kortxeteen artean bueltatzen ditu eta balioak =&gt; seinuaren atzean.</li>
-</ul>
+<h3 id="print_r">Print_r<a class="headerlink" href="#print_r" title="Permanent link">&para;</a></h3>
+<pre><code>print_r funtzioak bueltatzen digu array baten klabeak eta balioak. Klabeak kortxeteen artean bueltatzen ditu eta balioak =&gt; seinuaren atzean.
+</code></pre>
 <p><img alt="Print_r" src="images/slide28_9.png" /></p>
 <ul>
 <li>Irteera:
@@ -1677,7 +1672,7 @@ $emaitza = array_merge($array1, $array2);
 <li>Sort funtzioa erabili alfabetikoki ordenatu eta print_r bidez pantailan bistaratu</li>
 </ul>
 </div>
-<h2 id="unset">unset()<a class="headerlink" href="#unset" title="Permanent link">&para;</a></h2>
+<h3 id="unset">unset()<a class="headerlink" href="#unset" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Parentesien artean esandako elementua ezabatzen du. Hurrengo irudian dago adibide bat</li>
 </ul>
@@ -1686,16 +1681,20 @@ $emaitza = array_merge($array1, $array2);
 <p class="admonition-title">Ariketa 25</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
-<li>Array hau emanda:</li>
 </ul>
-<p><code>$paises = array (“alemania’,’brasil’,’italia’,’txile’,’uruguay’,’australia’)</code>
-- Hau eskatzen da:
-- 1. ‘Alemania’, ‘italia’ eta ‘australia’ elementuak kentzea.
+<p>Array hau emanda:</p>
+<pre><code>```
+$paises = array (“alemania’,’brasil’,’italia’,’txile’,’uruguay’,’australia’)
+```
+</code></pre>
+<p>Hau eskatzen da:</p>
+<pre><code>- 1. ‘Alemania’, ‘italia’ eta ‘australia’ elementuak kentzea.
 - 2. ‘Argentina’ eta ‘bolivia’ elementuak txertatzea
 - 3. Ordenatu array alfabetikoki
-- 4. Bistaratu emaitza print_r pantailaz</p>
+- 4. Bistaratu emaitza print_r pantailaz
+</code></pre>
 </div>
-<h2 id="var_dump">Var_dump<a class="headerlink" href="#var_dump" title="Permanent link">&para;</a></h2>
+<h3 id="var_dump">Var_dump<a class="headerlink" href="#var_dump" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Var_dump funtzioak bueltatzen digu array baten elementu zenbakia parentesien artean eta barneko estruktura datu mota guztiak zehazten.</li>
 </ul>
@@ -1707,21 +1706,16 @@ $emaitza = array_merge($array1, $array2);
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa 26</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
-<li>Karaktere bateko gakoak dituen array bat definitu, kareakterak ‘a’tik ‘f’rarte joango dira.</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</p>
+</li>
+<li>
+<p>Karaktere bateko gakoak dituen array bat definitu, kareakterak ‘a’tik ‘f’rarte joango dira.</p>
+</li>
 <li>Definizio berean, gako bakoitzari letra horrekin hasten den izen propio bat eman. Adibidez (“a”=’Amanda’);</li>
 <li>Erakutsi emaitza pantailan var_dump erabiliz</li>
 </ul>
 </div>
-<h2 id="in_array_1">in_array()<a class="headerlink" href="#in_array_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Funtzio honek esango digu elementu bat ia array barruan dagoen ala ez. 1 balio hori array barruan dagoenean eta 0 ez baldin badu topatzen.</li>
-</ul>
-<p><img alt="in_array()" src="images/slide35_14.png" /></p>
-<ul>
-<li>Irteera:
-<img alt="in_array()" src="images/slide35_15.png" /></li>
-</ul>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa 27</p>
 <ul class="task-list">
@@ -1729,13 +1723,13 @@ $emaitza = array_merge($array1, $array2);
 <p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</p>
 </li>
 <li>
-<p>Hartuko dugu, ariketa 12 errepaso, eta array batekin kontrolatuko dugu hautazko zenbakia ez errepikatzea.</p>
+<p>Hartuko dugu, "Ariketa 16: Zenbakia asmatu", eta array batekin kontrolatuko dugu hautazko zenbakia ez errepikatzea.</p>
 </li>
 <li>Errepikatzen bada mezu bat aterako dugu, eta ez dugu saiakeren kopurua gehituko.</li>
 <li>Mezua adibidez: Zenbakia 5 berriro aukeratu duzu, saiatu berriz.</li>
 </ul>
 </div>
-<h2 id="array_rand">array_rand<a class="headerlink" href="#array_rand" title="Permanent link">&para;</a></h2>
+<h3 id="array_rand">array_rand<a class="headerlink" href="#array_rand" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Array barruan dauden elementu guztien artean elementu bat hartzen du “aleatorio” moduan.</li>
 <li>Funtzio honek bi parametro izan ditzake, alde batetik arraya, hori derrigorrezkoa da, eta bestetik aukerazko beste parametro bat, zenbat elementu nahi ditugun zehazteko.</li>
@@ -1756,10 +1750,16 @@ Imajinatu bidaia egiteko gogoko dituzun herrialdeen zerrenda bat antolatzen ari 
 <ul>
 <li>Sortu <code>$desio_zerrenda</code> izeneko array bat, bidaiatu nahi zenituzkeen bost herrialderekin.</li>
 <li>Erabili beharrezko funtzioa  bi herrialde gehiago gehitzeko zerrendara.</li>
-<li>Orain bi zerrenda gehigarri dituzu, azken bi urteetan bidaiatu dituzun herrialdeekin, adibidez:</li>
+<li>
+<p>Orain bi zerrenda gehigarri dituzu, azken bi urteetan bidaiatu dituzun herrialdeekin, adibidez:</p>
+<ul>
 <li><code>$bisitatuak_2022 = array('Italia', 'Frantzia')</code></li>
 <li><code>$bisitatuak_2023 = array('Portugal', 'Japon')</code></li>
-<li>Bi zerrenda horiek batu array bakarrean <code>$bisitatuak_guztiak</code>.</li>
+</ul>
+</li>
+<li>
+<p>Bi zerrenda horiek batu array bakarrean <code>$bisitatuak_guztiak</code>.</p>
+</li>
 <li>Ezabatu errepikatzen diren herrialdeak <code>$desio_zerrenda</code>-tik. Hau da, bidaiatu dituzun herrialdeak ezabatu nahi dituzu zure desioen zerrendatik.</li>
 <li>Azken desioen zerrenda alfabetikoki ordenatu.</li>
 <li>Emaitza pantailaratu.</li>
