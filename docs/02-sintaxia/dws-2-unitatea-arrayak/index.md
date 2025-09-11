@@ -59,11 +59,11 @@ $izenak[4]="Elena";
 $izenak[]="Elena";  // Ez da beharrezkoa indizea jartzea, PHPk zuzenean bukaeran sartzen du
 ```
 
-Ikusi dugu indizeak zerotik hasten dire, eta goranzko sekuentzian sortuz. Baina hori alda dezakegu, kasu bakoitzean komeni zaigun moduan.
+Ikusi dugunez, indizeak zerotik hasten dira, eta goranzko sekuentzian sortuz. Baina hori alda dezakegu, kasu bakoitzean komeni zaigun moduan.
 ```php  
 $izenak = array (1=>"Pedro","Ana","Carmen","Alfredo", "Eva");
 ```
-Kasu honetan lehenengoa 1ean hasiko zen eta hurrengoa 2 izango zen, baina hori hurrengo adibidean ikusi daitekeen moduan, ere alda daiteke horrela nahi izatekotan.
+Kasu honetan lehenengoa, 1 posizioan hasiko zen eta hurrengoa 2.nean, baina hori hurrengo adibidean ikusi daitekeen moduan, ere alda daiteke horrela nahi izatekotan.
 ```php
 $izenak = array (1=>"Pedro","Ana",50=>"Carmen","Alfredo", "Eva");
 ```
@@ -84,19 +84,12 @@ $izenak[34]="Maider";
 
 
 ### Array asoziatiboak
-Elementuak dituzten matrize-motak dira gako-balio bikoteen bidez eratzen dira, eta gakoa horrekin jakingo dugu zein den dagokion elementua.
-
-Horrela, array bat lor dezakegu, non gakoa haren balioari lotzen zaio.
-
-```php
-$lagun = array( "izena"=> "Pedro Torres","helbidea"=> "CL Mayor,37", 
-"telefonoa"=>123456789);
-```
-
+Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dira; gako horrekin jakingo dugu zein den dagokion elementua.
 
 ```php
 <?php
-// Array asoziatiboa sortu
+    // Array asoziatiboa sortu
+
     $ikaslea = array(
         "izena" => "Ane",
         "abizena" => "Garcia",
@@ -105,6 +98,7 @@ $lagun = array( "izena"=> "Pedro Torres","helbidea"=> "CL Mayor,37",
     );
 
     // Elementu bat atzitu
+
     echo $ikaslea["izena"];  // "Ane"
 ?>
 ```
@@ -116,12 +110,12 @@ $lagun = array( "izena"=> "Pedro Torres","helbidea"=> "CL Mayor,37",
     - Hurrengo array kontutan izanda, atara ikasleen nota guztiak banan-banan alde batetik eta gero  foreach bategaz, kontutan izan zein motatako arraya den.
 
     ```
-     $notak = array("Ander"=>"3.5", "Bego"=>"7", "Jon"=>"6.3");
+        $notak = array("Ander"=>"3.5", "Bego"=>"7", "Jon"=>"6.3");
     ```
 
 ## Matrize mutidimestsionala
 
-Dimentsio anitzeko array bat bada array bat non bere balioetako bat, gutxienez beste array bat da.
+Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array bat denean.
 ![slide14_2.png](images/slide14_2.png)
 ![slide14_3.png](images/slide14_3.png)
 
@@ -146,10 +140,12 @@ Dimentsio anitzeko array bat bada array bat non bere balioetako bat, gutxienez b
 
 
 ## Matrizeetan nabigatzea
-- Matrize indexatuak direnean, erraza da array baten zehar nabigatzea, nahikoa da nahi dugun elementuan sartzea, baina elkarte-matrizeren bat denez, ezin da tratamendu bera aplikatu.
+- Matrize indexatuak direnean, erraza da array baten zehar nabigatzea, baina matrize multidimensaionala denean, ez da ain erraza izaten.
+
 - Horretarako, funtzio-multzo bat dago aurrefabrikatuak, ekintza ugari: `count()`, `reset()`, `end()` etab…
+
 - Hurrengo estekan dituzue Array-en funtzioen zerrenda:
-- <https://www.php.net/manual/es/ref.array.php>
+    <a href="https://www.php.net/manual/es/ref.array.php">Array-en funtzioen zerrenda</a>
 
 
 ### count()
@@ -204,10 +200,12 @@ if (in_array("berdea", $koloreak)) {
     Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
     
     1. Sortu array multidimentsionala ikasleen datuekin:
+
        - Izena
        - Abizena
        - Adina
        - Zikloa
+
     2. Erabili foreach egitura bikoitza datuak erakusteko
     
 
@@ -215,8 +213,7 @@ if (in_array("berdea", $koloreak)) {
     - Erabili `print_r()` edo `var_dump()` array-ak aztertzeko
     - Gogoan izan array-ak 0-tik hasten direla indexatzen
     - Erabili `foreach` egitura array-etan zehar ibiltzeko
-    - `array_` hasierako funtzioak ikasi (sort(), merge(), search(), etc.)
-
+    
 
 
 ## Matrizeetan nabigatzea
@@ -232,49 +229,56 @@ if (in_array("berdea", $koloreak)) {
 ## Elementuak txertatzea
 Array baten barruan elementuak txertatzeko PHP-k hainbat funtzio eskaintzen ditu:
 
-### `array_push()`
+### array_push()
+
 Array baten bukaeran elementuak gehitzen ditu.
+
 ```php
-$koloreak = ["gorria", "berdea"];
-array_push($koloreak, "urdina", "horia");
-// Emaitza: ["gorria", "berdea", "urdina", "horia"]
+    $koloreak = ["gorria", "berdea"];
+    array_push($koloreak, "urdina", "horia");
+    // Emaitza: ["gorria", "berdea", "urdina", "horia"]
 ```
 
-### `array_unshift()`
+### array_unshift()
 Array baten hasieran elementuak gehitzen ditu, beste elementuak atzeraka mugituz.
+
 ```php
-$zenbakiak = [3, 4];
-array_unshift($zenbakiak, 1, 2);
-// Emaitza: [1, 2, 3, 4]
+    $zenbakiak = [3, 4];
+    array_unshift($zenbakiak, 1, 2);
+    // Emaitza: [1, 2, 3, 4]
 ```
 
-### `array_pad()`
+### array_pad()
 Array baten tamaina handitzen du, beharrezkoa bada, balio lehenetsi betez.
-```php
-$array = [1, 2];
-$berria = array_pad($array, 5, 0);
-// Emaitza: [1, 2, 0, 0, 0]
 
-// Tamaina negatiboa erabiliz hasieran betetzeko
-$berria = array_pad($array, -5, 0);
-// Emaitza: [0, 0, 0, 1, 2]
+```php
+    $array = [1, 2];
+    $berria = array_pad($array, 5, 0);
+    // Emaitza: [1, 2, 0, 0, 0]
+
+    // Tamaina negatiboa erabiliz hasieran betetzeko
+    $berria = array_pad($array, -5, 0);
+    // Emaitza: [0, 0, 0, 1, 2]
 ```
 
-### `array_merge()`
+### array_merge()
 Bi edo array gehiago batzen ditu.
+
 ```php
-$array1 = ["a" => "sagarra"];
-$array2 = ["b" => "madaria"];
-$emaitza = array_merge($array1, $array2);
-// Emaitza: ["a" => "sagarra", "b" => "madaria"]
+    $array1 = ["a" => "sagarra"];
+    $array2 = ["b" => "madaria"];
+    $emaitza = array_merge($array1, $array2);
+
+    // Emaitza: ["a" => "sagarra", "b" => "madaria"]
 ```
 
-### `+` Operadorea
-```php
+### + Operadorea
 
+```php
     $array1 = [1, 2];
     $array2 = [3, 4];
     $emaitza = $array1 + $array2;  // Lehenengo array-aren gakoak mantentzen ditu
+
     // Emaitza === [1, 2]
     // ($array2-ren elementuak ez dira gehituko haien gakoak $array1-n daudelako)
 ```
@@ -290,42 +294,45 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
     - Badugu ondorengo array bat:
 
     ```
-    $frutak = array("laranja", "platanoa");
+        $frutak = array("laranja", "platanoa");
     ```
 
     - Gehitu beste bi elementu (limoia eta sagarra) `array_push()` funtzioarekin.
 
-## Elementuak txertatzea
+## Array funtzio gehiago...
+
 - `array_unshift(matrizea,aldagai1,aldagaiN);`
-- Funtzioaren hasieran elementuak gehitzen ditu besteak atzeruntz botatzen.
+    - Funtzioaren hasieran elementuak gehitzen ditu besteak atzeruntz botatzen.
+
 - `array_pad(matrizea,berria,balio_betegarria);`
-- Matrizearen tamaina handitzen du balio bat erabiliz betegarri gisa.
+    - Matrizearen tamaina handitzen du balio bat erabiliz betegarri gisa.
+
 - `array_shift(matrizea);`
-- Matrizeko lehenengo elementua ezabatzen du
+    - Matrizeko lehenengo elementua ezabatzen du
+
 - `array_pop (matrizea);`
-- Matrizeko azkeneko elementua ezabatzen du
+    - Matrizeko azkeneko elementua ezabatzen du
+
 - `array_splice(matrizea, pos_ini,[tamaina],[ordezkoak]);`
-- Matrize baten zati baten edukia ordezkatzeko edo ezabatzeko erabiltzen da. Horretarako, posizioa zehaztu behar dugu, zenbat elementu ordezkatuko diren eta ordezkoak zeintzuk izango diren (baldin eta elementuren batekin ordezkatu nahi dugun).
+    - Matrize baten zati baten edukia ordezkatzeko edo ezabatzeko erabiltzen da. Horretarako, posizioa zehaztu behar dugu, zenbat elementu ordezkatuko diren eta ordezkoak zeintzuk izango diren (baldin eta elementuren batekin ordezkatu nahi dugun).
 
-
-## Elementuak ezabatzea
 - `array_keys(matrizea,[bilatutako balioa]);`
-- Honek esaten digu array baten klabeak. Balioagarria da elementu bat ezabatu behar dugunerako eta ez baldin badakigu zein posiziotan dagoen
+    - Honek esaten digu array baten klabeak. Balioagarria da elementu bat ezabatu behar dugunerako eta ez baldin badakigu zein posiziotan dagoen
+
 - `array_values (matrizea);`
-- Honek bueltatzen ditu array baten balioak
+    - Honek bueltatzen ditu array baten balioak
 
-
-## Array zati bat lortzeko
 - `array_slice(matrizea,posizioa,tamaina);`
-- Funtzio honek array baten zati bat bueltatzen du, esaten diogu non hasi behar duen zatitzen eta zenbat elementu nahi ditugun.
+    - Funtzio honek array baten zati bat bueltatzen du, esaten diogu non hasi behar duen zatitzen eta zenbat elementu nahi ditugun.
 - Ez badugu tamaina jartzen, bukaerararte egingo du.
 
 ## Arrayak ordenatzen
 
 ![Arrayak ordenatzen](images/slide27_8.png)
 
-## Print_r
-- print_r funtzioak bueltatzen digu array baten klabeak eta balioak. Klabeak kortxeteen artean bueltatzen ditu eta balioak => seinuaren atzean.
+### Print_r
+
+    print_r funtzioak bueltatzen digu array baten klabeak eta balioak. Klabeak kortxeteen artean bueltatzen ditu eta balioak => seinuaren atzean.
 
 ![Print_r](images/slide28_9.png)
 
@@ -339,25 +346,27 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
     - Hamar film-titulu dituen array bat definitu.
     - Sort funtzioa erabili alfabetikoki ordenatu eta print_r bidez pantailan bistaratu
 
-## unset()
+### unset()
 - Parentesien artean esandako elementua ezabatzen du. Hurrengo irudian dago adibide bat
 
 ![unset()](images/slide31_11.png)
 
 !!! exercise "Ariketa 25"
     - [ ] Eginda dut
-    - Array hau emanda:
 
-    ```
-    $paises = array (“alemania’,’brasil’,’italia’,’txile’,’uruguay’,’australia’)
-    ```
-    - Hau eskatzen da:
-    - 1. ‘Alemania’, ‘italia’ eta ‘australia’ elementuak kentzea.
-    - 2. ‘Argentina’ eta ‘bolivia’ elementuak txertatzea
-    - 3. Ordenatu array alfabetikoki
-    - 4. Bistaratu emaitza print_r pantailaz
+    Array hau emanda:
 
-## Var_dump
+        ```
+        $paises = array (“alemania’,’brasil’,’italia’,’txile’,’uruguay’,’australia’)
+        ```
+    Hau eskatzen da:
+
+        - 1. ‘Alemania’, ‘italia’ eta ‘australia’ elementuak kentzea.
+        - 2. ‘Argentina’ eta ‘bolivia’ elementuak txertatzea
+        - 3. Ordenatu array alfabetikoki
+        - 4. Bistaratu emaitza print_r pantailaz
+
+### Var_dump
 - Var_dump funtzioak bueltatzen digu array baten elementu zenbakia parentesien artean eta barneko estruktura datu mota guztiak zehazten.
 
 ![Var_dump](images/slide33_12.png)
@@ -367,26 +376,19 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
 
 !!! exercise "Ariketa 26"
     - [ ] Eginda dut
+
     - Karaktere bateko gakoak dituen array bat definitu, kareakterak ‘a’tik ‘f’rarte joango dira.
     - Definizio berean, gako bakoitzari letra horrekin hasten den izen propio bat eman. Adibidez (“a”=’Amanda’);
     - Erakutsi emaitza pantailan var_dump erabiliz
 
-## in_array()
-- Funtzio honek esango digu elementu bat ia array barruan dagoen ala ez. 1 balio hori array barruan dagoenean eta 0 ez baldin badu topatzen.
-
-![in_array()](images/slide35_14.png)
-
-- Irteera:
-![in_array()](images/slide35_15.png)
-
 !!! exercise "Ariketa 27"
     - [ ] Eginda dut
         
-    - Hartuko dugu, ariketa 12 errepaso, eta array batekin kontrolatuko dugu hautazko zenbakia ez errepikatzea.
+    - Hartuko dugu, "Ariketa 16: Zenbakia asmatu", eta array batekin kontrolatuko dugu hautazko zenbakia ez errepikatzea.
     - Errepikatzen bada mezu bat aterako dugu, eta ez dugu saiakeren kopurua gehituko.
     - Mezua adibidez: Zenbakia 5 berriro aukeratu duzu, saiatu berriz.
 
-## array_rand
+### array_rand
 - Array barruan dauden elementu guztien artean elementu bat hartzen du “aleatorio” moduan.
 - Funtzio honek bi parametro izan ditzake, alde batetik arraya, hori derrigorrezkoa da, eta bestetik aukerazko beste parametro bat, zenbat elementu nahi ditugun zehazteko.
 - <https://www.w3schools.com/php/func_array_rand.asp>
@@ -401,8 +403,9 @@ Hau gertatzen da PHPn `+` eragileak ez dituelako elementuak kontzentratzen, baiz
         - Sortu `$desio_zerrenda` izeneko array bat, bidaiatu nahi zenituzkeen bost herrialderekin.
         - Erabili beharrezko funtzioa  bi herrialde gehiago gehitzeko zerrendara.
         - Orain bi zerrenda gehigarri dituzu, azken bi urteetan bidaiatu dituzun herrialdeekin, adibidez:
-        - `$bisitatuak_2022 = array('Italia', 'Frantzia')`
-        - `$bisitatuak_2023 = array('Portugal', 'Japon')`
+        
+            - `$bisitatuak_2022 = array('Italia', 'Frantzia')`
+            - `$bisitatuak_2023 = array('Portugal', 'Japon')`
         - Bi zerrenda horiek batu array bakarrean `$bisitatuak_guztiak`.
         - Ezabatu errepikatzen diren herrialdeak `$desio_zerrenda`-tik. Hau da, bidaiatu dituzun herrialdeak ezabatu nahi dituzu zure desioen zerrendatik.
         - Azken desioen zerrenda alfabetikoki ordenatu.
