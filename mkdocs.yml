@@ -2,15 +2,15 @@ site_name: DWS Apunteak - 2025-2026
 theme:
   name: material
   language: eu
-  logo: https://fptxurdinaga.eus/wp-content/uploads/2023/06/Logo_Home3.png
+  logo: images/logo.png
   favicon: http://fptxurdinaga.eus/wp-content/uploads/2022/10/favicon-96x96-1.png
 palette:
 - scheme: default
-  primary: '#005A9C'
-  accent: '#FF8200'
+  primary: '#004c95'
+  accent: '#e95f15'
 - scheme: slate
-  primary: '#005A9C'
-  accent: '#FF8200'
+  primary: '#004c95'
+  accent: '#e95f15'
   toggle:
     icon: material/weather-night
     name: Modu iluna
