@@ -114,7 +114,6 @@ Hauek guztiak dira PHPrekin aldagai globalak. Gogoratu,  PHPko aldagai super glo
     Sortu `ariketa1.php` formulario bategaz. Formulario horrek deituko du `ariketa1_jaso.php` fitxategiari, eta honek datuak jasoko ditu eta ongi etorria emango dio pertsona horreri.
     Gutxi gora behera itxura hau izan beharko du:
 
-    **Adibidea:**
     ![ariketa1](../images/ariketa1.png)
 
 
@@ -128,10 +127,24 @@ Oso funtzio erabilgarria da jakiteko ia formulario bateko daturen bat bidali den
 
 
 ```php
-if(isset($_POST['izena'])) {
-    echo "Izena: " . $_POST['izena'];
-}
+    if (isset($_GET['izena'])) {
+        $izena = $_GET['izena'];
+    } else {
+        $izena = 'Gonbidatua';
+    }
 ```
+
+!!! warning " `isset()` - Modu modernoan"
+    Gaur egun `isset()` erabiltzerakoan, ez da horrela egiten, hori modu klasikoa da.
+
+    ```php
+        $izena = $_GET['izena'] ?? 'Gonbidatua';
+    ```
+    
+    Operadorea isset() + baldintzapeko esleipena egiten duen gauza bera egiten du, baina modu dotoreagoan. 
+    
+    Ezkerreko aldea ebaluatzen du, eta nulua bada edo ez badago, eskuineko aldearen balioa itzultzen du.
+
 
 ### `empty()`
 Funtzio honekin jakin dezakegu aldagai batek balioa duen ala ez. 
@@ -139,14 +152,53 @@ Funtzio honekin jakin dezakegu aldagai batek balioa duen ala ez.
 Aldagai bat dago hutsik ez baldin bada existitzen edo bere balioa false baldin bada.
 
 ```php
-    if (isset($_POST['submit'])) {
-        if (!empty($_POST['elem1'])) {
-            //Bidali da inprimakia eta elem1 datua ez dago hutsik
-        }
+    
+    if (!empty($adina)) {
+        $mezua = $adina . ' urte dituzu';
+    } else {
+        $mezua = 'Adina ez da zehaztu';
     }
 
 ```
 
+!!! warning " `empty()` - Modu modernoan"
+    empty-ren kasuan pixkatxo bat ezberdina da, oraindik ez dago operadore zuzenik.
+
+    ```php
+        $mezua = !empty($adina) ? $adina . ' urte dituzu' : 'Adina ez da zehaztu';
+    ```
+
+#### Zelan erabiliko genituzke biak elkarrekin?
+Programatzerakoan, oso ohikoa da biak elkarrekin erabili behar izatea, kasu horretan horrela egingo genuke:
+
+**Modu klasikoan**
+
+```php
+   if (isset($_POST['helbidea']) && !empty($_POST['helbidea'])) {
+        $helbidea = $_POST['helbidea'];
+    } else {
+        $helbidea = 'Helbidea ez da zehaztu';
+    }
+```
+
+**Modu modernoan**
+
+```php
+    $helbidea = ($_POST['helbidea'] ?? '') ?: 'Helbidea ez da zehaztu';
+
+    // Goiko hau da izango zen honen modukoa: 
+    // $helbidea = (isset($_POST['helbidea']) && !empty($_POST['helbidea'])) ? $_POST['helbidea'] : 'Helbidea ez da zehaztu';
+
+```
+
+
+!!! warning "Laburpena"
+
+    | Egoerak: | Klasikoa | Modernoa |
+    |------------|----------|----------|
+    | `isset()` | `isset($var) ? $var : $default` | `$var ?? $default` |
+    | `empty()` | `!empty($var) ? $var : $default` | Ez dago operadorerik |
+    | Biak | `isset($var) && !empty($var) ? $var : $default` | `($var ?? '') ?: $default` |
 
 !!! exercise "Ariketa UD3 - 2"
     - [ ] Eginda dut
@@ -291,22 +343,82 @@ Fitxategia array asoziatibo baten gordeko da, lehenengo klabea fitxategiaren ize
         echo "Errorea fitxategia igotzean";
     }
 ```
-#### Zelan egingo genuke gure zerbitzarira igotzeko?
+#### Zelan egin dezakegu hau seguruago izateko?
+
+Aurreko adibidea ondo dago, baina ez da guztiz segurua, hainbat arazo ditu eta horiek direla eta Path injection-a gertatzea posiblea da.
+
+1. Hasierako izena erabiltzen da ⚠️
+
+    ``` php
+        $izena = $fitxategia['name'];  // ARRISKUTSUA!
+    ```
+Arazoa: Erabiltzaileak ../../index.php bezalako izenak jar ditzake
+
+2. Ez dira erroreak egiaztatzen ⚠️
+
+    ```php
+        // Ez duzu begiratzen $_FILES['fitxategia']['error'] errorea
+    ```
+
+3. Ez dira fitxategi motak mugatzen ⚠️
+
+    ```php
+        // .php, .exe, .js fitxategiak ere onar ditzake!
+    ```
+
+4. Ez da tamaina mugatzen ⚠️
+
+Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasieratik hainbat gauza mugatzeko:
 
 ```php
-    // Irudiaren informazioa jaso
-    $fitxategia = $_FILES['fitxategia'];
-    $fitxategiarenIzena = $fitxategia['name'];
-    $fitxategiarenTmpIzena = $fitxategia['tmp_name'];
 
-    // Irudia `img` karpeta sartuko dugu
-    $irudiaIzena = "img/" . $fitxategiarenIzena; 
+// Horrela sortuko genuke formularioa
+   <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="fitxategia" accept=".jpg,.jpeg,.png,.gif,.pdf">
+        <input type="submit" value="Igo fitxategia">
+    </form>
 
-    if (move_uploaded_file($fitxategiarenTmpIzena, $irudiaIzena)) {
-        echo "<p style='color:green'>Irudia ondo igo da.</p>";
-    } else {
-        echo "<p style='color:red'>Errorea gertatu da irudia igotzean.</p>";
+// Eta hau izango litzateke fitxategia jasotzeko kodea
+    // 1. Fitxategia igo den egiaztatu
+    if (!isset($_FILES['fitxategia']) || $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
+        echo "Errorea: Ez da fitxategirik igo";
+        exit;
     }
+
+    $fitxategia = $_FILES['fitxategia'];
+
+    // 2. Fitxategi mota baimentzeko
+    $baimentutako_motak = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
+    $fitxategi_luzapena = strtolower(pathinfo($fitxategia['name'], PATHINFO_EXTENSION));
+
+    if (!in_array($fitxategi_luzapena, $baimentutako_motak)) {
+        echo "Errorea: Fitxategi mota ez da baimendua";
+        exit;
+    }
+
+    // 3. Tamaina mugatu (5MB) - Gogoratu size bytetan adierazita egoten dela, MB-era pasatuko dugu konparaketa egiteko
+    if ($fitxategia['size'] > 5 * 1024 * 1024) {
+        echo "Errorea: Fitxategia handiegia da";
+        exit;
+    }
+
+    // 4. Izen segurua sortu (hasierako izena ez erabili!) - Hau adibide bat  (uniqid('fitx_') Izen bakarra sortzen du prefixo batekin:))
+    $izen_segurua = uniqid('fitx_') . '.' . $fitxategi_luzapena;
+    $helburu_osoa = "img/" . $izen_segurua;
+
+    // 5. Direktorioa existitzen den egiaztatu
+    if (!is_dir('img/')) {
+        mkdir('img/', 0755, true);
+    }
+
+    // 6. Fitxategia mugitu
+    if (move_uploaded_file($fitxategia['tmp_name'], $helburu_osoa)) {
+        echo "Fitxategia ondo igo da: " . $izen_segurua;
+    } else {
+        echo "Errorea fitxategia igotzean";
+    }
+
+
 
 ```
 
@@ -324,13 +436,18 @@ Fitxategia array asoziatibo baten gordeko da, lehenengo klabea fitxategiaren ize
     - [ ] Eginda dut
     
     Aurreko ariketan oinarrituta, konprobatu fitxategiak 1MB baino gehiago pisatzen duen. 
+
     Gehiago pisatuz gero "Errorea: Fitxategia handiegia da" mezua erakutsi, bestela "Fitxategia ondo igo da".
+
 
 !!! exercise "Ariketa UD3 - 8"
     - [ ] Eginda dut
 
     Sortu formulario bat ikasleen datu bilketarako (`ariketa8.php`). Izena, abizena, adina eta irudi bat. 
+
     Irudia "img" karpetan sartu behar dugu. Fitxategi berak datuak jasoko ditu eta erakutsiko ditu. Gogoratu irudia ere erakutsi behar duela.
+
+    Modu seguru baten egiten saiatu.
 
     **Adibidea:**
     ![ariketa8](../images/ariketa8.png)
