@@ -32,7 +32,7 @@ Zenbakizko gakoak dituzten array-ak dira:
     // Array sinple bat sortu
     $ikasleak = array("Ane", "Gorka", "Elena", "Leo", "Maider");
 
-    // Elementu bat atzitu
+    // Elementu bat hartu
     echo $ikasleak[0];  // "Ane"
 
     // Elementu berri bat gehitu
@@ -113,7 +113,7 @@ Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dir
         $notak = array("Ander"=>"3.5", "Bego"=>"7", "Jon"=>"6.3");
     ```
 
-## Matrize mutidimestsionala
+## Matrize mutidimentsionala
 
 Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array bat denean.
 ![slide14_2.png](images/slide14_2.png)
@@ -124,8 +124,8 @@ Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array b
     - [ ] Eginda dut
 
     Sortu matriz multidimentsionala ikasleen datuak gordetzeko.
-    Array nagusiaren klabea ikaslearen “izena” izango da eta array honek beste array bat izango du barruan. 
-    Hurrengoko datuekin:
+
+    Array nagusiaren klabea ikaslearen “izena” izango da eta array honek beste array bat izango du barruan hurrengoko datuekin:
 
     - Abizenak
 
@@ -180,7 +180,7 @@ if (in_array("berdea", $koloreak)) {
     
     1. Sortu array asoziatiboa ikasleen izenekin eta haien notekin
     2. Bistaratu ikasle bakoitzaren izena eta nota
-    3. Kalkulatu batez besteko nota
+    3. Kalkulatu batez besteko nota (oraingoan zerrendan ikusitako funtzioak erabili)
     
    
 !!! exercise "Ariketa 21: Ikasleen datuak"
@@ -190,10 +190,10 @@ if (in_array("berdea", $koloreak)) {
     
     1. Sortu array multidimentsionala ikasleen datuekin:
 
-       - Izena
-       - Abizena
-       - Adina
-       - Zikloa
+        - Izena
+        - Abizena
+        - Adina
+        - Zikloa
 
     2. Erabili foreach egitura bikoitza datuak erakusteko
     
