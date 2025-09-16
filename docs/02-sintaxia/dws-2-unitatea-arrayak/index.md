@@ -32,7 +32,7 @@ Zenbakizko gakoak dituzten array-ak dira:
     // Array sinple bat sortu
     $ikasleak = array("Ane", "Gorka", "Elena", "Leo", "Maider");
 
-    // Elementu bat atzitu
+    // Elementu bat hartu
     echo $ikasleak[0];  // "Ane"
 
     // Elementu berri bat gehitu
@@ -113,7 +113,7 @@ Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dir
         $notak = array("Ander"=>"3.5", "Bego"=>"7", "Jon"=>"6.3");
     ```
 
-## Matrize mutidimestsionala
+## Matrize multidimentsionala
 
 Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array bat denean.
 ![slide14_2.png](images/slide14_2.png)
