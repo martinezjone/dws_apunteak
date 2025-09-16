@@ -175,19 +175,19 @@ Ez du kopiarik egiten, aldagaiaren helbidea pasatzen du
 ?>
 ```
 
-!!! exercise "Ariketa 21"
+!!! exercise "Ariketa 28"
     - [ ] Eginda dut
     
     Bi zenbaki jasotzen dituen php funtzio bat egiten du, eta haien batezbesteko aritmetikoa itzultzen du. 
     Froga ezazu funtzioa adibide batekin
 
     
-!!! exercise "Ariketa 22"
+!!! exercise "Ariketa 29"
     - [ ] Eginda dut
     
     Sortu funtzio bat erreferentziazko parametro bat jasotzen duena, unitate baten gehitzen du. Froga ezazu funtzioa adibide batekin.
 
-!!! exercise "Ariketa 23"
+!!! exercise "Ariketa 30"
     - [ ] Eginda dut
     
     Produktu baten BEZa kalkulatzeko balio duen funtzio bat egiten du. 
@@ -226,7 +226,7 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
     froga ();
 ?>
 ```
-!!! exercise "Ariketa 24"
+!!! exercise "Ariketa 31"
     - [ ] Eginda dut
     
     Funtzio bat duen programa bat egiten du, 0 balioarekin hasieratuko duen aldagai estatiko batekin, eta, deitzen den bakoitzean, handituko dugu baten balio hori, funtzioak balioa bueltatuko du. 
@@ -234,7 +234,7 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
     Behin funtzioa sortuta duzunean, deitu funtzioari 3 aldiz, eta bistaratu itzulitako balioa funtzioari deitzen diogun bakoitzean.
 
 
-!!! exercise "Ariketa 25"
+!!! exercise "Ariketa 32"
     - [ ] Eginda dut
     
     Programa bat sortu behar duzu, ikasleen eta haien kalifikazioen erregistroa eramateko. Horretarako array asoziatibo bat erabili behar duzu informazio guztia hori gordetzeko.
@@ -243,7 +243,7 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
     - Sortu ezazu ikaslearen izena eta erregistro osoa erakusten duen funtzioa. Funtzio honek ikaslea erregistroan izatekotan, bere izena, adina eta kalifikazioa erakutsi behar ditu, bestela erregistroan ez dagoela idatziko du. `ikasleaErakutsi()` izena izango du funtzioak.
     - Funtzio horiek erabiliko dituen programa nagusi bat sortuko duzu, erregistroan gutxienez hiru ikasle sartzeko, eta informazioa erakusteko. 
 
-!!! exercise "Ariketa 26"
+!!! exercise "Ariketa 33"
     - [ ] Eginda dut
     
     Aurreko ariketari buelta bat emango diogu…
@@ -333,7 +333,7 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
 - Bi funtzio hauen arteko ezberdintasun bat da ere, includen edo requiren dagoen fitxategi bat faltatzekotan, includeren kasuan warning bat aterako da, baina scripta exekutzatzen jarraituko du, aldiz require-ren kasuan errorea emango du eta scripta geldituko da.
 
 
-!!! exercise "Ariketa 26"
+!!! exercise "Ariketa 34"
     - [ ] Eginda dut
 
     - "Harri, Horri, Ar" jolasa programatuko dugu. Lehenengo eta behin, array bat sortuko dugu 3 aukerekin: 0 - Harri, 1 - Horri, 2 - Ar.
@@ -347,7 +347,7 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
     - `include()` erabili goiko partea (irudia barne) egiteko eta footerra egiteko ere (autorea…)
 
 
-!!! exercise "Ariketa 28"
+!!! exercise "Ariketa 35"
     - [ ] Eginda dut
 
     - Orrialde bat sortu. Sartu goiburua eta orri-oina include() funtzioarekin. 0tik 5era bitarteko zenbaki bat aukeratuko dugu (random), eta zenbaki horrekin hau izango da. Switch() estruktura erabiliko dugu.
@@ -357,7 +357,7 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
     - 3 -– 4 zutabeko taula batean, erakutsi 4 irudi. Funtzio baten egin
     - — Ez badago 0 eta 3ren artean “Zenbakia ez dago 0 eta 3 artean” mezua atera
 
-!!! exercise "Ariketa 29"
+!!! exercise "Ariketa 36"
     - [ ] Eginda dut
 
     - Erakutsi 4 bider 4ko taula bat, lehenengo 4 elementuen berreketak (php-ko [pow()](https://www.php.net/manual/es/function.pow.php) funtzioa erabili dezakezue) erakutsi (kalkulatu behar dituen funtzioa egin).
