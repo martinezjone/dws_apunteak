@@ -805,6 +805,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="empty()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zelan-erabiliko-genituzke-biak-elkarrekin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zelan erabiliko genituzke biak elkarrekin?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -860,9 +875,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#zelan-egingo-genuke-gure-zerbitzarira-igotzeko" class="md-nav__link">
+  <a href="#zelan-egin-dezakegu-hau-seguruago-izateko" class="md-nav__link">
     <span class="md-ellipsis">
-      Zelan egingo genuke gure zerbitzarira igotzeko?
+      Zelan egin dezakegu hau seguruago izateko?
     </span>
   </a>
   
@@ -1168,6 +1183,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="empty()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zelan-erabiliko-genituzke-biak-elkarrekin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zelan erabiliko genituzke biak elkarrekin?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1223,9 +1253,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#zelan-egingo-genuke-gure-zerbitzarira-igotzeko" class="md-nav__link">
+  <a href="#zelan-egin-dezakegu-hau-seguruago-izateko" class="md-nav__link">
     <span class="md-ellipsis">
-      Zelan egingo genuke gure zerbitzarira igotzeko?
+      Zelan egin dezakegu hau seguruago izateko?
     </span>
   </a>
   
@@ -1379,27 +1409,88 @@ $abizena = $_POST[&quot;lname&quot;];
 </ul>
 <p>Sortu <code>ariketa1.php</code> formulario bategaz. Formulario horrek deituko du <code>ariketa1_jaso.php</code> fitxategiari, eta honek datuak jasoko ditu eta ongi etorria emango dio pertsona horreri.
 Gutxi gora behera itxura hau izan beharko du:</p>
-<p><strong>Adibidea:</strong>
-<img alt="ariketa1" src="../images/ariketa1.png" /></p>
+<p><img alt="ariketa1" src="../images/ariketa1.png" /></p>
 </div>
 <h2 id="isset-eta-empty-funtzioak"><code>isset()</code> eta <code>empty()</code> funtzioak<a class="headerlink" href="#isset-eta-empty-funtzioak" title="Permanent link">&para;</a></h2>
 <h3 id="isset"><code>isset()</code><a class="headerlink" href="#isset" title="Permanent link">&para;</a></h3>
 <p>Funtzio honek esango digu ia aldagaia definitu den ala ez, baiezko kasuan true bueltatuko du.</p>
 <p>Oso funtzio erabilgarria da jakiteko ia formulario bateko daturen bat bidali den ala ez. Ez du konprobatzen balio bat duen ala ez, naiz eta hutsik egon, true emango bait du</p>
-<pre><code class="language-php">if(isset($_POST['izena'])) {
-    echo &quot;Izena: &quot; . $_POST['izena'];
-}
+<pre><code class="language-php">    if (isset($_GET['izena'])) {
+        $izena = $_GET['izena'];
+    } else {
+        $izena = 'Gonbidatua';
+    }
 </code></pre>
+<div class="admonition warning">
+<p class="admonition-title"> <code>isset()</code> - Modu modernoan</p>
+<p>Gaur egun <code>isset()</code> erabiltzerakoan, ez da horrela egiten, hori modu klasikoa da.</p>
+<p><code>php
+    $izena = $_GET['izena'] ?? 'Gonbidatua';</code></p>
+<p>Operadorea isset() + baldintzapeko esleipena egiten duen gauza bera egiten du, baina modu dotoreagoan. </p>
+<p>Ezkerreko aldea ebaluatzen du, eta nulua bada edo ez badago, eskuineko aldearen balioa itzultzen du.</p>
+</div>
 <h3 id="empty"><code>empty()</code><a class="headerlink" href="#empty" title="Permanent link">&para;</a></h3>
 <p>Funtzio honekin jakin dezakegu aldagai batek balioa duen ala ez. </p>
 <p>Aldagai bat dago hutsik ez baldin bada existitzen edo bere balioa false baldin bada.</p>
-<pre><code class="language-php">    if (isset($_POST['submit'])) {
-        if (!empty($_POST['elem1'])) {
-            //Bidali da inprimakia eta elem1 datua ez dago hutsik
-        }
+<pre><code class="language-php">
+    if (!empty($adina)) {
+        $mezua = $adina . ' urte dituzu';
+    } else {
+        $mezua = 'Adina ez da zehaztu';
     }
 
 </code></pre>
+<div class="admonition warning">
+<p class="admonition-title"> <code>empty()</code> - Modu modernoan</p>
+<p>empty-ren kasuan pixkatxo bat ezberdina da, oraindik ez dago operadore zuzenik.</p>
+<p><code>php
+    $mezua = !empty($adina) ? $adina . ' urte dituzu' : 'Adina ez da zehaztu';</code></p>
+</div>
+<h4 id="zelan-erabiliko-genituzke-biak-elkarrekin">Zelan erabiliko genituzke biak elkarrekin?<a class="headerlink" href="#zelan-erabiliko-genituzke-biak-elkarrekin" title="Permanent link">&para;</a></h4>
+<p>Programatzerakoan, oso ohikoa da biak elkarrekin erabili behar izatea, kasu horretan horrela egingo genuke:</p>
+<p><strong>Modu klasikoan</strong></p>
+<pre><code class="language-php">   if (isset($_POST['helbidea']) &amp;&amp; !empty($_POST['helbidea'])) {
+        $helbidea = $_POST['helbidea'];
+    } else {
+        $helbidea = 'Helbidea ez da zehaztu';
+    }
+</code></pre>
+<p><strong>Modu modernoan</strong></p>
+<pre><code class="language-php">    $helbidea = ($_POST['helbidea'] ?? '') ?: 'Helbidea ez da zehaztu';
+
+    // Goiko hau da izango zen honen modukoa: 
+    // $helbidea = (isset($_POST['helbidea']) &amp;&amp; !empty($_POST['helbidea'])) ? $_POST['helbidea'] : 'Helbidea ez da zehaztu';
+
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Laburpena</p>
+<table>
+<thead>
+<tr>
+<th>Egoerak:</th>
+<th>Klasikoa</th>
+<th>Modernoa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isset()</code></td>
+<td><code>isset($var) ? $var : $default</code></td>
+<td><code>$var ?? $default</code></td>
+</tr>
+<tr>
+<td><code>empty()</code></td>
+<td><code>!empty($var) ? $var : $default</code></td>
+<td>Ez dago operadorerik</td>
+</tr>
+<tr>
+<td>Biak</td>
+<td><code>isset($var) &amp;&amp; !empty($var) ? $var : $default</code></td>
+<td><code>($var ?? '') ?: $default</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa UD3 - 2</p>
 <ul class="task-list">
@@ -1515,20 +1606,78 @@ Gutxi gora behera itxura hau izan beharko du:</p>
         echo &quot;Errorea fitxategia igotzean&quot;;
     }
 </code></pre>
-<h4 id="zelan-egingo-genuke-gure-zerbitzarira-igotzeko">Zelan egingo genuke gure zerbitzarira igotzeko?<a class="headerlink" href="#zelan-egingo-genuke-gure-zerbitzarira-igotzeko" title="Permanent link">&para;</a></h4>
-<pre><code class="language-php">    // Irudiaren informazioa jaso
-    $fitxategia = $_FILES['fitxategia'];
-    $fitxategiarenIzena = $fitxategia['name'];
-    $fitxategiarenTmpIzena = $fitxategia['tmp_name'];
+<h4 id="zelan-egin-dezakegu-hau-seguruago-izateko">Zelan egin dezakegu hau seguruago izateko?<a class="headerlink" href="#zelan-egin-dezakegu-hau-seguruago-izateko" title="Permanent link">&para;</a></h4>
+<p>Aurreko adibidea ondo dago, baina ez da guztiz segurua, hainbat arazo ditu eta horiek direla eta Path injection-a gertatzea posiblea da.</p>
+<ol>
+<li>
+<p>Hasierako izena erabiltzen da ⚠️</p>
+<p><code>php
+    $izena = $fitxategia['name'];  // ARRISKUTSUA!</code>
+Arazoa: Erabiltzaileak ../../index.php bezalako izenak jar ditzake</p>
+</li>
+<li>
+<p>Ez dira erroreak egiaztatzen ⚠️</p>
+<p><code>php
+    // Ez duzu begiratzen $_FILES['fitxategia']['error'] errorea</code></p>
+</li>
+<li>
+<p>Ez dira fitxategi motak mugatzen ⚠️</p>
+<p><code>php
+    // .php, .exe, .js fitxategiak ere onar ditzake!</code></p>
+</li>
+<li>
+<p>Ez da tamaina mugatzen ⚠️</p>
+</li>
+</ol>
+<p>Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasieratik hainbat gauza mugatzeko:</p>
+<pre><code class="language-php">
+// Horrela sortuko genuke formularioa
+   &lt;form method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        &lt;input type=&quot;file&quot; name=&quot;fitxategia&quot; accept=&quot;.jpg,.jpeg,.png,.gif,.pdf&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Igo fitxategia&quot;&gt;
+    &lt;/form&gt;
 
-    // Irudia `img` karpeta sartuko dugu
-    $irudiaIzena = &quot;img/&quot; . $fitxategiarenIzena; 
-
-    if (move_uploaded_file($fitxategiarenTmpIzena, $irudiaIzena)) {
-        echo &quot;&lt;p style='color:green'&gt;Irudia ondo igo da.&lt;/p&gt;&quot;;
-    } else {
-        echo &quot;&lt;p style='color:red'&gt;Errorea gertatu da irudia igotzean.&lt;/p&gt;&quot;;
+// Eta hau izango litzateke fitxategia jasotzeko kodea
+    // 1. Fitxategia igo den egiaztatu
+    if (!isset($_FILES['fitxategia']) || $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
+        echo &quot;Errorea: Ez da fitxategirik igo&quot;;
+        exit;
     }
+
+    $fitxategia = $_FILES['fitxategia'];
+
+    // 2. Fitxategi mota baimentzeko
+    $baimentutako_motak = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
+    $fitxategi_luzapena = strtolower(pathinfo($fitxategia['name'], PATHINFO_EXTENSION));
+
+    if (!in_array($fitxategi_luzapena, $baimentutako_motak)) {
+        echo &quot;Errorea: Fitxategi mota ez da baimendua&quot;;
+        exit;
+    }
+
+    // 3. Tamaina mugatu (5MB) - Gogoratu size bytetan adierazita egoten dela, MB-era pasatuko dugu konparaketa egiteko
+    if ($fitxategia['size'] &gt; 5 * 1024 * 1024) {
+        echo &quot;Errorea: Fitxategia handiegia da&quot;;
+        exit;
+    }
+
+    // 4. Izen segurua sortu (hasierako izena ez erabili!) - Hau adibide bat  (uniqid('fitx_') Izen bakarra sortzen du prefixo batekin:))
+    $izen_segurua = uniqid('fitx_') . '.' . $fitxategi_luzapena;
+    $helburu_osoa = &quot;img/&quot; . $izen_segurua;
+
+    // 5. Direktorioa existitzen den egiaztatu
+    if (!is_dir('img/')) {
+        mkdir('img/', 0755, true);
+    }
+
+    // 6. Fitxategia mugitu
+    if (move_uploaded_file($fitxategia['tmp_name'], $helburu_osoa)) {
+        echo &quot;Fitxategia ondo igo da: &quot; . $izen_segurua;
+    } else {
+        echo &quot;Errorea fitxategia igotzean&quot;;
+    }
+
+
 
 </code></pre>
 <div class="admonition exercise">
@@ -1546,16 +1695,17 @@ Gutxi gora behera itxura hau izan beharko du:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
-<p>Aurreko ariketan oinarrituta, konprobatu fitxategiak 1MB baino gehiago pisatzen duen. 
-Gehiago pisatuz gero "Errorea: Fitxategia handiegia da" mezua erakutsi, bestela "Fitxategia ondo igo da".</p>
+<p>Aurreko ariketan oinarrituta, konprobatu fitxategiak 1MB baino gehiago pisatzen duen. </p>
+<p>Gehiago pisatuz gero "Errorea: Fitxategia handiegia da" mezua erakutsi, bestela "Fitxategia ondo igo da".</p>
 </div>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa UD3 - 8</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</li>
 </ul>
-<p>Sortu formulario bat ikasleen datu bilketarako (<code>ariketa8.php</code>). Izena, abizena, adina eta irudi bat. 
-Irudia "img" karpetan sartu behar dugu. Fitxategi berak datuak jasoko ditu eta erakutsiko ditu. Gogoratu irudia ere erakutsi behar duela.</p>
+<p>Sortu formulario bat ikasleen datu bilketarako (<code>ariketa8.php</code>). Izena, abizena, adina eta irudi bat. </p>
+<p>Irudia "img" karpetan sartu behar dugu. Fitxategi berak datuak jasoko ditu eta erakutsiko ditu. Gogoratu irudia ere erakutsi behar duela.</p>
+<p>Modu seguru baten egiten saiatu.</p>
 <p><strong>Adibidea:</strong>
 <img alt="ariketa8" src="../images/ariketa8.png" /></p>
 </div>

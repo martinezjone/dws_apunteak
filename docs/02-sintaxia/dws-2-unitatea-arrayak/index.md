@@ -113,7 +113,11 @@ Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dir
         $notak = array("Ander"=>"3.5", "Bego"=>"7", "Jon"=>"6.3");
     ```
 
+<<<<<<< HEAD
 ## Matrize mutidimentsionala
+=======
+## Matrize multidimentsionala
+>>>>>>> 509bc3e9d5a96ff536b3c866e1e665a9d0068d24
 
 Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array bat denean.
 ![slide14_2.png](images/slide14_2.png)
