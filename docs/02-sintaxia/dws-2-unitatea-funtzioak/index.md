@@ -350,16 +350,19 @@ Aldagai honek ez du bere balioa galtzen deitzen dugun bakoitzean.
 !!! exercise "Ariketa 35"
     - [ ] Eginda dut
 
-    - Orrialde bat sortu. Sartu goiburua eta orri-oina include() funtzioarekin. 0tik 5era bitarteko zenbaki bat aukeratuko dugu (random), eta zenbaki horrekin hau izango da. Switch() estruktura erabiliko dugu.
-    - 0-– “Ez du sarbiderik” mezua aterako du eta beste zenbaki bat aterako du.
-    - 1-– Ongi etorri, egun on bat pasa! Mezua aterako du
-    - 2-– Zenbaki baten biderketa-taula erakutsiko du (1etik 10era ausaz ateratakoa) elementu bakoitza zenb x 1 = balioa, zenb x 2= formakoa izango den taula batean balioa… Honetarako funtzio bat sortu
-    - 3 -– 4 zutabeko taula batean, erakutsi 4 irudi. Funtzio baten egin
-    - — Ez badago 0 eta 3ren artean “Zenbakia ez dago 0 eta 3 artean” mezua atera
+    Orrialde bat sortu, horretan, sartu goiburua eta orri-oina include() funtzioarekin. 
+    
+    0tik 5era bitarteko zenbaki bat aukeratuko dugu (random), eta zenbaki horrekin hau izango da, egin beharrekoa ( Switch() estruktura erabiliko dugu);
+
+        - 0-– “Ez du sarbiderik” mezua aterako du eta beste zenbaki bat aterako du.
+        - 1-– Ongi etorri, egun on bat pasa! Mezua aterako du
+        - 2-– Zenbaki baten biderketa-taula erakutsiko du (1etik 10era ausaz ateratakoa) elementu bakoitza zenb x 1 = balioa, zenb x 2= formakoa izango den taula batean balioa… Honetarako funtzio bat sortu beharra dago
+        - 3 -– 4 zutabeko taula batean, erakutsi 4 irudi. Honetarako ere funtzio baten egin-
+        - — Ez badago 0 eta 3ren artean “Zenbakia ez dago 0 eta 3 artean” mezua atera behar da.
 
 !!! exercise "Ariketa 36"
     - [ ] Eginda dut
 
-    - Erakutsi 4 bider 4ko taula bat, lehenengo 4 elementuen berreketak (php-ko [pow()](https://www.php.net/manual/es/function.pow.php) funtzioa erabili dezakezue) erakutsi (kalkulatu behar dituen funtzioa egin).
+    - Erakutsi 4 bider 4ko taula bat, lehenengo 4 elementuen berreketak (php-ko [pow()](https://www.php.net/manual/es/function.pow.php) funtzioa erabili dezakezue) erakutsi (kalkuluak egiteko, behar dituen funtzioak sortu).
 
     ![Ariketa 29](images/slide37_17.png)
