@@ -1641,7 +1641,6 @@ Arazoa: Erabiltzaileak ../../index.php bezalako izenak jar ditzake</p>
     // 1. Fitxategia igo den egiaztatu
     if (!isset($_FILES['fitxategia']) || $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
         echo &quot;Errorea: Ez da fitxategirik igo&quot;;
-        exit;
     }
 
     $fitxategia = $_FILES['fitxategia'];
@@ -1652,13 +1651,11 @@ Arazoa: Erabiltzaileak ../../index.php bezalako izenak jar ditzake</p>
 
     if (!in_array($fitxategi_luzapena, $baimentutako_motak)) {
         echo &quot;Errorea: Fitxategi mota ez da baimendua&quot;;
-        exit;
     }
 
     // 3. Tamaina mugatu (5MB) - Gogoratu size bytetan adierazita egoten dela, MB-era pasatuko dugu konparaketa egiteko
     if ($fitxategia['size'] &gt; 5 * 1024 * 1024) {
         echo &quot;Errorea: Fitxategia handiegia da&quot;;
-        exit;
     }
 
     // 4. Izen segurua sortu (hasierako izena ez erabili!) - Hau adibide bat  (uniqid('fitx_') Izen bakarra sortzen du prefixo batekin:))
