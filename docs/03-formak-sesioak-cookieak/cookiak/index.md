@@ -165,12 +165,13 @@ Cookie bat *ezabatzeko*, iraungitze-data atzera jarri behar da:
 - HTTPS erabili; `SameSite=None` bada, derrigorrezkoa da `secure`.
 
 
-!!! exercise "Ariketa 9"
+!!! exercise "Ariketa 10"
     - [ ] Eginda dut
     
     Sortu formulario bat eta bertan erabiltzaileari izena eskatu. Izena cookie batean gorde, eta cookiearen balioa pantailaratu.
+    Fitxategi bakar baten egin.
 
-!!! exercise "Ariketa 10"
+!!! exercise "Ariketa 11"
     - [ ] Eginda dut
     
     “azken_saio” izeneko cookie sortuta dagoen egiaztatu. Ez badago, sortu, eta eguna + ordua gorde (date('Y-m-d H:i:s')). Sortuta balego, pantailaratu sarrera aurreko momentua eta eguneratu.

@@ -81,11 +81,6 @@ Saio baten balioa ezabatzako `unset()` erabitzen da, saioa baten balio guztiak d
 
         // 3. Saioa guztiz ezabatu
         session_destroy();
-
-        // 4. Cookie ere ezabatu (oso segurua izan nahi badugu) Horrela bezeroan ere ezabatuko genuke
-        if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '', time() - 3600, '/');
-        }
     ?>
 ```
 
@@ -97,8 +92,7 @@ Saio baten balioa ezabatzako `unset()` erabitzen da, saioa baten balio guztiak d
     <?php
         // Saioa 30 minutu iraun dezan
         ini_set('session.gc_maxlifetime', 1800);
-        session_set_cookie_params(1800);
-        session_start();
+        session_start(); // Kasu honetan session_start(); gero egiten dugu
     ?>
 ```
 
@@ -121,17 +115,6 @@ Saio baten balioa ezabatzako `unset()` erabitzen da, saioa baten balio guztiak d
 - Beti erabili `session_start()` saioarekin lan egin aurretik
 - **Erabili `htmlspecialchars()`** erabiltzailearen sarrera bistaratzean, XSS ekiditeko.  
 - **Egiaztatu erabiltzailearen baimenak** orrialde babestuetan sartzerakoan.  
-- JavaScript-etik cookie-a ez atzitu
-    ```php
-        ini_set('session.cookie_httponly', 1);
-    ```
-
-- SameSite babesteko
-    ```php
-        ini_set('session.cookie_samesite', 'Strict');
-    ```
-
-- Informazio gehiago: <a href="https://www.php.net/manual/en/session.security.ini.php" target="_blank">Securing Session INI Settings</a>
 
 
 
