@@ -1057,11 +1057,6 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 
         // 3. Saioa guztiz ezabatu
         session_destroy();
-
-        // 4. Cookie ere ezabatu (oso segurua izan nahi badugu) Horrela bezeroan ere ezabatuko genuke
-        if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '', time() - 3600, '/');
-        }
     ?&gt;
 </code></pre>
 <h2 id="saioa-konfiguratu">Saioa Konfiguratu<a class="headerlink" href="#saioa-konfiguratu" title="Permanent link">&para;</a></h2>
@@ -1069,8 +1064,7 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 <pre><code class="language-php">    &lt;?php
         // Saioa 30 minutu iraun dezan
         ini_set('session.gc_maxlifetime', 1800);
-        session_set_cookie_params(1800);
-        session_start();
+        session_start(); // Kasu honetan session_start(); gero egiten dugu
     ?&gt;
 </code></pre>
 <h3 id="session-regenerate-segurtasunarentzat">Session regenerate (segurtasunarentzat):<a class="headerlink" href="#session-regenerate-segurtasunarentzat" title="Permanent link">&para;</a></h3>
@@ -1089,19 +1083,6 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 <li>Beti erabili <code>session_start()</code> saioarekin lan egin aurretik</li>
 <li><strong>Erabili <code>htmlspecialchars()</code></strong> erabiltzailearen sarrera bistaratzean, XSS ekiditeko.  </li>
 <li><strong>Egiaztatu erabiltzailearen baimenak</strong> orrialde babestuetan sartzerakoan.  </li>
-<li>
-<p>JavaScript-etik cookie-a ez atzitu
-    <code>php
-        ini_set('session.cookie_httponly', 1);</code></p>
-</li>
-<li>
-<p>SameSite babesteko
-    <code>php
-        ini_set('session.cookie_samesite', 'Strict');</code></p>
-</li>
-<li>
-<p>Informazio gehiago: <a href="https://www.php.net/manual/en/session.security.ini.php" target="_blank">Securing Session INI Settings</a></p>
-</li>
 </ul>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa UD3 - 9</p>
