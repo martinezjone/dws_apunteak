@@ -1057,6 +1057,16 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 
         // 3. Saioa guztiz ezabatu
         session_destroy();
+
+        // 4. Saioaren cookie-a ere ezabatu (oso garrantzitsua!)
+        // Saioaren cookie-a ezabatu modu sinplean
+        setcookie(session_name(), '', [
+            'expires'  =&gt; time() - 3600, // Atzera eginda
+            'path'     =&gt; '/',
+            'secure'   =&gt; true,          // HTTPS erabiltzen baduzu
+            'httponly' =&gt; true,
+            'samesite' =&gt; 'Lax'
+        ]);
     ?&gt;
 </code></pre>
 <h2 id="saioa-konfiguratu">Saioa Konfiguratu<a class="headerlink" href="#saioa-konfiguratu" title="Permanent link">&para;</a></h2>
@@ -1064,7 +1074,20 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 <pre><code class="language-php">    &lt;?php
         // Saioa 30 minutu iraun dezan
         ini_set('session.gc_maxlifetime', 1800);
+
+        // Saioa hasi aurretik sortuta dagoen cookiearen bizi-iraupena ere ezarri
+        session_set_cookie_params([
+            'lifetime' =&gt; 1800,       // 30 minutu
+            'path'     =&gt; '/',
+            'domain'   =&gt; 'tudominio.com',
+            'secure'   =&gt; true,       // HTTPS erabiliz gero
+            'httponly' =&gt; true,
+            'samesite' =&gt; 'Lax'
+        ]);
+
+
         session_start(); // Kasu honetan session_start(); gero egiten dugu
+
     ?&gt;
 </code></pre>
 <h3 id="session-regenerate-segurtasunarentzat">Session regenerate (segurtasunarentzat):<a class="headerlink" href="#session-regenerate-segurtasunarentzat" title="Permanent link">&para;</a></h3>
@@ -1084,6 +1107,11 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 <li><strong>Erabili <code>htmlspecialchars()</code></strong> erabiltzailearen sarrera bistaratzean, XSS ekiditeko.  </li>
 <li><strong>Egiaztatu erabiltzailearen baimenak</strong> orrialde babestuetan sartzerakoan.  </li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Saioak eta cookiak</p>
+<p>Saioa bat sortzen dugunean, hau zerbitzarian gordetzen da, baina gehienetan ere cookie bat sortu egiten da gure nabigatzailean ere. Cookie honek ez ditu saioak dituen datuak, normalean saioaren IDa bakarrik gordetzen du.
+Horregaitik bai iraupena aldatzerakoan bai ezabatzerakoan, ondo legoke cookia aldatzea.</p>
+</div>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa UD3 - 9</p>
 <ul class="task-list">
