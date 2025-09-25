@@ -745,18 +745,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cookieak-berreskuratu-eta-erabili" class="md-nav__link">
+  <a href="#cookien-atributuak" class="md-nav__link">
     <span class="md-ellipsis">
-      Cookieak berreskuratu eta erabili
+      Cookien atributuak
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cookien-atributuak" class="md-nav__link">
+  <a href="#cookieak-berreskuratu-eta-erabili" class="md-nav__link">
     <span class="md-ellipsis">
-      Cookien atributuak
+      Cookieak berreskuratu eta erabili
     </span>
   </a>
   
@@ -951,18 +951,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cookieak-berreskuratu-eta-erabili" class="md-nav__link">
+  <a href="#cookien-atributuak" class="md-nav__link">
     <span class="md-ellipsis">
-      Cookieak berreskuratu eta erabili
+      Cookien atributuak
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cookien-atributuak" class="md-nav__link">
+  <a href="#cookieak-berreskuratu-eta-erabili" class="md-nav__link">
     <span class="md-ellipsis">
-      Cookien atributuak
+      Cookieak berreskuratu eta erabili
     </span>
   </a>
   
@@ -1047,22 +1047,69 @@
 <h2 id="cookie-bat-nola-sortu-phpn">Cookie bat nola sortu PHPn<a class="headerlink" href="#cookie-bat-nola-sortu-phpn" title="Permanent link">&para;</a></h2>
 <p>Cookie bat bidaltzeko, setcookie() funtzioa erabiltzen da. Cookieak header zatian bidali behar dira, HTML tag-ak baino lehen. Sintaxia hau da:</p>
 <pre><code class="language-php">    setcookie(
-        izena, 
-        balioa, 
-        iraungitze_data, 
-        path, 
-        domain, 
-        secure
+        'nombre_cookie',       // nombre de la cookie
+        'valor_cookie',        // valor de la cookie
+        [
+            'expires'  =&gt; time() + 3600,  // fecha de expiración (timestamp)
+            'path'     =&gt; '/',            // path donde la cookie es válida
+            'domain'   =&gt; 'tudominio.com',// dominio donde es válida
+            'secure'   =&gt; true,           // solo HTTPS
+            'httponly' =&gt; true,           // no accesible desde JavaScript
+            'samesite' =&gt; 'Lax'           // 'Strict' | 'Lax' | 'None'
+        ]
     );
+
 </code></pre>
-<p>Hona hemen adibide bat:</p>
-<pre><code class="language-php">    setcookie(&quot;erabiltzaile&quot;, &quot;Aimar&quot;, time() + 3600, &quot;/&quot;, &quot;Webestilo.com&quot;);
+<h2 id="cookien-atributuak">Cookien atributuak<a class="headerlink" href="#cookien-atributuak" title="Permanent link">&para;</a></h2>
+<p>Cookie batean honako atributuak defini daitezke:</p>
+<pre><code>- **nombre_cookie**: Nombre identificador de la cookie
+- **valor_cookie**: Valor que se almacenará (string)
+- **expires**: Fecha de expiración (timestamp)
+- **path**: Path dentro del dominio donde la cookie es válida
+- **domain**: Dominio donde la cookie es válida
+- **secure**: Solo enviar cookie sobre HTTPS (true recomendado)
+- **httponly**: Evita que JS acceda a la cookie
+- **samesite**: Protege contra CSRF (Strict, Lax o None)
+</code></pre>
+<p><strong>Hona hemen adibide bat:</strong></p>
+<pre><code class="language-php">
+    setcookie('erabiltzaile', 'Aimar', [
+        'expires'  =&gt; time() + 60*60,  // 60 minututan iraungiko da
+        'path'     =&gt; '/cookies/',     // Cookie hau baliozko path honetan bakarrik
+        'domain'   =&gt; 'Webestilo.com', // Cookie hau baliozko domeinuan bakarrik
+        'secure'   =&gt; true,            // HTTPS soilik; segurtasuna handitzeko
+        'httponly' =&gt; true,            // JavaScript-ek ezin du cookie honetara sarbiderik izan
+        'samesite' =&gt; 'Lax'            // CSRF-ren aurkako babesa ('Strict', 'Lax' edo 'None')
+    ]);
+
 </code></pre>
 <p>Hor, “erabiltzaile” cookie sortzen da, “Aimar” balioarekin, ordu bete iraungo duena eta domeinu horretakoa.</p>
 <h2 id="cookieak-berreskuratu-eta-erabili">Cookieak berreskuratu eta erabili<a class="headerlink" href="#cookieak-berreskuratu-eta-erabili" title="Permanent link">&para;</a></h2>
 <p>Cookie baten balioa irakurtzeko, <code>$_COOKIE[]</code> array asoziatiboa erabiltzen da, cookiaren izena erabilita:</p>
-<pre><code class="language-php">    $balioa = $_COOKIE['erabiltzaile'];
-    echo $balioa; // Aimar bueltatzen du
+<pre><code class="language-php">    if (isset($_COOKIE['nombre_cookie'])) {
+        $valor = $_COOKIE['nombre_cookie'];
+        // Escapamos antes de imprimir en HTML
+        echo htmlspecialchars($valor, ENT_QUOTES, 'UTF-8');
+    }
+
+    // Gure adibidearekin jarraitzeko
+    $erabiltzailea = $_COOKIE['erabiltzaile'];
+    echo htmlspecialchars($erabiltzailea, ENT_QUOTES, 'UTF-8'); // Aimar bueltatzen du
+</code></pre>
+<p>Cooki baten datua aldatzeko:</p>
+<pre><code class="language-php">    setcookie(
+        'nombre_cookie',
+        'nuevo_valor', // Nuevo valor
+        [
+            'expires'  =&gt; time() + 7200,    // Nueva expiración
+            'path'     =&gt; '/',
+            'domain'   =&gt; 'tudominio.com',
+            'secure'   =&gt; true,
+            'httponly' =&gt; true,
+            'samesite' =&gt; 'Lax'
+        ]
+    );
+
 </code></pre>
 <p>Cookie bat <em>existitzen den egiaztatzeko</em>, <code>isset()</code> funtzioa erabili dezakegu:</p>
 <pre><code class="language-php">    if(isset($_COOKIE['cookie_izena'])) {
@@ -1072,23 +1119,62 @@
     }
 </code></pre>
 <p>Cookie bat <em>ezabatzeko</em>, iraungitze-data atzera jarri behar da:</p>
-<pre><code class="language-php">    setcookie('cookie1', 'valorcookie1', time() - 60);
+<pre><code class="language-php">   setcookie(
+        'nombre_cookie',
+        '',
+        [
+            'expires'  =&gt; time() - 3600,    // Expiración en el pasado !!!!!!
+            'path'     =&gt; '/',               // Mismo path que la original
+            'domain'   =&gt; 'tudominio.com',  // Mismo dominio
+            'secure'   =&gt; true,
+            'httponly' =&gt; true,
+            'samesite' =&gt; 'Lax'
+        ]
+    );
 </code></pre>
-<h2 id="cookien-atributuak">Cookien atributuak<a class="headerlink" href="#cookien-atributuak" title="Permanent link">&para;</a></h2>
-<p>Cookie batean honako atributuak defini daitezke:</p>
-<ul>
-<li><em>name</em>: cookiaren izena.</li>
-<li><em>value</em>: gordetuko den balioa.</li>
-<li><em>expires</em>: cookiearen iraungitze data.</li>
-<li><em>path</em>: webgunearen zein bideetan erabilgarri den.</li>
-<li><em>domain</em>: domeinua (zerbitzariari lotuta).</li>
-<li><em>secure</em>: HTTP edo HTTPS erabileraren arabera (true = HTTPS bakarrik).</li>
-</ul>
 <h2 id="cookien-mugak">Cookien mugak<a class="headerlink" href="#cookien-mugak" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Cookien tamaina maximoa 4096Bytes da (4KB).</li>
 <li>Domeinu bakoitzeko gutxi gora-behera 20 cookie erakutsi daitezke, nabigatzailearen arabera.</li>
 <li>Diskoan 300 cookie maximo gordetzen dira, gehiago sartzen denean zaharrena ezabatzen da.</li>
+</ul>
+<h3 id="adibide-osoa-cookie-berrezkuratzea-eta-iraungitzea">Adibide osoa: Cookie berrezkuratzea eta iraungitzea<a class="headerlink" href="#adibide-osoa-cookie-berrezkuratzea-eta-iraungitzea" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">    &lt;?php
+        // Cookie bat modu seguru batean sortzea
+        setcookie('erabiltzaile', 'Homer', [
+            'expires'  =&gt; time() + 60*30,  // 30 minututan iraungiko da
+            'path'     =&gt; '/cookies/',     // Path honetan bakarrik balio du
+            'domain'   =&gt; 'prueba.dev',   // Domeinu honetan bakarrik balio du
+            'secure'   =&gt; true,            // HTTPS soilik; segurtasuna handitzeko
+            'httponly' =&gt; true,            // JavaScript-ek ezin du cookie honetara sarbiderik izan
+            'samesite' =&gt; 'Lax'            // CSRF-ren aurkako babesa ('Strict', 'Lax' edo 'None')
+        ]);
+
+        // Cookiea berreskuratzea eta modu seguruan erakustea
+        if (isset($_COOKIE['erabiltzaile'])) {
+            $balioCookie = $_COOKIE['erabiltzaile'];
+            echo htmlspecialchars($balioCookie, ENT_QUOTES, 'UTF-8'); // XSS aurkako babesa
+        }
+    ?&gt;
+</code></pre>
+<h3 id="non-gordetzen-dira-cookiak-nabigatzailean">Non gordetzen dira cookiak nabigatzailean?<a class="headerlink" href="#non-gordetzen-dira-cookiak-nabigatzailean" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Chrome:</strong> Configuración &gt; Privacidad y seguridad &gt; Cookies de terceros &gt; Ver todos los datos y permisos de sitios</li>
+<li><strong>Firefox:</strong> Ajustes &gt; Privacidad y seguridad &gt; Cookies y datos del sitio &gt; Administrar datos</li>
+</ul>
+<h2 id="ohar-teknikoak-eta-best-practice-ak">Ohar teknikoak eta best-practice-ak<a class="headerlink" href="#ohar-teknikoak-eta-best-practice-ak" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>setcookie</code> funtzioari deitu behar zaio HTMLaren edozein etiketa baino lehen.</li>
+<li>Behar diren atributuak soilik sartu.</li>
+<li>Domeinuko cookiak domeinu beretik soilik irakur daitezke.</li>
+</ul>
+<h2 id="segurtasun-oharrak">Segurtasun-oharrak<a class="headerlink" href="#segurtasun-oharrak" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ez gorde informazio sentikorrik cookietan (pasahitzak, kreditu-txartelak...).</li>
+<li>Erabili <code>httponly</code> eta <code>secure</code> flag-ak.</li>
+<li>Ezarri <code>samesite</code> (gomendatua: <code>Strict</code> edo <code>Lax</code>) CSRFren aurka.</li>
+<li>Erabili <code>htmlspecialchars()</code> erabiltzaileari cookie balioak bistaratzean.</li>
+<li>HTTPS erabili; <code>SameSite=None</code> bada, derrigorrezkoa da <code>secure</code>.</li>
 </ul>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa 9</p>
@@ -1104,31 +1190,6 @@
 </ul>
 <p>“azken_saio” izeneko cookie sortuta dagoen egiaztatu. Ez badago, sortu, eta eguna + ordua gorde (date('Y-m-d H:i:s')). Sortuta balego, pantailaratu sarrera aurreko momentua eta eguneratu.</p>
 </div>
-<h3 id="adibide-osoa-cookie-berrezkuratzea-eta-iraungitzea">Adibide osoa: Cookie berrezkuratzea eta iraungitzea<a class="headerlink" href="#adibide-osoa-cookie-berrezkuratzea-eta-iraungitzea" title="Permanent link">&para;</a></h3>
-<pre><code class="language-php">    setcookie('usuario', 'Homer', time() + 60*30, '/cookies/', 'prueba.dev', false, true);
-    if (isset($_COOKIE['usuario'])) {
-        $valorCookie = $_COOKIE['usuario'];
-        echo $valorCookie; // Homer bueltatzen du
-    }
-</code></pre>
-<h3 id="non-gordetzen-dira-cookiak-nabigatzailean">Non gordetzen dira cookiak nabigatzailean?<a class="headerlink" href="#non-gordetzen-dira-cookiak-nabigatzailean" title="Permanent link">&para;</a></h3>
-<p><em>Chrome:</em> Configuración &gt; Privacidad y seguridad &gt; Cookies de terceros &gt; Ver todos los datos y permisos de sitios
-<em>Firefox:</em> Ajustes &gt; Privacidad y seguridad &gt; Cookies y datos del sitio &gt; Administrar datos</p>
-<h2 id="ohar-teknikoak-eta-best-practice-ak">Ohar teknikoak eta best-practice-ak<a class="headerlink" href="#ohar-teknikoak-eta-best-practice-ak" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Setcookie funtzioari deitu behar zaio HTMLaren edozein etiketa baino lehen.</li>
-<li>Behar diren atributuak soilik sartu.</li>
-<li>Domeinuko cookiak domeinu beretik soilik irakur daitezke.</li>
-</ul>
-<h2 id="segurtasun-oharrak">Segurtasun-oharrak<a class="headerlink" href="#segurtasun-oharrak" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ez gorde informazio sentikorrik cookietan (pasahitzak, kreditu-txartelak...).</li>
-<li>Erabili <code>httponly</code> eta <code>secure</code> flag-ak.</li>
-<li>Ezarri <code>samesite</code> (gomendatua: <code>Strict</code> edo <code>Lax</code>) CSRFren aurka.</li>
-<li>Erabili <code>htmlspecialchars()</code> erabiltzaileari cookie balioak bistaratzean.</li>
-<li>HTTPS erabili; <code>SameSite=None</code> bada, derrigorrezkoa da <code>secure</code>.
-“azken_saio” izeneko cookie sortuta dagoen egiaztatu. Ez badago, sortu, eta eguna + ordua gorde (date('Y-m-d H:i:s')). Sortuta balego, pantailaratu sarrera aurreko momentua eta eguneratu.</li>
-</ul>
 
 
 
