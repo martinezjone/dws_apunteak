@@ -53,6 +53,4 @@ nav:
   - 5. Segurtasuna: 03-formak-sesioak-cookieak/segurtasuna/index.md
 - Unitatea 4:
   - Aurkezpena: 04-datu-atzipena/index.md
-  - 1. PDO Konexioak:
-    - Aurkezpena: 04-datu-atzipena/pdo-konexioak/aurkezpena.md
-    - Edukiak: 04-datu-atzipena/pdo-konexioak/index.md
+  - 1. PDO Konexioak: 04-datu-atzipena/pdo-konexioak/index.md
