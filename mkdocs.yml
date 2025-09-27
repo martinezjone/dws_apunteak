@@ -50,7 +50,11 @@ nav:
   - 2. Saioak: 03-formak-sesioak-cookieak/dws-3-saioak/index.md
   - 3. Cookiak: 03-formak-sesioak-cookieak/cookiak/index.md
   - 4. Erabiltzaile Kudeaketa: 03-formak-sesioak-cookieak/erabiltzaile_kudeaketa/index.md
+<<<<<<< HEAD
   - 5. Segurtasuna: 03-formak-sesioak-cookieak/segurtasuna/index.md
 - Unitatea 4:
   - Aurkezpena: 04-datu-atzipena/index.md
   - 1. PDO Konexioak: 04-datu-atzipena/pdo-konexioak/index.md
+=======
+- Unitatea 4: 04-datu-atzipena/index.md
+>>>>>>> 8286ab0e3070bcde3313a1cbec1a8184bd5e1a78

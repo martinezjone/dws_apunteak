@@ -82,10 +82,15 @@ Saio baten balioa ezabatzako `unset()` erabitzen da, saioa baten balio guztiak d
         // 3. Saioa guztiz ezabatu
         session_destroy();
 
-        // 4. Cookie ere ezabatu (oso segurua izan nahi badugu) Horrela bezeroan ere ezabatuko genuke
-        if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '', time() - 3600, '/');
-        }
+        // 4. Saioaren cookie-a ere ezabatu (oso garrantzitsua!)
+        // Saioaren cookie-a ezabatu modu sinplean
+        setcookie(session_name(), '', [
+            'expires'  => time() - 3600, // Atzera eginda
+            'path'     => '/',
+            'secure'   => true,          // HTTPS erabiltzen baduzu
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
     ?>
 ```
 
@@ -97,8 +102,20 @@ Saio baten balioa ezabatzako `unset()` erabitzen da, saioa baten balio guztiak d
     <?php
         // Saioa 30 minutu iraun dezan
         ini_set('session.gc_maxlifetime', 1800);
-        session_set_cookie_params(1800);
-        session_start();
+
+        // Saioa hasi aurretik sortuta dagoen cookiearen bizi-iraupena ere ezarri
+        session_set_cookie_params([
+            'lifetime' => 1800,       // 30 minutu
+            'path'     => '/',
+            'domain'   => 'tudominio.com',
+            'secure'   => true,       // HTTPS erabiliz gero
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+
+
+        session_start(); // Kasu honetan session_start(); gero egiten dugu
+
     ?>
 ```
 
@@ -121,19 +138,10 @@ Saio baten balioa ezabatzako `unset()` erabitzen da, saioa baten balio guztiak d
 - Beti erabili `session_start()` saioarekin lan egin aurretik
 - **Erabili `htmlspecialchars()`** erabiltzailearen sarrera bistaratzean, XSS ekiditeko.  
 - **Egiaztatu erabiltzailearen baimenak** orrialde babestuetan sartzerakoan.  
-- JavaScript-etik cookie-a ez atzitu
-    ```php
-        ini_set('session.cookie_httponly', 1);
-    ```
 
-- SameSite babesteko
-    ```php
-        ini_set('session.cookie_samesite', 'Strict');
-    ```
-
-- Informazio gehiago: <a href="https://www.php.net/manual/en/session.security.ini.php" target="_blank">Securing Session INI Settings</a>
-
-
+!!! info "Saioak eta cookiak"
+    Saioa bat sortzen dugunean, hau zerbitzarian gordetzen da, baina gehienetan ere cookie bat sortu egiten da gure nabigatzailean ere. Cookie honek ez ditu saioak dituen datuak, normalean saioaren IDa bakarrik gordetzen du.
+    Horregaitik bai iraupena aldatzerakoan bai ezabatzerakoan, ondo legoke cookia aldatzea.
 
 !!! exercise "Ariketa UD3 - 9"
     - [ ] Eginda dut

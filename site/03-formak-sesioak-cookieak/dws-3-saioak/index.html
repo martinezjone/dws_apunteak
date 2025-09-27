@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="http://fptxurdinaga.eus/wp-content/uploads/2022/10/favicon-96x96-1.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -1196,10 +1196,15 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
         // 3. Saioa guztiz ezabatu
         session_destroy();
 
-        // 4. Cookie ere ezabatu (oso segurua izan nahi badugu) Horrela bezeroan ere ezabatuko genuke
-        if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '', time() - 3600, '/');
-        }
+        // 4. Saioaren cookie-a ere ezabatu (oso garrantzitsua!)
+        // Saioaren cookie-a ezabatu modu sinplean
+        setcookie(session_name(), '', [
+            'expires'  =&gt; time() - 3600, // Atzera eginda
+            'path'     =&gt; '/',
+            'secure'   =&gt; true,          // HTTPS erabiltzen baduzu
+            'httponly' =&gt; true,
+            'samesite' =&gt; 'Lax'
+        ]);
     ?&gt;
 </code></pre>
 <h2 id="saioa-konfiguratu">Saioa Konfiguratu<a class="headerlink" href="#saioa-konfiguratu" title="Permanent link">&para;</a></h2>
@@ -1207,8 +1212,20 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 <pre><code class="language-php">    &lt;?php
         // Saioa 30 minutu iraun dezan
         ini_set('session.gc_maxlifetime', 1800);
-        session_set_cookie_params(1800);
-        session_start();
+
+        // Saioa hasi aurretik sortuta dagoen cookiearen bizi-iraupena ere ezarri
+        session_set_cookie_params([
+            'lifetime' =&gt; 1800,       // 30 minutu
+            'path'     =&gt; '/',
+            'domain'   =&gt; 'tudominio.com',
+            'secure'   =&gt; true,       // HTTPS erabiliz gero
+            'httponly' =&gt; true,
+            'samesite' =&gt; 'Lax'
+        ]);
+
+
+        session_start(); // Kasu honetan session_start(); gero egiten dugu
+
     ?&gt;
 </code></pre>
 <h3 id="session-regenerate-segurtasunarentzat">Session regenerate (segurtasunarentzat):<a class="headerlink" href="#session-regenerate-segurtasunarentzat" title="Permanent link">&para;</a></h3>
@@ -1227,20 +1244,12 @@ Balio hori lehenetsitako sistemaren konstante batean gordetzen da, hau da, PHPSE
 <li>Beti erabili <code>session_start()</code> saioarekin lan egin aurretik</li>
 <li><strong>Erabili <code>htmlspecialchars()</code></strong> erabiltzailearen sarrera bistaratzean, XSS ekiditeko.  </li>
 <li><strong>Egiaztatu erabiltzailearen baimenak</strong> orrialde babestuetan sartzerakoan.  </li>
-<li>
-<p>JavaScript-etik cookie-a ez atzitu
-    <code>php
-        ini_set('session.cookie_httponly', 1);</code></p>
-</li>
-<li>
-<p>SameSite babesteko
-    <code>php
-        ini_set('session.cookie_samesite', 'Strict');</code></p>
-</li>
-<li>
-<p>Informazio gehiago: <a href="https://www.php.net/manual/en/session.security.ini.php" target="_blank">Securing Session INI Settings</a></p>
-</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Saioak eta cookiak</p>
+<p>Saioa bat sortzen dugunean, hau zerbitzarian gordetzen da, baina gehienetan ere cookie bat sortu egiten da gure nabigatzailean ere. Cookie honek ez ditu saioak dituen datuak, normalean saioaren IDa bakarrik gordetzen du.
+Horregaitik bai iraupena aldatzerakoan bai ezabatzerakoan, ondo legoke cookia aldatzea.</p>
+</div>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa UD3 - 9</p>
 <ul class="task-list">
@@ -1317,10 +1326,10 @@ Ariketan segurtasun puntu hauek gehituko ditugu:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Arbelean kopiatuta", "clipboard.copy": "Kopiatu arbelean", "search.result.more.one": "Bat gehiago orri honetan", "search.result.more.other": "# gehiago orri honetan", "search.result.none": "Bat datorren dokumenturik ez", "search.result.one": "Bat datorren dokumentu bat", "search.result.other": "Bat datozen # dokumentu", "search.result.placeholder": "Idatzi bilatzen hasteko", "search.result.term.missing": "Falta da", "select.version": "Hautatu bertsioa"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Arbelean kopiatuta", "clipboard.copy": "Kopiatu arbelean", "search.result.more.one": "Bat gehiago orri honetan", "search.result.more.other": "# gehiago orri honetan", "search.result.none": "Bat datorren dokumenturik ez", "search.result.one": "Bat datorren dokumentu bat", "search.result.other": "Bat datozen # dokumentu", "search.result.placeholder": "Idatzi bilatzen hasteko", "search.result.term.missing": "Falta da", "select.version": "Hautatu bertsioa"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="../../scripts/checkboxes.js"></script>
       

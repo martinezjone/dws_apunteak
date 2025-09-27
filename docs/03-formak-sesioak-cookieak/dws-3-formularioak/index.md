@@ -382,7 +382,6 @@ Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasier
     // 1. Fitxategia igo den egiaztatu
     if (!isset($_FILES['fitxategia']) || $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
         echo "Errorea: Ez da fitxategirik igo";
-        exit;
     }
 
     $fitxategia = $_FILES['fitxategia'];
@@ -393,13 +392,11 @@ Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasier
 
     if (!in_array($fitxategi_luzapena, $baimentutako_motak)) {
         echo "Errorea: Fitxategi mota ez da baimendua";
-        exit;
     }
 
     // 3. Tamaina mugatu (5MB) - Gogoratu size bytetan adierazita egoten dela, MB-era pasatuko dugu konparaketa egiteko
     if ($fitxategia['size'] > 5 * 1024 * 1024) {
         echo "Errorea: Fitxategia handiegia da";
-        exit;
     }
 
     // 4. Izen segurua sortu (hasierako izena ez erabili!) - Hau adibide bat  (uniqid('fitx_') Izen bakarra sortzen du prefixo batekin:))
