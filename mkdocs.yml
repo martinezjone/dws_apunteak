@@ -4,16 +4,16 @@ theme:
   language: eu
   logo: images/logo.png
   favicon: http://fptxurdinaga.eus/wp-content/uploads/2022/10/favicon-96x96-1.png
-palette:
-- scheme: default
-  primary: '#004c95'
-  accent: '#e95f15'
-- scheme: slate
-  primary: '#004c95'
-  accent: '#e95f15'
-  toggle:
-    icon: material/weather-night
-    name: Modu iluna
+  palette:
+  - scheme: default
+    primary: '#004c95'
+    accent: '#e95f15'
+  - scheme: slate
+    primary: '#004c95'
+    accent: '#e95f15'
+    toggle:
+      icon: material/weather-night
+      name: Modu iluna
 extra_css:
 - stylesheets/extra.css
 extra_javascript:

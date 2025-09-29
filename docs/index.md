@@ -4,7 +4,7 @@ Ongi etorri! Honako edukiei egingo diegu aurre PHP ardatz hartuta:
 
 ---
 
-## Unitatea 1: Web arkitektura eta garapen-tresnak
+## [Unitatea 1: Web arkitektura eta garapen-tresnak](./01-arkitektura/aurkezpena.md)
 
 - [ ] 1.1 Web klient-zerbitzari eredua
 - [ ] 1.2 HTTP oinarrizko kontzeptuak
@@ -50,7 +50,7 @@ Ongi etorri! Honako edukiei egingo diegu aurre PHP ardatz hartuta:
 
 ---
 
-## Unitatea 3: Inprimakiak, saioak eta cookiak
+## [Unitatea 3: Inprimakiak, saioak eta cookiak](./03-formak-sesioak-cookieak/aurkezpena.md)
 
 - [ ] 3.1 HTML inprimakiak
     - Form elementuak
@@ -79,10 +79,7 @@ Ongi etorri! Honako edukiei egingo diegu aurre PHP ardatz hartuta:
 
 ---
 
-## Unitatea 4: Datu-atzipena PHP-rekin
+## [Unitatea 4: Datu-atzipena PHP-rekin](./04-datu-atzipena/aurkezpena.md)
 
-    - `MySQLi` vs `PDO` (konfigurazioa)  
-    - Prestatuak adierazpenak (prepared statements)  
-    - CRUD operazioak (Create, Read, Update, Delete)  
-    - Datuen balidazioa eta SQL Injection defensak  
+- [ ] 4.1 PDO konexioak
 
