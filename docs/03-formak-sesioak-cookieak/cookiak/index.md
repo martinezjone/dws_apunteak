@@ -2,16 +2,16 @@
 
 ## Zer diren eta zertarako erabiltzen diren
 
-Cookieak datu zati txikiak dira, webgune batek erabiltzailearen nabigatzailean gordetzen dituenak, etorkizunean informazioa berreskuratzeko. HTTP eta HTTPS estaturik gabeko protokoloak dira; zerbitzariak eta bezeroak ez dute orrialde batetik bestera datuen jarraipenik egiten, unless forms are used. Cookieek eta saioek informazioa orrien artean pasatzeko aukera ematen dute.
+Cookieak datu zati txikiak dira, webgune batek erabiltzailearen nabigatzailean gordetzen dituenak, etorkizunean informazioa berreskuratzeko. HTTP eta HTTPS estaturik gabeko protokoloak dira; zerbitzariak eta bezeroak ez dute orrialde batetik bestera datuen jarraipenik egiten, ez baldin bada formularioen bitartez. Cookiek eta saioek informazioa orrien artean pasatzeko aukera ematen dute.
 
 ## Cookieen funtzionamendua
-Cookien bidez, webguneek bisitarien informazioa lokal gordetzen dute: erabiltzaile izenak, hizkuntza, saioaren egoera, bisita ohikoak etab. Aldiz, saioaren datuak zerbitzarian gordetzen dira; cookienak, bezeroaren diskoan.
+Cookien bidez, webguneek bisitarien informazioa lokala gordetzen dute: erabiltzaile izenak, hizkuntza, saioaren egoera, bisita ohikoak etab. Aldiz, saioaren datuak zerbitzarian gordetzen dira; cookienak, bezeroaren diskoan.
 
 - Cookieak erabiltzen badira, baliteke erabiltzaileak hauek desaktibatzea eta aplikazioak ez funtzionatzea.
 - Saioak erabiltzen badira bisitari asko izatean, zerbitzaria kargatu daiteke.
 
 ## Cookie bat nola sortu PHPn
-Cookie bat bidaltzeko, setcookie() funtzioa erabiltzen da. Cookieak header zatian bidali behar dira, HTML tag-ak baino lehen. Sintaxia hau da:
+Cookie bat bidaltzeko, setcookie() funtzioa erabiltzen da. Cookie-ak header zatian bidali behar dira, HTML tag-ak baino lehen. Sintaxia hau da:
 
 ```php
     setcookie(
@@ -29,18 +29,17 @@ Cookie bat bidaltzeko, setcookie() funtzioa erabiltzen da. Cookieak header zatia
 
 ```
 
+### Cookien atributuak
+Cookie batean honako atributuak definitu daitezke:
 
-## Cookien atributuak
-Cookie batean honako atributuak defini daitezke:
-
-    - **nombre_cookie**: Nombre identificador de la cookie
-    - **valor_cookie**: Valor que se almacenará (string)
-    - **expires**: Fecha de expiración (timestamp)
-    - **path**: Path dentro del dominio donde la cookie es válida
-    - **domain**: Dominio donde la cookie es válida
-    - **secure**: Solo enviar cookie sobre HTTPS (true recomendado)
-    - **httponly**: Evita que JS acceda a la cookie
-    - **samesite**: Protege contra CSRF (Strict, Lax o None)
+- **nombre_cookie**: Nombre identificador de la cookie
+- **valor_cookie**: Valor que se almacenará (string)
+- **expires**: Fecha de expiración (timestamp)
+- **path**: Path dentro del dominio donde la cookie es válida
+- **domain**: Dominio donde la cookie es válida
+- **secure**: Solo enviar cookie sobre HTTPS (true recomendado)
+- **httponly**: Evita que JS acceda a la cookie
+- **samesite**: Protege contra CSRF (Strict, Lax o None)
 
 
 **Hona hemen adibide bat:**
@@ -57,7 +56,7 @@ Cookie batean honako atributuak defini daitezke:
     ]);
 
 ```
-Hor, “erabiltzaile” cookie sortzen da, “Aimar” balioarekin, ordu bete iraungo duena eta domeinu horretakoa.
+Hor, “erabiltzaile” cookie sortzen da, “Aimar” balioarekin, ordu bete iraungo duena eta domeinu horretan egongo dena.
 
 ## Cookieak berreskuratu eta erabili
 Cookie baten balioa irakurtzeko, `$_COOKIE[]` array asoziatiboa erabiltzen da, cookiaren izena erabilita:
@@ -65,7 +64,8 @@ Cookie baten balioa irakurtzeko, `$_COOKIE[]` array asoziatiboa erabiltzen da, c
 ```php
     if (isset($_COOKIE['nombre_cookie'])) {
         $valor = $_COOKIE['nombre_cookie'];
-        // Escapamos antes de imprimir en HTML
+
+        // Gogoratu "eskapatzen" HTML-n inprimatu aurretik
         echo htmlspecialchars($valor, ENT_QUOTES, 'UTF-8');
     }
 
@@ -74,7 +74,7 @@ Cookie baten balioa irakurtzeko, `$_COOKIE[]` array asoziatiboa erabiltzen da, c
     echo htmlspecialchars($erabiltzailea, ENT_QUOTES, 'UTF-8'); // Aimar bueltatzen du
 ```
 
-Cooki baten datua aldatzeko:
+Cookie baten datua aldatzeko:
 
 ```php
     setcookie(
@@ -120,10 +120,10 @@ Cookie bat *ezabatzeko*, iraungitze-data atzera jarri behar da:
     );
 ```
 
-## Cookien mugak
-- Cookien tamaina maximoa 4096Bytes da (4KB).
-- Domeinu bakoitzeko gutxi gora-behera 20 cookie erakutsi daitezke, nabigatzailearen arabera.
-- Diskoan 300 cookie maximo gordetzen dira, gehiago sartzen denean zaharrena ezabatzen da.
+!!! note "Cookien mugak"
+    - Cookien tamaina maximoa 4096Bytes da (4KB).
+    - Domeinu bakoitzeko gutxi gora-behera 20 cookie erakutsi daitezke, nabigatzailearen arabera.
+    - Diskoan 300 cookie maximo gordetzen dira, gehiago sartzen denean, zaharrena ezabatzen da.
 
 
 ### Adibide osoa: Cookie berrezkuratzea eta iraungitzea
@@ -151,18 +151,18 @@ Cookie bat *ezabatzeko*, iraungitze-data atzera jarri behar da:
 - **Chrome:** Configuración > Privacidad y seguridad > Cookies de terceros > Ver todos los datos y permisos de sitios
 - **Firefox:** Ajustes > Privacidad y seguridad > Cookies y datos del sitio > Administrar datos
 
-## Ohar teknikoak eta best-practice-ak
-- `setcookie` funtzioari deitu behar zaio HTMLaren edozein etiketa baino lehen.
-- Behar diren atributuak soilik sartu.
-- Domeinuko cookiak domeinu beretik soilik irakur daitezke.
+!!! note "Ohar teknikoak eta best-practice-ak"
+    - `setcookie` funtzioari deitu behar zaio HTMLaren edozein etiketa baino lehen.
+    - Behar diren atributuak soilik sartu.
+    - Domeinuko cookiak domeinu beretik soilik irakur daitezke.
 
-## Segurtasun-oharrak
+!!! warning "Segurtasun-oharrak"
+    - Ez gorde informazio sentikorrik cookietan (pasahitzak, kreditu-txartelak...).
+    - Erabili `httponly` eta `secure` flag-ak.
+    - Ezarri `samesite` (gomendatua: `Strict` edo `Lax`) CSRFren aurka.
+    - Erabili `htmlspecialchars()` erabiltzaileari cookie balioak bistaratzean.
+    - HTTPS erabili; `SameSite=None` bada, derrigorrezkoa da `secure`.
 
-- Ez gorde informazio sentikorrik cookietan (pasahitzak, kreditu-txartelak...).
-- Erabili `httponly` eta `secure` flag-ak.
-- Ezarri `samesite` (gomendatua: `Strict` edo `Lax`) CSRFren aurka.
-- Erabili `htmlspecialchars()` erabiltzaileari cookie balioak bistaratzean.
-- HTTPS erabili; `SameSite=None` bada, derrigorrezkoa da `secure`.
 
 
 !!! exercise "Ariketa 10"
