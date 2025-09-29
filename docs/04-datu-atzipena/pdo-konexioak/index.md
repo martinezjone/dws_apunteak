@@ -326,18 +326,18 @@ Bi kontu daude: kontu A-tik dirua kendu eta kontu B-ra gehitu. Bi eragiketa haue
     }
 ```
 
-!!!info "Zergatik erabili try/catch?"
+!!! info "Zergatik erabili try/catch?"
     Errore bat gertatzen bada eta ez bazaizu rollback deitzen, datu-baseak egoera inkonsistentean gelditu daiteke. beginTransaction() egin ondoren beti jarri try/catch eta rollBack() errore kasuan.
 
-!!! exercise Ariketa 1: Datu base baten konexioa sortu
+!!! exercise "Ariketa 1: Datu base baten konexioa sortu"
     - [ ] Eginda dut
 
-        1. Sortu `conexion.php` fitxeroa.
-        2. Fitxero honetan `connectDB()` funtzioa sortu beharko dugu, funtzio honi datu-basearen izena bakarrik pasatuko diogu, PDO objektua itzuliko du.
+    1. Sortu `conexion.php` fitxeroa.
+    2. Fitxero honetan `connectDB()` funtzioa sortu beharko dugu, funtzio honi datu-basearen izena bakarrik pasatuko diogu, PDO objektua itzuliko du.
 
-        3. Ondoren, beste PHP fitxero bat sortuko dugu, erabiltzaile guztien datuak lortzeko, horretarako:
-            - `conexion.php` inportatuko dugu `connectDB()` funtzioa erabili ahal izateko.
-        
-        4. Hau guztia egin ahal izateko datu base bat sortuko dugu phpMyAdmin erabiliz. Fitxategi honetan taula sortzeko kodea duzue: <a href="https://docs.google.com/document/d/1e_X_wF_RQcEdPKzFklU9JXF7GAUinlBSHf7CS-57LWA/edit?usp=sharing">CREATE TABLE USERS</a>
+    3. Ondoren, beste PHP fitxero bat sortuko dugu, erabiltzaile guztien datuak lortzeko, horretarako:
+        - `conexion.php` inportatuko dugu `connectDB()` funtzioa erabili ahal izateko.
+    
+    4. Hau guztia egin ahal izateko datu base bat sortuko dugu phpMyAdmin erabiliz. Fitxategi honetan taula sortzeko kodea duzue: <a href="https://docs.google.com/document/d/1e_X_wF_RQcEdPKzFklU9JXF7GAUinlBSHf7CS-57LWA/edit?usp=sharing">CREATE TABLE USERS</a>
     
     
