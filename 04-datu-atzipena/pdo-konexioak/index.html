@@ -1632,16 +1632,29 @@ $stmt-&gt;execute($parametros);
 <p class="admonition-title">Zergatik erabili try/catch?</p>
 <p>Errore bat gertatzen bada eta ez bazaizu rollback deitzen, datu-baseak egoera inkonsistentean gelditu daiteke. beginTransaction() egin ondoren beti jarri try/catch eta rollBack() errore kasuan.</p>
 </div>
-<p>!!! exercise Ariketa 1: Datu base baten konexioa sortu
-    - [ ] Eginda dut</p>
-<pre><code>    1. Sortu `conexion.php` fitxeroa.
-    2. Fitxero honetan `connectDB()` funtzioa sortu beharko dugu, funtzio honi datu-basearen izena bakarrik pasatuko diogu, PDO objektua itzuliko du.
-
-    3. Ondoren, beste PHP fitxero bat sortuko dugu, erabiltzaile guztien datuak lortzeko, horretarako:
-        - `conexion.php` inportatuko dugu `connectDB()` funtzioa erabili ahal izateko.
-
-    4. Hau guztia egin ahal izateko datu base bat sortuko dugu phpMyAdmin erabiliz. Fitxategi honetan taula sortzeko kodea duzue: &lt;a href="https://docs.google.com/document/d/1e_X_wF_RQcEdPKzFklU9JXF7GAUinlBSHf7CS-57LWA/edit?usp=sharing"&gt;CREATE TABLE USERS&lt;/a&gt;
-</code></pre>
+<div class="admonition exercise">
+<p class="admonition-title">Ariketa 1: Datu base baten konexioa sortu</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Eginda dut</p>
+</li>
+<li>
+<p>Sortu <code>conexion.php</code> fitxeroa.</p>
+</li>
+<li>
+<p>Fitxero honetan <code>connectDB()</code> funtzioa sortu beharko dugu, funtzio honi datu-basearen izena bakarrik pasatuko diogu, PDO objektua itzuliko du.</p>
+</li>
+<li>
+<p>Ondoren, beste PHP fitxero bat sortuko dugu, erabiltzaile guztien datuak lortzeko, horretarako:</p>
+<ul>
+<li><code>conexion.php</code> inportatuko dugu <code>connectDB()</code> funtzioa erabili ahal izateko.</li>
+</ul>
+</li>
+<li>
+<p>Hau guztia egin ahal izateko datu base bat sortuko dugu phpMyAdmin erabiliz. Fitxategi honetan taula sortzeko kodea duzue: <a href="https://docs.google.com/document/d/1e_X_wF_RQcEdPKzFklU9JXF7GAUinlBSHf7CS-57LWA/edit?usp=sharing">CREATE TABLE USERS</a></p>
+</li>
+</ul>
+</div>
 
 
 
