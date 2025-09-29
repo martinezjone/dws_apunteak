@@ -2,4 +2,6 @@
 
 Une honetan, datu-basearekin elkarreragiteko teknikak prestatzen ari gara.
 
-> Edukia lantzen ari da. Laster gehiago!
+### Edukiaren mapa
+
+1. [PDO konexioak](../pdo-konexioak)
