@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#004c95" data-md-color-accent="#e95f15">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,28 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="#004c95" data-md-color-accent="#e95f15"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="#004c95" data-md-color-accent="#e95f15"  aria-label="Modu iluna"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modu iluna" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -960,7 +992,7 @@
 <h1 id="web-garapena-zerbitzari-ingurunean">Web garapena zerbitzari-ingurunean<a class="headerlink" href="#web-garapena-zerbitzari-ingurunean" title="Permanent link">&para;</a></h1>
 <p>Ongi etorri! Honako edukiei egingo diegu aurre PHP ardatz hartuta:</p>
 <hr />
-<h2 id="unitatea-1-web-arkitektura-eta-garapen-tresnak">Unitatea 1: Web arkitektura eta garapen-tresnak<a class="headerlink" href="#unitatea-1-web-arkitektura-eta-garapen-tresnak" title="Permanent link">&para;</a></h2>
+<h2 id="unitatea-1-web-arkitektura-eta-garapen-tresnak"><a href="./01-arkitektura/aurkezpena.md">Unitatea 1: Web arkitektura eta garapen-tresnak</a><a class="headerlink" href="#unitatea-1-web-arkitektura-eta-garapen-tresnak" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 1.1 Web klient-zerbitzari eredua</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 1.2 HTTP oinarrizko kontzeptuak<ul>
@@ -1026,7 +1058,7 @@
 </li>
 </ul>
 <hr />
-<h2 id="unitatea-3-inprimakiak-saioak-eta-cookiak">Unitatea 3: Inprimakiak, saioak eta cookiak<a class="headerlink" href="#unitatea-3-inprimakiak-saioak-eta-cookiak" title="Permanent link">&para;</a></h2>
+<h2 id="unitatea-3-inprimakiak-saioak-eta-cookiak"><a href="./03-formak-sesioak-cookieak/aurkezpena.md">Unitatea 3: Inprimakiak, saioak eta cookiak</a><a class="headerlink" href="#unitatea-3-inprimakiak-saioak-eta-cookiak" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 3.1 HTML inprimakiak</p>
@@ -1070,12 +1102,10 @@
 </li>
 </ul>
 <hr />
-<h2 id="unitatea-4-datu-atzipena-php-rekin">Unitatea 4: Datu-atzipena PHP-rekin<a class="headerlink" href="#unitatea-4-datu-atzipena-php-rekin" title="Permanent link">&para;</a></h2>
-<pre><code>- `MySQLi` vs `PDO` (konfigurazioa)  
-- Prestatuak adierazpenak (prepared statements)  
-- CRUD operazioak (Create, Read, Update, Delete)  
-- Datuen balidazioa eta SQL Injection defensak
-</code></pre>
+<h2 id="unitatea-4-datu-atzipena-php-rekin"><a href="./04-datu-atzipena/aurkezpena.md">Unitatea 4: Datu-atzipena PHP-rekin</a><a class="headerlink" href="#unitatea-4-datu-atzipena-php-rekin" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 4.1 PDO konexioak</li>
+</ul>
 
 
 

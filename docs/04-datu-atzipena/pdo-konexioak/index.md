@@ -141,46 +141,66 @@ PDOk hiru modu nagusi eskaintzen ditu prepared statements-era parametroak pasatz
 $stmt->execute($parametros);
 ```
 
-## Kontsultak emandako emaitzak jasaotzeko
+## Kontsultak emandako emaitzak jasotzeko
 PDOk metodo pare bat eskeintzen ditu kontsultak emandako emaitzak ezagutzeko:
 
 ### 1.  **`fetch`**: 
-    - Emaitzen hurrengo erregistroa lortzen du. Banan banan erakusten ditu, ez direnean gehiago gelditzen `false` ematen du.
+
+Emaitzen hurrengo erregistroa lortzen du. Banan banan erakusten ditu, ez direnean gehiago gelditzen `false` ematen du.
 
 ```php
     $stmt = $pdo->prepare("SELECT nombre, edad FROM personas");
     $stmt->execute();
+
     while ($fila = $stmt->fetch()) {
-    echo "Nombre: " . $fila['nombre'] . ", Edad: " . $fila['edad'] . "<br>";
+        echo "Nombre: " . $fila['nombre'] . ", Edad: " . $fila['edad'] . "<br>";
     }
 ```
 
 ### 2.  **`fetchAll`**: 
-    - Emaitzen erregistro guztiak dituen array bat lortzen du.
+
+Emaitzen erregistro guztiak dituen array bat lortzen du.
 
 ```php
     $stmt = $pdo->prepare("SELECT nombre, edad FROM personas");
     $stmt->execute();
     $resultados = $stmt->fetchAll();
+
     foreach ($resultados as $fila) {
-    echo "Nombre: " . $fila['nombre'] . ", Edad: " . $fila['edad'] . "<br>";
+        echo "Nombre: " . $fila['nombre'] . ", Edad: " . $fila['edad'] . "<br>";
     }
 ```
 
 ### 3. `fetchAll()` erabili barik `foreach` bidez erregistroak lortzea:
 
+fetchAll() erabili barik - foraech-ek filak banan banan jasotzen ditugu, ez dugu dena memorian gordetzen
+
 ```php
     $stmt = $pdo->prepare("SELECT nombre, edad FROM personas");
     $stmt->execute();
+
     foreach ($stmt as $fila) {
-    echo "Nombre: " . $fila['nombre'] . ", Edad: " . $fila['edad'] . "<br>";
+        echo "Nombre: " . $fila['nombre'] . ", Edad: " . $fila['edad'] . "<br>";
     }
 ```
-
-    fetchAll() erabili barik - foraech-ek Filak banan banan jasotzen ditugu, ez dugu dena memorian gordetzen
+   
 
 !!! info "Noiz erabili bata edo bestea?"
-    Normalean datu gutxi jasoko baldin baditugu `fetchAll` erabili dezakegu bestela memoria asko erabiliko luke, `fetch`-ekin lan egitea kasu horieta eraginkorrago izango litzateke.
+    Bi aukerak baliozkoak dira eta testuinguruaren araberakoak:
+
+    - `fetchAll()`: Kargatu erregistro guztiak kolpearen memorian.
+
+        - Abantaila: erosoagoa datu berdinak behin baino gehiagotan erabili behar badituzu, edo PHPn iragazkiak/ordenazioak aplikatu behar badituzu.
+
+        - Eragozpena: taulak erregistro asko baditu, memoria dezente kontsumi dezake.
+
+    - Zuzenean `$stmt` gainean idatzi (edo `fetch()` begizta batean)
+
+        - Erregistroak banan-banan ekartzen ditu, egin ahala.
+
+        - Abantaila: memorian eraginkorragoa taula handiekin.
+
+        - Eragozpena: behin bakarrik begiratu ditzakezu; datuak geroago behar badituzu, zuk gorde beharko dituzu array batean.
 
 
 ## Fetch moduak
