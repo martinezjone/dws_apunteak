@@ -946,13 +946,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kontsultak-emandako-emaitzak-jasaotzeko" class="md-nav__link">
+  <a href="#kontsultak-emandako-emaitzak-jasotzeko" class="md-nav__link">
     <span class="md-ellipsis">
-      Kontsultak emandako emaitzak jasaotzeko
+      Kontsultak emandako emaitzak jasotzeko
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Kontsultak emandako emaitzak jasaotzeko">
+    <nav class="md-nav" aria-label="Kontsultak emandako emaitzak jasotzeko">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1189,13 +1189,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kontsultak-emandako-emaitzak-jasaotzeko" class="md-nav__link">
+  <a href="#kontsultak-emandako-emaitzak-jasotzeko" class="md-nav__link">
     <span class="md-ellipsis">
-      Kontsultak emandako emaitzak jasaotzeko
+      Kontsultak emandako emaitzak jasotzeko
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Kontsultak emandako emaitzak jasaotzeko">
+    <nav class="md-nav" aria-label="Kontsultak emandako emaitzak jasotzeko">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1444,39 +1444,66 @@
     ];
 $stmt-&gt;execute($parametros);
 </code></pre>
-<h2 id="kontsultak-emandako-emaitzak-jasaotzeko">Kontsultak emandako emaitzak jasaotzeko<a class="headerlink" href="#kontsultak-emandako-emaitzak-jasaotzeko" title="Permanent link">&para;</a></h2>
+<h2 id="kontsultak-emandako-emaitzak-jasotzeko">Kontsultak emandako emaitzak jasotzeko<a class="headerlink" href="#kontsultak-emandako-emaitzak-jasotzeko" title="Permanent link">&para;</a></h2>
 <p>PDOk metodo pare bat eskeintzen ditu kontsultak emandako emaitzak ezagutzeko:</p>
 <h3 id="1-fetch">1.  <strong><code>fetch</code></strong>:<a class="headerlink" href="#1-fetch" title="Permanent link">&para;</a></h3>
-<pre><code>- Emaitzen hurrengo erregistroa lortzen du. Banan banan erakusten ditu, ez direnean gehiago gelditzen `false` ematen du.
-</code></pre>
+<p>Emaitzen hurrengo erregistroa lortzen du. Banan banan erakusten ditu, ez direnean gehiago gelditzen <code>false</code> ematen du.</p>
 <pre><code class="language-php">    $stmt = $pdo-&gt;prepare(&quot;SELECT nombre, edad FROM personas&quot;);
     $stmt-&gt;execute();
+
     while ($fila = $stmt-&gt;fetch()) {
-    echo &quot;Nombre: &quot; . $fila['nombre'] . &quot;, Edad: &quot; . $fila['edad'] . &quot;&lt;br&gt;&quot;;
+        echo &quot;Nombre: &quot; . $fila['nombre'] . &quot;, Edad: &quot; . $fila['edad'] . &quot;&lt;br&gt;&quot;;
     }
 </code></pre>
 <h3 id="2-fetchall">2.  <strong><code>fetchAll</code></strong>:<a class="headerlink" href="#2-fetchall" title="Permanent link">&para;</a></h3>
-<pre><code>- Emaitzen erregistro guztiak dituen array bat lortzen du.
-</code></pre>
+<p>Emaitzen erregistro guztiak dituen array bat lortzen du.</p>
 <pre><code class="language-php">    $stmt = $pdo-&gt;prepare(&quot;SELECT nombre, edad FROM personas&quot;);
     $stmt-&gt;execute();
     $resultados = $stmt-&gt;fetchAll();
+
     foreach ($resultados as $fila) {
-    echo &quot;Nombre: &quot; . $fila['nombre'] . &quot;, Edad: &quot; . $fila['edad'] . &quot;&lt;br&gt;&quot;;
+        echo &quot;Nombre: &quot; . $fila['nombre'] . &quot;, Edad: &quot; . $fila['edad'] . &quot;&lt;br&gt;&quot;;
     }
 </code></pre>
 <h3 id="3-fetchall-erabili-barik-foreach-bidez-erregistroak-lortzea">3. <code>fetchAll()</code> erabili barik <code>foreach</code> bidez erregistroak lortzea:<a class="headerlink" href="#3-fetchall-erabili-barik-foreach-bidez-erregistroak-lortzea" title="Permanent link">&para;</a></h3>
+<p>fetchAll() erabili barik - foraech-ek filak banan banan jasotzen ditugu, ez dugu dena memorian gordetzen</p>
 <pre><code class="language-php">    $stmt = $pdo-&gt;prepare(&quot;SELECT nombre, edad FROM personas&quot;);
     $stmt-&gt;execute();
+
     foreach ($stmt as $fila) {
-    echo &quot;Nombre: &quot; . $fila['nombre'] . &quot;, Edad: &quot; . $fila['edad'] . &quot;&lt;br&gt;&quot;;
+        echo &quot;Nombre: &quot; . $fila['nombre'] . &quot;, Edad: &quot; . $fila['edad'] . &quot;&lt;br&gt;&quot;;
     }
-</code></pre>
-<pre><code>fetchAll() erabili barik - foraech-ek Filak banan banan jasotzen ditugu, ez dugu dena memorian gordetzen
 </code></pre>
 <div class="admonition info">
 <p class="admonition-title">Noiz erabili bata edo bestea?</p>
-<p>Normalean datu gutxi jasoko baldin baditugu <code>fetchAll</code> erabili dezakegu bestela memoria asko erabiliko luke, <code>fetch</code>-ekin lan egitea kasu horieta eraginkorrago izango litzateke.</p>
+<p>Bi aukerak baliozkoak dira eta testuinguruaren araberakoak:</p>
+<ul>
+<li>
+<p><code>fetchAll()</code>: Kargatu erregistro guztiak kolpearen memorian.</p>
+<ul>
+<li>
+<p>Abantaila: erosoagoa datu berdinak behin baino gehiagotan erabili behar badituzu, edo PHPn iragazkiak/ordenazioak aplikatu behar badituzu.</p>
+</li>
+<li>
+<p>Eragozpena: taulak erregistro asko baditu, memoria dezente kontsumi dezake.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Zuzenean <code>$stmt</code> gainean idatzi (edo <code>fetch()</code> begizta batean)</p>
+<ul>
+<li>
+<p>Erregistroak banan-banan ekartzen ditu, egin ahala.</p>
+</li>
+<li>
+<p>Abantaila: memorian eraginkorragoa taula handiekin.</p>
+</li>
+<li>
+<p>Eragozpena: behin bakarrik begiratu ditzakezu; datuak geroago behar badituzu, zuk gorde beharko dituzu array batean.</p>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 <h2 id="fetch-moduak">Fetch moduak<a class="headerlink" href="#fetch-moduak" title="Permanent link">&para;</a></h2>
 <table>
