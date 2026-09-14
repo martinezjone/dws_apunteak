@@ -87,20 +87,19 @@ $izenak[34]="Maider";
 Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dira; gako horrekin jakingo dugu zein den dagokion elementua.
 
 ```php
-<?php
-    // Array asoziatiboa sortu
+    <?php
+        // Produktu baten datuak array asoziatibo batean
+        $produktua = [
+            "izena" => "Haririk gabeko sagua",
+            "marka" => "Logitech",
+            "prezioa" => 29.99,
+            "stock" => 12
+        ];
 
-    $ikaslea = array(
-        "izena" => "Ane",
-        "abizena" => "Garcia",
-        "adina" => 20,
-        "nota" => 8.5
-    );
-
-    // Elementu bat atzitu
-
-    echo $ikaslea["izena"];  // "Ane"
-?>
+        // Datuak atzitu gakoaren bidez
+        echo $produktua["izena"];      // Haririk gabeko sagua
+        echo $produktua["prezioa"];    // 29.99
+    ?>
 ```
 
 
@@ -113,11 +112,7 @@ Elementuak dituzten matrize-motak dira eta gako-balio bikoteen bidez eratzen dir
         $notak = array("Ander"=>"3.5", "Bego"=>"7", "Jon"=>"6.3");
     ```
 
-<<<<<<< HEAD
-## Matrize mutidimentsionala
-=======
 ## Matrize multidimentsionala
->>>>>>> 509bc3e9d5a96ff536b3c866e1e665a9d0068d24
 
 Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array bat denean.
 ![slide14_2.png](images/slide14_2.png)
@@ -144,7 +139,7 @@ Dimentsio anitzeko arraya dela diogu bere balioetako bat gutxienez beste array b
 
 
 ## Matrizeetan nabigatzea
-- Matrize indexatuak direnean, erraza da array baten zehar nabigatzea, baina matrize multidimensaionala denean, ez da ain erraza izaten.
+- Matrize indexatuak direnean, erraza da array baten zehar nabigatzea, baina matrize multidimensaionala denean, ez da horren erraza izaten.
 
 - Horretarako, funtzio-multzo bat dago aurrefabrikatuak, ekintza ugari: `count()`, `reset()`, `end()` etab…
 
@@ -187,20 +182,28 @@ if (in_array("berdea", $koloreak)) {
     3. Kalkulatu batez besteko nota (oraingoan zerrendan ikusitako funtzioak erabili)
     
    
-!!! exercise "Ariketa 21: Ikasleen datuak"
+!!! exercise "Ariketa 21: Ikasgelako asistentzia"
+
     - [ ] Eginda dut
-    
-    Sortu PHP script bat eta idatzi kodea honako funtzionalitateekin:
-    
-    1. Sortu array multidimentsionala ikasleen datuekin:
 
-        - Izena
-        - Abizena
-        - Adina
-        - Zikloa
+    Ikasgelara etorri diren ikasleen izenak array batean gordeta ditugu:
 
-    2. Erabili foreach egitura bikoitza datuak erakusteko
-    
+    ```php
+    $ikasleak = ["Ane", "Jon", "Mikel", "June", "Unai", "Maialen"];
+    ```
+
+    Sortu PHP script bat honako funtzionalitateekin:
+
+    1. Erakutsi zenbat ikasle etorri diren klasera. Horretarako, ikusitako funtzioren baten bat erabili.
+    2. Erakutsi ikasle guztien izenak `foreach` erabiliz.
+    3. Egiaztatu `"Mikel"` zerrendan dagoen. 
+        4. Mikel zerrendan badago, erakutsi:
+        **"Mikel klasera etorri da."**
+
+        Bestela:
+        **"Mikel ez da klasera etorri."**
+    5. Egin gauza bera `"Nora"` izenarekin.
+
 
 !!! info "Aholku erabilgarriak"
     - Erabili `print_r()` edo `var_dump()` array-ak aztertzeko
