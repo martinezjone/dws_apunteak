@@ -345,79 +345,156 @@ Fitxategia array asoziatibo baten gordeko da, lehenengo klabea fitxategiaren ize
 ```
 #### Zelan egin dezakegu hau seguruago izateko?
 
-Aurreko adibidea ondo dago, baina ez da guztiz segurua, hainbat arazo ditu eta horiek direla eta Path injection-a gertatzea posiblea da.
+Aurreko adibideak funtzionatzen du, baina **ez da guztiz segurua**. Fitxategiak igotzean, erabiltzailearengandik jasotako informazioaz ezin gara fidatu.
 
-1. Hasierako izena erabiltzen da ⚠️
+Hainbat arazo izan ditzakegu:
 
-    ``` php
-        $izena = $fitxategia['name'];  // ARRISKUTSUA!
-    ```
-Arazoa: Erabiltzaileak ../../index.php bezalako izenak jar ditzake
-
-2. Ez dira erroreak egiaztatzen ⚠️
+1. **Jatorrizko fitxategi-izena erabiltzea ⚠️**
 
     ```php
-        // Ez duzu begiratzen $_FILES['fitxategia']['error'] errorea
+    $izena = $fitxategia['name']; // ARRISKUTSUA!
     ```
 
-3. Ez dira fitxategi motak mugatzen ⚠️
+    Erabiltzaileak bidalitako izenaz ezin gara fidatu. Adibidez, bide edo fitxategi-izen arriskutsuak bidaltzen saia daiteke.
+
+2. **Igoerako erroreak ez egiaztatzea ⚠️**
 
     ```php
-        // .php, .exe, .js fitxategiak ere onar ditzake!
+    $_FILES['fitxategia']['error']
     ```
 
-4. Ez da tamaina mugatzen ⚠️
+    Fitxategia behar bezala igo den egiaztatu behar dugu.
 
-Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasieratik hainbat gauza mugatzeko:
+3. **Fitxategi motak ez mugatzea ⚠️**
+
+    Nahi dugun edozein fitxategi mota igotzea saihestu behar dugu.
+
+4. **Fitxategiaren benetako mota ez egiaztatzea ⚠️**
+
+    Fitxategiak `.jpg` luzapena izateak ez du esan nahi benetan JPEG irudi bat denik.
+
+5. **Fitxategiaren tamaina ez mugatzea ⚠️**
+
+    Fitxategi handiegiak igotzea saihestu behar dugu.
+
+##### HTML formularioa
+
+HTMLn erabiltzaileari zein fitxategi mota onartzen diren adieraz dezakegu:
+
+```html
+<form method="POST" enctype="multipart/form-data">
+
+    <input
+        type="file"
+        name="fitxategia"
+        accept=".jpg,.jpeg,.png,.gif,.pdf"
+        required
+    >
+
+    <input type="submit" value="Igo fitxategia">
+
+</form>
+```
+
+!!! warning "Kontuz"
+    `accept` atributuak erabiltzaileari laguntzen dio fitxategia aukeratzen, baina **ez da segurtasun-neurri nahikoa**. Zerbitzarian ere fitxategia egiaztatu behar dugu.
+
+##### PHP kodea
 
 ```php
+<?php
 
-// Horrela sortuko genuke formularioa
-   <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="fitxategia" accept=".jpg,.jpeg,.png,.gif,.pdf">
-        <input type="submit" value="Igo fitxategia">
-    </form>
+// 1. Fitxategia behar bezala igo den egiaztatu
 
-// Eta hau izango litzateke fitxategia jasotzeko kodea
-    // 1. Fitxategia igo den egiaztatu
-    if (!isset($_FILES['fitxategia']) || $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
-        echo "Errorea: Ez da fitxategirik igo";
-    }
+if (!isset($_FILES['fitxategia']) ||
+    $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
 
-    $fitxategia = $_FILES['fitxategia'];
+    die("Errorea: fitxategia ez da behar bezala igo.");
+}
 
-    // 2. Fitxategi mota baimentzeko
-    $baimentutako_motak = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
-    $fitxategi_luzapena = strtolower(pathinfo($fitxategia['name'], PATHINFO_EXTENSION));
-
-    if (!in_array($fitxategi_luzapena, $baimentutako_motak)) {
-        echo "Errorea: Fitxategi mota ez da baimendua";
-    }
-
-    // 3. Tamaina mugatu (5MB) - Gogoratu size bytetan adierazita egoten dela, MB-era pasatuko dugu konparaketa egiteko
-    if ($fitxategia['size'] > 5 * 1024 * 1024) {
-        echo "Errorea: Fitxategia handiegia da";
-    }
-
-    // 4. Izen segurua sortu (hasierako izena ez erabili!) - Hau adibide bat  (uniqid('fitx_') Izen bakarra sortzen du prefixo batekin:))
-    $izen_segurua = uniqid('fitx_') . '.' . $fitxategi_luzapena;
-    $helburu_osoa = "img/" . $izen_segurua;
-
-    // 5. Direktorioa existitzen den egiaztatu
-    if (!is_dir('img/')) {
-        mkdir('img/', 0755, true);
-    }
-
-    // 6. Fitxategia mugitu
-    if (move_uploaded_file($fitxategia['tmp_name'], $helburu_osoa)) {
-        echo "Fitxategia ondo igo da: " . $izen_segurua;
-    } else {
-        echo "Errorea fitxategia igotzean";
-    }
+$fitxategia = $_FILES['fitxategia'];
 
 
+// 2. Tamaina mugatu (5 MB)
 
+if ($fitxategia['size'] > 5 * 1024 * 1024) {
+    die("Errorea: fitxategia handiegia da.");
+}
+
+
+// 3. Luzapena egiaztatu
+
+$baimendutako_luzapenak = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
+
+$luzapena = strtolower(
+    pathinfo($fitxategia['name'], PATHINFO_EXTENSION)
+);
+
+if (!in_array($luzapena, $baimendutako_luzapenak)) {
+    die("Errorea: fitxategi mota ez da baimendua.");
+}
+
+
+// 4. Fitxategiaren benetako mota egiaztatu
+
+$finfo = finfo_open(FILEINFO_MIME_TYPE);
+$mime_mota = finfo_file($finfo, $fitxategia['tmp_name']);
+finfo_close($finfo);
+
+$baimendutako_mime_motak = [
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+    'application/pdf'
+];
+
+if (!in_array($mime_mota, $baimendutako_mime_motak)) {
+    die("Errorea: fitxategiaren edukia ez da baimendua.");
+}
+
+
+// 5. Izen berri eta segurua sortu
+
+$izen_segurua = uniqid('fitx_') . '.' . $luzapena;
+
+$helburu_osoa = "img/" . $izen_segurua;
+
+
+// 6. Direktorioa existitzen den egiaztatu
+
+if (!is_dir('img/')) {
+    mkdir('img/', 0755, true);
+}
+
+
+// 7. Fitxategia mugitu
+
+if (move_uploaded_file($fitxategia['tmp_name'], $helburu_osoa)) {
+
+    echo "Fitxategia ondo igo da.";
+
+} else {
+
+    echo "Errorea fitxategia igotzean.";
+}
+
+?>
 ```
+
+##### Gogoratu
+
+Fitxategi bat igotzean:
+
+- Ez fidatu erabiltzaileak bidalitako fitxategi-izenaz.
+- Egiaztatu igoerako erroreak.
+- Mugatu fitxategiaren tamaina.
+- Mugatu onartutako luzapenak.
+- Egiaztatu fitxategiaren benetako MIME mota.
+- Sortu fitxategiarentzat izen berri bat.
+- Erabili `move_uploaded_file()` igotako fitxategia mugitzeko.
+
+> **HTMLko `accept` atributua erabiltzaileari laguntzeko da; benetako segurtasun-kontrolak zerbitzarian egin behar dira.**
+
 
 !!! exercise "Ariketa UD3 - 6"
     - [ ] Eginda dut
@@ -448,3 +525,8 @@ Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasier
 
     **Adibidea:**
     ![ariketa8](../images/ariketa8.png)
+
+## Balidazioak
+Formulariok kudeatzerakoan ezinbestekoa da balidazioak egitea, dokumentu honetan topatuko dituzue kontutan izateko hainbat gauza:
+
+<a href="https://docs.google.com/document/d/1pXHm-xlxm2vumP_QSSmQNO7y8TUz-GgMRB_kPu_Vop0/edit?usp=sharing" target="_blank">Formularioen Balidazioak</a>
