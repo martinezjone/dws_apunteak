@@ -1057,6 +1057,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Zelan egin dezakegu hau seguruago izateko?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-formularioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML formularioa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-kodea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHP kodea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gogoratu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gogoratu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1555,6 +1594,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Zelan egin dezakegu hau seguruago izateko?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-formularioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML formularioa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-kodea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHP kodea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gogoratu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gogoratu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1904,76 +1982,146 @@ Gutxi gora behera itxura hau izan beharko du:</p>
     }
 </code></pre>
 <h4 id="zelan-egin-dezakegu-hau-seguruago-izateko">Zelan egin dezakegu hau seguruago izateko?<a class="headerlink" href="#zelan-egin-dezakegu-hau-seguruago-izateko" title="Permanent link">&para;</a></h4>
-<p>Aurreko adibidea ondo dago, baina ez da guztiz segurua, hainbat arazo ditu eta horiek direla eta Path injection-a gertatzea posiblea da.</p>
+<p>Aurreko adibideak funtzionatzen du, baina <strong>ez da guztiz segurua</strong>. Fitxategiak igotzean, erabiltzailearengandik jasotako informazioaz ezin gara fidatu.</p>
+<p>Hainbat arazo izan ditzakegu:</p>
 <ol>
 <li>
-<p>Hasierako izena erabiltzen da ⚠️</p>
+<p><strong>Jatorrizko fitxategi-izena erabiltzea ⚠️</strong></p>
 <p><code>php
-    $izena = $fitxategia['name'];  // ARRISKUTSUA!</code>
-Arazoa: Erabiltzaileak ../../index.php bezalako izenak jar ditzake</p>
+$izena = $fitxategia['name']; // ARRISKUTSUA!</code></p>
+<p>Erabiltzaileak bidalitako izenaz ezin gara fidatu. Adibidez, bide edo fitxategi-izen arriskutsuak bidaltzen saia daiteke.</p>
 </li>
 <li>
-<p>Ez dira erroreak egiaztatzen ⚠️</p>
+<p><strong>Igoerako erroreak ez egiaztatzea ⚠️</strong></p>
 <p><code>php
-    // Ez duzu begiratzen $_FILES['fitxategia']['error'] errorea</code></p>
+$_FILES['fitxategia']['error']</code></p>
+<p>Fitxategia behar bezala igo den egiaztatu behar dugu.</p>
 </li>
 <li>
-<p>Ez dira fitxategi motak mugatzen ⚠️</p>
-<p><code>php
-    // .php, .exe, .js fitxategiak ere onar ditzake!</code></p>
+<p><strong>Fitxategi motak ez mugatzea ⚠️</strong></p>
+<p>Nahi dugun edozein fitxategi mota igotzea saihestu behar dugu.</p>
 </li>
 <li>
-<p>Ez da tamaina mugatzen ⚠️</p>
+<p><strong>Fitxategiaren benetako mota ez egiaztatzea ⚠️</strong></p>
+<p>Fitxategiak <code>.jpg</code> luzapena izateak ez du esan nahi benetan JPEG irudi bat denik.</p>
+</li>
+<li>
+<p><strong>Fitxategiaren tamaina ez mugatzea ⚠️</strong></p>
+<p>Fitxategi handiegiak igotzea saihestu behar dugu.</p>
 </li>
 </ol>
-<p>Modu seguruago baten programatzeko, HTML kodea ere aldatu beharko genuke, hasieratik hainbat gauza mugatzeko:</p>
-<pre><code class="language-php">
-// Horrela sortuko genuke formularioa
-   &lt;form method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
-        &lt;input type=&quot;file&quot; name=&quot;fitxategia&quot; accept=&quot;.jpg,.jpeg,.png,.gif,.pdf&quot;&gt;
-        &lt;input type=&quot;submit&quot; value=&quot;Igo fitxategia&quot;&gt;
-    &lt;/form&gt;
+<h5 id="html-formularioa">HTML formularioa<a class="headerlink" href="#html-formularioa" title="Permanent link">&para;</a></h5>
+<p>HTMLn erabiltzaileari zein fitxategi mota onartzen diren adieraz dezakegu:</p>
+<pre><code class="language-html">&lt;form method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
 
-// Eta hau izango litzateke fitxategia jasotzeko kodea
-    // 1. Fitxategia igo den egiaztatu
-    if (!isset($_FILES['fitxategia']) || $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
-        echo &quot;Errorea: Ez da fitxategirik igo&quot;;
-    }
+    &lt;input
+        type=&quot;file&quot;
+        name=&quot;fitxategia&quot;
+        accept=&quot;.jpg,.jpeg,.png,.gif,.pdf&quot;
+        required
+    &gt;
 
-    $fitxategia = $_FILES['fitxategia'];
+    &lt;input type=&quot;submit&quot; value=&quot;Igo fitxategia&quot;&gt;
 
-    // 2. Fitxategi mota baimentzeko
-    $baimentutako_motak = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
-    $fitxategi_luzapena = strtolower(pathinfo($fitxategia['name'], PATHINFO_EXTENSION));
-
-    if (!in_array($fitxategi_luzapena, $baimentutako_motak)) {
-        echo &quot;Errorea: Fitxategi mota ez da baimendua&quot;;
-    }
-
-    // 3. Tamaina mugatu (5MB) - Gogoratu size bytetan adierazita egoten dela, MB-era pasatuko dugu konparaketa egiteko
-    if ($fitxategia['size'] &gt; 5 * 1024 * 1024) {
-        echo &quot;Errorea: Fitxategia handiegia da&quot;;
-    }
-
-    // 4. Izen segurua sortu (hasierako izena ez erabili!) - Hau adibide bat  (uniqid('fitx_') Izen bakarra sortzen du prefixo batekin:))
-    $izen_segurua = uniqid('fitx_') . '.' . $fitxategi_luzapena;
-    $helburu_osoa = &quot;img/&quot; . $izen_segurua;
-
-    // 5. Direktorioa existitzen den egiaztatu
-    if (!is_dir('img/')) {
-        mkdir('img/', 0755, true);
-    }
-
-    // 6. Fitxategia mugitu
-    if (move_uploaded_file($fitxategia['tmp_name'], $helburu_osoa)) {
-        echo &quot;Fitxategia ondo igo da: &quot; . $izen_segurua;
-    } else {
-        echo &quot;Errorea fitxategia igotzean&quot;;
-    }
-
-
-
+&lt;/form&gt;
 </code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Kontuz</p>
+<p><code>accept</code> atributuak erabiltzaileari laguntzen dio fitxategia aukeratzen, baina <strong>ez da segurtasun-neurri nahikoa</strong>. Zerbitzarian ere fitxategia egiaztatu behar dugu.</p>
+</div>
+<h5 id="php-kodea">PHP kodea<a class="headerlink" href="#php-kodea" title="Permanent link">&para;</a></h5>
+<pre><code class="language-php">&lt;?php
+
+// 1. Fitxategia behar bezala igo den egiaztatu
+
+if (!isset($_FILES['fitxategia']) ||
+    $_FILES['fitxategia']['error'] !== UPLOAD_ERR_OK) {
+
+    die(&quot;Errorea: fitxategia ez da behar bezala igo.&quot;);
+}
+
+$fitxategia = $_FILES['fitxategia'];
+
+
+// 2. Tamaina mugatu (5 MB)
+
+if ($fitxategia['size'] &gt; 5 * 1024 * 1024) {
+    die(&quot;Errorea: fitxategia handiegia da.&quot;);
+}
+
+
+// 3. Luzapena egiaztatu
+
+$baimendutako_luzapenak = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
+
+$luzapena = strtolower(
+    pathinfo($fitxategia['name'], PATHINFO_EXTENSION)
+);
+
+if (!in_array($luzapena, $baimendutako_luzapenak)) {
+    die(&quot;Errorea: fitxategi mota ez da baimendua.&quot;);
+}
+
+
+// 4. Fitxategiaren benetako mota egiaztatu
+
+$finfo = finfo_open(FILEINFO_MIME_TYPE);
+$mime_mota = finfo_file($finfo, $fitxategia['tmp_name']);
+finfo_close($finfo);
+
+$baimendutako_mime_motak = [
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+    'application/pdf'
+];
+
+if (!in_array($mime_mota, $baimendutako_mime_motak)) {
+    die(&quot;Errorea: fitxategiaren edukia ez da baimendua.&quot;);
+}
+
+
+// 5. Izen berri eta segurua sortu
+
+$izen_segurua = uniqid('fitx_') . '.' . $luzapena;
+
+$helburu_osoa = &quot;img/&quot; . $izen_segurua;
+
+
+// 6. Direktorioa existitzen den egiaztatu
+
+if (!is_dir('img/')) {
+    mkdir('img/', 0755, true);
+}
+
+
+// 7. Fitxategia mugitu
+
+if (move_uploaded_file($fitxategia['tmp_name'], $helburu_osoa)) {
+
+    echo &quot;Fitxategia ondo igo da.&quot;;
+
+} else {
+
+    echo &quot;Errorea fitxategia igotzean.&quot;;
+}
+
+?&gt;
+</code></pre>
+<h5 id="gogoratu">Gogoratu<a class="headerlink" href="#gogoratu" title="Permanent link">&para;</a></h5>
+<p>Fitxategi bat igotzean:</p>
+<ul>
+<li>Ez fidatu erabiltzaileak bidalitako fitxategi-izenaz.</li>
+<li>Egiaztatu igoerako erroreak.</li>
+<li>Mugatu fitxategiaren tamaina.</li>
+<li>Mugatu onartutako luzapenak.</li>
+<li>Egiaztatu fitxategiaren benetako MIME mota.</li>
+<li>Sortu fitxategiarentzat izen berri bat.</li>
+<li>Erabili <code>move_uploaded_file()</code> igotako fitxategia mugitzeko.</li>
+</ul>
+<blockquote>
+<p><strong>HTMLko <code>accept</code> atributua erabiltzaileari laguntzeko da; benetako segurtasun-kontrolak zerbitzarian egin behar dira.</strong></p>
+</blockquote>
 <div class="admonition exercise">
 <p class="admonition-title">Ariketa UD3 - 6</p>
 <ul class="task-list">
